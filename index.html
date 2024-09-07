@@ -213,93 +213,198 @@ Embark on a journey of cutting-edge web solutions with Antocap Teknologies. We b
         </div>
         <!-- About End -->
 
-
-        <!-- Services Start -->
-        <div class="container-fluid services py-5 mb-5">
-            <div class="container">
-                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Our Services</h5>
-                    <h1>Services Built Specifically For Your Business</h1>
-                </div>
-                <div class="row g-5 services-inner">
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Design</h4>
-                                    <p class="mb-4">We offer a range of web development plans to suit your needs, from basic to ultimate.
-                                        Each plan provides different features and levels of customization to help you create a website that meets your specific goals.</p>
-                                    <a href="service.html" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
+<!-- Services Start -->
+<div class="container-fluid services py-5 mb-5">
+    <div class="container">
+        <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+            <h5 class="text-primary">Our Services</h5>
+            <h1>Services Built Specifically For Your Business</h1>
+        </div>
+        <div class="row g-5 services-inner">
+            <!-- Web Development -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Web Development</h4>
+                            <p class="mb-4">We offer a variety of website development plans with distinct features tailored for your business needs.</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary text-white px-5 py-3 rounded-pill" onclick="togglePlans('web-development')">Read More</a>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Development</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">UI/UX Design</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Web Cecurity</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Digital Marketing</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="services-item bg-light">
-                            <div class="p-4 text-center services-content">
-                                <div class="services-content-icon">
-                                    <i class="fas fa-laptop fa-7x mb-4 text-primary"></i>
-                                    <h4 class="mb-3">Programming</h4>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet elit. Sed efficitur quis purus ut interdum. Aliquam dolor eget urna ultricies tincidunt.</p>
-                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
-                                </div>
-                            </div>
+                        <div id="web-development" class="plans" style="display:none;">
+                            <h5 class="text-primary mt-4">Available Plans</h5>
+                            <ul>
+                                <li><b>Basic Plan:</b> Essential features for startups.</li>
+                                <li><b>Standard Plan:</b> Advanced features with custom options.</li>
+                                <li><b>Premium Plan:</b> Comprehensive design and development.</li>
+                                <li><b>Ultimate Plan:</b> Full custom solutions with dedicated support.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Software Development -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-laptop-code fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Software Development</h4>
+                            <p class="mb-4">We provide a range of software development plans customized for your business requirements.</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary text-white px-5 py-3 rounded-pill" onclick="togglePlans('software-development')">Read More</a>
+                        </div>
+                        <div id="software-development" class="plans" style="display:none;">
+                            <h5 class="text-primary mt-4">Available Plans</h5>
+                            <ul>
+                                <li><b>Basic Plan:</b> Entry-level software for simple needs.</li>
+                                <li><b>Standard Plan:</b> More features for growing businesses.</li>
+                                <li><b>Advanced Plan:</b> Customizable software solutions.</li>
+                                <li><b>Premium Plan:</b> Tailored solutions with integration capabilities.</li>
+                                <li><b>Ultimate Plan:</b> Full-scale software development and support.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">UI/UX Design</h4>
+                            <p class="mb-4">We craft intuitive and visually appealing interfaces that enhance user experience and engagement.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Security -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Web Security</h4>
+                            <p class="mb-4">We provide top-notch security services to protect your website from cyber threats and vulnerabilities.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Digital Marketing</h4>
+                            <p class="mb-4">We help your business grow by leveraging digital platforms to reach your target audience effectively.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-laptop fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Programming</h4>
+                            <p class="mb-4">We offer professional programming services for various platforms and technologies, tailored to your business goals.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- Security Camera Installation -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-video fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Security Camera Installation</h4>
+                            <p class="mb-4">We offer professional installation of high-quality security camera systems for homes and businesses.</p>
+                            <a href="javascript:void(0)" class="btn btn-secondary text-white px-5 py-3 rounded-pill" onclick="togglePlans('camera-installation')">Read More</a>
+                        </div>
+                        <div id="camera-installation" class="plans" style="display:none;">
+                            <h5 class="text-primary mt-4">Service Details</h5>
+                            <ul>
+                                <li><b>Home Security:</b> Reliable camera systems for your home.</li>
+                                <li><b>Business Security:</b> Advanced surveillance for businesses.</li>
+                                <li><b>Custom Solutions:</b> Tailored systems based on your needs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-paint-brush fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Graphic Design</h4>
+                            <p class="mb-4">We provide creative graphic design solutions to help your brand stand out in a competitive market.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Computer Maintenance -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-tools fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">Computer Maintenance</h4>
+                            <p class="mb-4">We offer regular maintenance services to keep your computers running smoothly and efficiently.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IoT Services -->
+            <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
+                <div class="services-item bg-light">
+                    <div class="p-4 text-center services-content">
+                        <div class="services-content-icon">
+                            <i class="fas fa-microchip fa-7x mb-4 text-primary"></i>
+                            <h4 class="mb-3">IoT Services</h4>
+                            <p class="mb-4">We offer IoT solutions that help businesses automate processes and improve efficiency.</p>
+                            <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional services go here (e.g., cloud computing, network administration, system administration, etc.) -->
         </div>
-        <!-- Services End -->
+    </div>
+</div>
+<!-- Services End -->
+
+<script>
+    function togglePlans(serviceId) {
+        const service = document.getElementById(serviceId);
+        if (service.style.display === "none") {
+            service.style.display = "block";
+        } else {
+            service.style.display = "none";
+        }
+    }
+</script>
+
 
 
         <!-- Project Start -->
