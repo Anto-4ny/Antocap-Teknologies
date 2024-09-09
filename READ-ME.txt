@@ -1,9 +1,12 @@
-  =>  Template Name    : HighTech - IT Solutions Website Template
+  =>  Website Name    : Antocap Teknologies
 
-  =>  Template Link    : https://htmlcodex.com/it-solutions-website-template
+  =>  Website Link    : https://www.antocapteknologies.com/
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
 
-  =>  Template Author  : HTML Codex
+  =>  Template Author  : Antocap Teknolopgies
 
-  =>  Author Website   : https://htmlcodex.com
+  =>  Author Website   : https://www.antocapteknologies.com/
+
+  =>  contact          : +254 757 492 614
+
+  =>  Email            : antocapteknologies@gmail.com
