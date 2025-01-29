@@ -40,83 +40,147 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-    
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Antocap Teknologies",
+    "url": "https://www.antocapteknologies.com/",
+    "logo": "https://www.antocapteknologies.com/scr/Photo_1722093478037.png",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "Kenya"
+    },
+    "description": "A leading software and website development company in Nairobi, Kenya."
+}
+</script>
 
-        <!-- Topbar Start -->
-        <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-            <div class="container">
-                <div class="d-flex justify-content-between topbar">
-                    <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Utawala, Nairobi, Kenya</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>antocaptechnologies@gmail.com</small>
-                    </div>
-                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
-                    <div class="top-link">
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                    </div>
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" aria-label="Loading">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+        <div class="container">
+            <div class="d-flex justify-content-between topbar">
+                <div class="top-info">
+                    <small class="me-3 text-white-50">
+                        <a href="https://maps.google.com/?q=Utawala,Nairobi,Kenya" target="_blank" rel="noopener">
+                            <i class="fas fa-map-marker-alt me-2 text-secondary"></i> Utawala, Nairobi, Kenya
+                        </a>
+                    </small>
+                    <small class="me-3 text-white-50">
+                        <a href="mailto:antocaptechnologies@gmail.com">
+                            <i class="fas fa-envelope me-2 text-secondary"></i> antocaptechnologies@gmail.com
+                        </a>
+                    </small>
+                </div>
+                <div id="note" class="text-secondary d-none d-xl-flex">
+                    <small>Note: We help you grow your business</small>
+                </div>
+                <div class="top-link">
+                    <a href="https://www.facebook.com/antocapteknologies" class="bg-light nav-fill btn btn-sm-square rounded-circle" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f text-primary"></i>
+                    </a>
+                    <a href="https://twitter.com/antocapteknologies" class="bg-light nav-fill btn btn-sm-square rounded-circle" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter text-primary"></i>
+                    </a>
+                    <a href="https://www.instagram.com/antocap__teknologies?igsh=YzljYTk1ODg3Zg==" class="bg-light nav-fill btn btn-sm-square rounded-circle" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram text-primary"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/antocapteknologies" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in text-primary"></i>
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- Topbar End -->
+    </div>
+    <!-- Topbar End -->
 
-        <!-- Navbar Start -->
-        <div class="container-fluid bg-primary">
-            <div class="container">
-                <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-white fw-bold d-block">Antocap<span class="text-secondary">Teknologies</span> </h1>
-                    </a>
-                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="service.html" class="nav-item nav-link active">Our Services</a>
-                            <a href="project.html" class="nav-item nav-link">Projects Completed</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Our Blog</a>
-                                    <a href="team.html" class="dropdown-item">Our Team</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                    <a href="404.html" class="dropdown-item">404 Page</a>
-                                </div>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-primary">
+        <div class="container">
+            <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-white fw-bold d-block">Antocap <span class="text-secondary">Teknologies</span></h1>
+                </a>
+                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mx-xl-auto p-0">
+                        <li class="nav-item"><a href="index" class="nav-link active text-secondary">Home</a></li>
+                        <li class="nav-item"><a href="about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="service" class="nav-link">Our Services</a></li>
+                        <li class="nav-item"><a href="project" class="nav-link">Projects Completed</a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <ul class="dropdown-menu rounded">
+                                <li><a href="blog" class="dropdown-item">Our Blog</a></li>
+                                <li><a href="team" class="dropdown-item">Our Team</a></li>
+                                <li><a href="testimonial" class="dropdown-item">Testimonial</a></li>
+                                <li><a href="404" class="dropdown-item">404 Page</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="d-none d-xl-flex flex-shrink-0">
+                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                        <a href="tel:+254757492614" class="position-relative animated tada infinite">
+                            <i class="fa fa-phone-alt text-white fa-2x"></i>
+                            <div class="position-absolute" style="top: -7px; left: 20px;">
+                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                        </div>
+                        </a>
                     </div>
-                    <div class="d-none d-xl-flex flex-shirink-0">
-                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                            <a href="" class="position-relative animated tada infinite">
-                                <i class="fa fa-phone-alt text-white fa-2x"></i>
-                                <div class="position-absolute" style="top: -7px; left: 20px;">
-                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="d-flex flex-column pe-4 border-end">
-                            <span class="text-white-50">Have any questions?</span>
-                            <span class="text-secondary">Call: +2547 5749 2614</span>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
-                        </div>
+                    <div class="d-flex flex-column pe-4 border-end">
+                        <span class="text-white-50">Have any questions?</span>
+                        <span class="text-secondary">Call: <a href="tel:+254757492614" class="text-secondary">+254 757 492 614</a></span>
                     </div>
-                </nav>
-            </div>
+                    <div class="d-flex align-items-center justify-content-center ms-4">
+                        <a href="search"><i class="bi bi-search text-white fa-2x"></i></a>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <!-- Navbar End -->
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Antocap Teknologies",
+        "url": "https://www.antocapteknologies.com/",
+        "logo": "https://www.antocapteknologies.com/scr/Photo_1722093478037.png",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Utawala",
+            "addressLocality": "Nairobi",
+            "addressCountry": "Kenya"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+254757492614",
+            "contactType": "customer service"
+        },
+        "sameAs": [
+            "https://www.facebook.com/antocapteknologies",
+            "https://twitter.com/antocapteknologies",
+            "https://www.instagram.com/antocap__teknologies",
+            "https://www.linkedin.com/company/antocapteknologies"
+        ]
+    }
+    </script>
+
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
