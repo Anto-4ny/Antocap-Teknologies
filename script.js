@@ -117,12 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     threshold: 0.1
   });
 
+  // Observe each pop-in element
   elements.forEach(element => {
     observer.observe(element);
   });
 });
-
-
-  elements.forEach(element => {
-    observer.observe(element);
-  });
