@@ -21,82 +21,92 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Handle Sign-Up
-document.getElementById('sign-up-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const email = document.getElementById('sign-up-email').value;
-  const password = document.getElementById('sign-up-password').value;
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle Sign-Up
+  const signUpForm = document.getElementById('sign-up-form');
+  if (signUpForm) {
+    signUpForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('sign-up-email').value;
+      const password = document.getElementById('sign-up-password').value;
 
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
-  if (!passwordRegex.test(password)) {
-    alert('Password must be at least 6 characters long and include both letters and numbers.');
-    return;
+      if (!passwordRegex.test(password)) {
+        alert('Password must be at least 6 characters long and include both letters and numbers.');
+        return;
+      }
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          const userRef = doc(db, "users", user.uid);
+
+          const userData = {
+            email: user.email,
+            uid: user.uid,
+            createdAt: new Date(),
+            displayName: "",
+            phoneNumber: "",
+            status: "active",
+            profilePicture: "",
+          };
+
+          return setDoc(userRef, userData);
+        })
+        .then(() => {
+          alert('Sign-up successful!');
+        })
+        .catch((error) => {
+          alert(`Error: ${error.message}`);
+        });
+    });
   }
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      const userRef = doc(db, "users", user.uid);
+  // Handle Login
+  const loginForm = document.getElementById('login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
 
-      const userData = {
-        email: user.email,
-        uid: user.uid,
-        createdAt: new Date(),
-        displayName: "", // Add this field if users have display names
-        phoneNumber: "", // Add this field if users have phone numbers
-        status: "active", // For tracking user account status
-        profilePicture: "", // URL to the user's profile picture if you have one
-      };
-
-      return setDoc(userRef, userData);
-    })
-    .then(() => {
-      alert('Sign-up successful!');
-    })
-    .catch((error) => {
-      alert(`Error: ${error.message}`);
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert('Login successful!');
+          // Redirect or perform actions after login
+        })
+        .catch((error) => {
+          alert(`Error: ${error.message}`);
+        });
     });
-});
+  }
 
-// Handle Login
-document.getElementById('login-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-
-  signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      alert('Login successful!');
-      // Redirect or perform actions after login
-    })
-    .catch((error) => {
-      alert(`Error: ${error.message}`);
+  // Form Toggling
+  const showLogin = document.getElementById('show-login');
+  const showSignup = document.getElementById('show-signup');
+  if (showLogin) {
+    showLogin.addEventListener('click', () => {
+      document.getElementById('login-form').classList.add('active');
+      document.getElementById('sign-up-form').classList.remove('active');
     });
-});
+  }
+  if (showSignup) {
+    showSignup.addEventListener('click', () => {
+      document.getElementById('sign-up-form').classList.add('active');
+      document.getElementById('login-form').classList.remove('active');
+    });
+  }
 
-// Form Toggling
-document.getElementById('show-login').addEventListener('click', () => {
-  document.getElementById('login-form').classList.add('active');
-  document.getElementById('sign-up-form').classList.remove('active');
-});
+  // Password Visibility Toggling
+  function togglePasswordVisibility(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+  }
 
-document.getElementById('show-signup').addEventListener('click', () => {
-  document.getElementById('sign-up-form').classList.add('active');
-  document.getElementById('login-form').classList.remove('active');
-});
-
-// Password Visibility Toggling
-function togglePasswordVisibility(inputId) {
-  const passwordInput = document.getElementById(inputId);
-  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  passwordInput.setAttribute('type', type);
-}
-
-// Pop-In Effect
-document.addEventListener('DOMContentLoaded', () => {
+  // Pop-In Effect
   const elements = document.querySelectorAll('.pop-in');
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -106,6 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, {
     threshold: 0.1
   });
+
+  elements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
 
   elements.forEach(element => {
     observer.observe(element);
