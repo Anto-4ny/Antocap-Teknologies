@@ -54,23 +54,23 @@ const WebDevelopmentPage = () => {
       title: 'Portfolio Website',
       icon: 'fa-briefcase text-purple-600',
       description: 'Showcase your work and skills in a professional portfolio.',
-      price: '$800',
-      kshPrice: '88,000',
+      price: '$100',
+      kshPrice: '13,000',
       features: ['Responsive Design', 'Project Showcase', 'SEO Optimized']
     },
     {
       title: 'Landing Page Website',
       icon: 'fa-map-signs text-red-600',
       description: 'A single-page website for product launches or services.',
-      price: '$400',
-      kshPrice: '44,000',
+      price: '$120',
+      kshPrice: '16,000',
       features: ['One-Page Design', 'SEO Optimized', 'Lead Generation']
     }
   ];
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">Our Web Development Services</h1>
+      <h1 className="text-4xl font-bold text-center mb-12">Our Web Development Services</h1>
       
       {/* Ecommerce Website Category */}
       <WebsiteCategory category="Ecommerce Websites" services={ecommerceServices} />
