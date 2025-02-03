@@ -167,7 +167,7 @@
                                 <li><a href="404" class="dropdown-item">404 Page</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                        <li class="nav-item"><a href="contact" class="nav-link">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="d-none d-xl-flex flex-shrink-0">
@@ -223,127 +223,126 @@
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">About Us</h1>
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Website Development Nairobi</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="blog.html">Pages</a></li>
-                        <li class="breadcrumb-item" aria-current="page">About Us</li>
+                        <li class="breadcrumb-item"><a href="index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="blog">Pages</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Website Development Nairobi</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <!-- Page Header End -->
 
-        <style>
-            .service-card {
-              border: 1px solid #ccc;
-              border-radius: 10px;
-              padding: 20px;
-              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-            .service-card .service-icon {
-              font-size: 50px;
-              color: #007bff;
-            }
-            .service-card h3 {
-              color: #007bff;
-            }
-            .btn-custom {
-              border-radius: 30px;
-              padding: 10px 25px;
-            }
-            .service-card p {
-              color: #6c757d;
-            }
-          </style>
-
-  <!-- Web Development Section -->
-  <div class="container my-5">
-    <h2 class="text-center mb-5">Our Web Development Services</h2>
-    
-    <!-- Web Development Categories -->
-    <div class="row">
-      <!-- E-commerce Website -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-shopping-cart service-icon"></i>
-          <h3>E-commerce Website</h3>
-          <p>Fully functional online stores with secure payment gateways and product management systems.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="ecommerce.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Custom Website -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-cogs service-icon"></i>
-          <h3>Custom Website</h3>
-          <p>Tailored websites to meet the unique needs of your business and audience.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="custom-website.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog Website -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-blog service-icon"></i>
-          <h3>Blog Website</h3>
-          <p>Responsive and user-friendly blog websites designed to engage your audience.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="blog.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Portfolio Website -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-briefcase service-icon"></i>
-          <h3>Portfolio Website</h3>
-          <p>Showcase your skills, projects, or art with a professional portfolio website.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="portfolio.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Corporate Website -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-building service-icon"></i>
-          <h3>Corporate Website</h3>
-          <p>Professional websites for businesses looking to establish an online presence.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="corporate.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Landing Page -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="service-card text-center">
-          <i class="fas fa-paper-plane service-icon"></i>
-          <h3>Landing Page</h3>
-          <p>High-converting landing pages optimized for lead generation and conversions.</p>
-          <div class="d-flex justify-content-center">
-            <a href="contact.html" class="btn btn-primary btn-custom">Get Website</a>
-            <a href="landing-page.html" class="btn btn-outline-primary btn-custom ms-3">Know More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+       
+        <home class="bg-gray-100">
+            <div class="container mx-auto py-16 px-4">
+                <div class="text-center pb-8">
+                    <h2 class="text-blue-600 text-xl font-semibold">Web Development Services</h2>
+                    <h1 class="text-3xl font-bold text-gray-800">Professional Websites Tailored to Your Needs</h1>
+                </div>
+        
+                <!-- E-commerce Websites -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">E-commerce Websites</h2>
+                    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+                        <!-- Basic Plan -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-shopping-cart text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Basic E-commerce</h3>
+                            <p class="text-gray-600 mt-2">Up to 10 products, payment integration, and mobile-responsive.</p>
+                            <p class="text-gray-800 font-bold mt-2">$250 / Ksh 37,500</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Advanced Plan -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-store text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Advanced E-commerce</h3>
+                            <p class="text-gray-600 mt-2">Up to 50 products, analytics, SEO optimization.</p>
+                            <p class="text-gray-800 font-bold mt-2">$500 / Ksh 75,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Premium Plan -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-briefcase text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Premium E-commerce</h3>
+                            <p class="text-gray-600 mt-2">Unlimited products, AI search, chatbots & automation.</p>
+                            <p class="text-gray-800 font-bold mt-2">$1000 / Ksh 150,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Custom Websites -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Custom Websites</h2>
+                    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+                        <!-- Portfolio Website -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-user text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Portfolio Website</h3>
+                            <p class="text-gray-600 mt-2">Personal branding & professional portfolio.</p>
+                            <p class="text-gray-800 font-bold mt-2">$150 / Ksh 22,500</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Business Website -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-building text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Business Website</h3>
+                            <p class="text-gray-600 mt-2">Professional business presence, 5-10 pages.</p>
+                            <p class="text-gray-800 font-bold mt-2">$300 / Ksh 45,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Enterprise Website -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-globe text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Enterprise Website</h3>
+                            <p class="text-gray-600 mt-2">Large-scale business, security & performance.</p>
+                            <p class="text-gray-800 font-bold mt-2">$800 / Ksh 120,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Other Website Services -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Additional Web Services</h2>
+                    <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+                        <!-- Landing Page -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-bullhorn text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Landing Page</h3>
+                            <p class="text-gray-600 mt-2">Conversion-optimized single-page site.</p>
+                            <p class="text-gray-800 font-bold mt-2">$100 / Ksh 15,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Blog Website -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-pen text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Blog Website</h3>
+                            <p class="text-gray-600 mt-2">SEO-optimized blog with social sharing.</p>
+                            <p class="text-gray-800 font-bold mt-2">$200 / Ksh 30,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+        
+                        <!-- Web Apps -->
+                        <div class="bg-white p-6 shadow-md rounded-lg text-center">
+                            <i class="fas fa-cloud text-blue-600 text-6xl"></i>
+                            <h3 class="text-xl font-semibold mt-4">Web Application</h3>
+                            <p class="text-gray-600 mt-2">Custom web-based solutions for businesses.</p>
+                            <p class="text-gray-800 font-bold mt-2">$1,500 / Ksh 225,000</p>
+                            <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block">Get Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </home>
         
 <!-- Footer Start -->
 <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
