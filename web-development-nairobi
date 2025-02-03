@@ -190,8 +190,8 @@
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Our Services</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="contact.html">Pages</a></li>
+                        <li class="breadcrumb-item"><a href="index">Home</a></li>
+                        <li class="breadcrumb-item"><a href="contact">Pages</a></li>
                         <li class="breadcrumb-item" aria-current="page">Services</li>
                     </ol>
                 </nav>
