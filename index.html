@@ -311,19 +311,22 @@ import { Link } from 'react-router-dom';
             <h1 class="text-3xl font-bold text-gray-800">Customized Digital Solutions for Your Business</h1>
         </div>
 
-        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
 
-            <!-- Web Development -->
-            <div class="bg-white p-6 shadow-md rounded-lg text-center">
-                <i class="fa fa-file-code text-blue-600 text-6xl"></i>
-                <h3 class="text-xl font-semibold mt-4">Web Development</h3>
-                <p class="text-gray-600 mt-2">SEO-optimized, mobile-responsive, high-performance websites.</p>
-                <div class="flex space-x-4 justify-center mt-4">
-                    <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full">Get Service</a>
-<Link to="/web-development" className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full">
-  Know More
-</Link>                </div>
+            <div className="bg-white p-6 shadow-md rounded-lg text-center">
+              <i className="fa fa-file-code text-blue-600 text-6xl"></i>
+              <h3 className="text-xl font-semibold mt-4">Web Development</h3>
+              <p className="text-gray-600 mt-2">SEO-optimized, mobile-responsive, high-performance websites.</p>
+              <div className="flex space-x-4 justify-center mt-4">
+                {/* This will lead to the contact page */}
+                <a href="/contact" className="bg-blue-600 text-white px-4 py-2 rounded-full">Get Service</a>
+            
+                {/* React Router Link to the Web Development Page */}
+                <Link to="/web-development" className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full">
+                  Know More
+                </Link>
+              </div>
             </div>
+            
             
            <!-- Software Development -->
             <div class="bg-white p-6 shadow-md rounded-lg text-center">
