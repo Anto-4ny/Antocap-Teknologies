@@ -49,6 +49,9 @@ top software companies Africa, leading web developers Nairobi, IT solutions Keny
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<script>
+import { Link } from 'react-router-dom';
+</script>
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -210,12 +213,12 @@ top software companies Africa, leading web developers Nairobi, IT solutions Keny
                             Welcome to Antocap Teknologies, where digital innovation takes center stage. 
                             Embark on a journey of cutting-edge web solutions tailored for success.
                         </p>
-                        <a href="about.html" class="me-2">
+                        <a href="about" class="me-2">
                             <button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">
                                 Read More
                             </button>
                         </a>
-                        <a href="contact.html" class="ms-2">
+                        <a href="contact" class="ms-2">
                             <button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">
                                 Contact Us
                             </button>
@@ -235,12 +238,12 @@ top software companies Africa, leading web developers Nairobi, IT solutions Keny
                             At Antocap Teknologies, we provide top-notch IT solutions tailored to meet your digital needs.
                             Our expert team ensures your business stays ahead in the competitive digital landscape.
                         </p>
-                        <a href="about.html" class="me-2">
+                        <a href="about" class="me-2">
                             <button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">
                                 Read More
                             </button>
                         </a>
-                        <a href="contact.html" class="ms-2">
+                        <a href="contact" class="ms-2">
                             <button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">
                                 Contact Us
                             </button>
@@ -317,8 +320,9 @@ top software companies Africa, leading web developers Nairobi, IT solutions Keny
                 <p class="text-gray-600 mt-2">SEO-optimized, mobile-responsive, high-performance websites.</p>
                 <div class="flex space-x-4 justify-center mt-4">
                     <a href="contact" class="bg-blue-600 text-white px-4 py-2 rounded-full">Get Service</a>
-                    <a href="WebDevelopmentPage" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full">Know More</a>
-                </div>
+<Link to="/web-development" className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full">
+  Know More
+</Link>                </div>
             </div>
             
            <!-- Software Development -->
