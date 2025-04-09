@@ -163,7 +163,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-import gifSource from '@/assets/bjk.gif';
+import gifSource from '@/assets/bJk.gif';
 
 // ✅ Import only .jpg images from the assets folder
 import itJpg from '@/assets/it.jpg';
