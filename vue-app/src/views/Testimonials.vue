@@ -30,8 +30,8 @@
   import { ref, onMounted } from 'vue'
   import axios from 'axios'
   
-  const apiKey = 'AIzaSyB7t1wWHhPYBitqKC4SJ8lqP1WMLDefCxo' // Replace with your actual API key
-  const placeId = 'ChIJVxNBRxKJwogRygE6r3BxPOY' // Replace with your Google Business Profile Place ID
+  const apiKey = '' // Replace with your actual API key
+  const placeId = '' // Replace with your Google Business Profile Place ID
   
   const reviews = ref([])
   
