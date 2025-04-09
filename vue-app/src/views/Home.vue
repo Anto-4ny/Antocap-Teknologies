@@ -163,12 +163,12 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-import gifSource from '../assets/bjk.gif';
+import gifSource from '@/assets/bjk.gif';
 
 // ✅ Import only .jpg images from the assets folder
-import itJpg from '../assets/it.jpg';
-import cloudJpg from '../assets/cloud.jpg';
-import automationJpg from '../assets/automation2.jpg';
+import itJpg from '@/assets/it.jpg';
+import cloudJpg from '@/assets/cloud.jpg';
+import automationJpg from '@/assets/automation2.jpg';
 
 const slides = ref([
   {
