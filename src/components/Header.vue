@@ -111,7 +111,7 @@ const menuItems = [
   { title: 'About Us', href: '/about', icon: 'mdi-information' },
   { title: 'Services', href: '/services', icon: 'mdi-tools' },
   { title: 'Projects Completed', href: '/project', icon: 'mdi-check-circle' },
-  { title: 'Blog', href: '/blog', icon: 'mdi-blogger' },
+  { title: 'Blog', href: '/blog', icon: 'mdi-pencil' },
   { title: 'Testimonials', href: '/testimonials', icon: 'mdi-comment-quote' },
   { title: 'Get Started', href: '/contact', icon: 'mdi-email' }
 ]

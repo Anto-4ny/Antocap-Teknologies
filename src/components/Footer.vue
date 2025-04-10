@@ -123,6 +123,18 @@
 >
   <v-icon size="28" color="white">mdi-arrow-up</v-icon>
 </v-btn>
+
+ <!-- WhatsApp Contact Button -->
+<v-btn
+    v-if="showScrollButtonn"
+    class="whatsApp"
+    fab
+    large
+    @click="openWhatsApp"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <v-icon size="28" color="white">mdi-whatsapp</v-icon>
+  </v-btn>
 </template>
 
 <script setup>
@@ -147,6 +159,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+const showScrollButtonn = ref(true);
+
+const openWhatsApp = () => {
+  const phoneNumber = '+254757492614';
+  const message = 'Hello, are you available for discussion';
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+};
 
 </script>
 
@@ -186,6 +207,23 @@ hr {
 }
 
 .back-to-top:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.whatsApp {
+  position: fixed;
+  bottom: 8rem; /* Raised a bit higher */
+  right: 2rem;
+  z-index: 9999;
+  background: #25d366;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.whatsApp:hover {
   transform: scale(1.1);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
