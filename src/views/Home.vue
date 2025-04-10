@@ -8,9 +8,25 @@
         <p class="small-desc">Transforming businesses with powerful and scalable solutions.</p>
 
         <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
-          <v-btn color="primary" class="luxury-btn mr-4" href="/contact">Get Started</v-btn>
-          <v-btn color="secondary" class="luxury-btn" href="/services">Learn More</v-btn>
-        </div>
+  <!-- 'Get Started' Button -->
+  <v-btn
+    color="primary"
+    class="luxury-btn mr-4"
+    href="/contact"
+    aria-label="Contact us to get started with our services"
+  >
+    Get Started
+  </v-btn>
+  <!-- 'Learn More' Button -->
+  <v-btn
+    color="secondary"
+    class="luxury-btn"
+    href="/services"
+    aria-label="Explore our services to learn more"
+  >
+    Learn More
+  </v-btn>
+</div>
       </div>
     </v-col>
 
@@ -91,12 +107,18 @@
   </v-card>
 </v-col>
 
-   <!-- Explore More Button -->
-   <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
-          <v-btn color="primary" to="/contact" class="rounded">
-           Explore more of our Services
-          </v-btn>
-        </v-col>
+<!-- EXPLORE MORE BUTTON-->
+<v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
+  <!-- 'Explore More' Button -->
+  <v-btn
+    color="primary"
+    to="/services"
+    class="rounded"
+    aria-label="Discover our range of services"
+  >
+    Explore More of Our Services
+  </v-btn>
+</v-col>
   </v-row>
 
   <!-- Why Choose Us -->
@@ -127,7 +149,16 @@
       <v-card class="py-8 px-6 rounded-xl elevation-10" style="background: linear-gradient(135deg, #0077b6, #00b4d8);">
         <h2 class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
         <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
-       <v-btn to="/contact" color="white" text large class="font-weight-bold">Get In Touch</v-btn>
+        <v-btn
+          to="/contact"
+          color="white"
+          text
+          large
+          class="font-weight-bold"
+          aria-label="Contact us to get in touch"
+        >
+          Get In Touch
+        </v-btn>
       </v-card>
     </v-col>
   </v-row>
