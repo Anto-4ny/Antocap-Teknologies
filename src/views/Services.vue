@@ -211,13 +211,19 @@ const services = ref([
 
 /* Premium Services Heading */
 .premium-heading {
-  font-size: 4rem;  /* Large size */
+  font-size: 2.5rem;  /* Large size */
   color: #1E88E5;  /* Blue color */
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
   animation: jump 1.5s ease-in-out infinite;  /* Jumping effect */
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .premium-heading {
+    margin-top: 10%;
+  }
 }
 
 @keyframes jump {

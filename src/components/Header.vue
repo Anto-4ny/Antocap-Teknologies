@@ -69,35 +69,9 @@
         </v-list-item>
 
         <v-divider></v-divider>
-
-        <!-- Auth Links -->
-        <v-list-item @click="drawer = false" class="px-3 py-2">
-          <v-btn
-            text
-            block
-            href="/signup"
-            class="justify-start text-black font-weight-medium"
-            style="text-transform: none;"
-          >
-            <v-icon left color="green" class="mr-3">fas fa-user-plus</v-icon>
-            Sign Up
-          </v-btn>
-        </v-list-item>
-
-        <v-list-item @click="drawer = false" class="px-3 py-2">
-          <v-btn
-            text
-            block
-            href="/login"
-            class="justify-start text-black font-weight-medium"
-            style="text-transform: none;"
-          >
-            <v-icon left color="blue" class="mr-3">fas fa-sign-in-alt</v-icon>
-            Login
-          </v-btn>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
   </v-app-bar>
 </template>
 
@@ -108,13 +82,13 @@ import logo from '@/assets/Antocap-logo.jpg'
 const drawer = ref(false)
 
 const menuItems = [
-  { title: 'Home', href: '/', icon: 'fas fa-home' },
-  { title: 'About Us', href: '/about', icon: 'fas fa-info-circle' },
-  { title: 'Services', href: '/services', icon: 'fas fa-tools' },
-  { title: 'Projects Completed', href: '/project', icon: 'fas fa-check-circle' },
-  { title: 'Blog', href: '/blog', icon: 'fas fa-blog' },
-  { title: 'Testimonials', href: '/testimonials', icon: 'fas fa-comments' },
-  { title: 'Get Started', href: '/contact', icon: 'fas fa-envelope' }
+  { title: 'Home', href: '/', icon: 'mdi-home' },
+{ title: 'About Us', href: '/about', icon: 'mdi-information' },
+{ title: 'Services', href: '/services', icon: 'mdi-tools' },
+{ title: 'Projects Completed', href: '/project', icon: 'mdi-check-circle' },
+{ title: 'Blog', href: '/blog', icon: 'mdi-blogger' },
+{ title: 'Testimonials', href: '/testimonials', icon: 'mdi-comment-quote' },
+{ title: 'Get Started', href: '/contact', icon: 'mdi-email' }
 ]
 </script>
 

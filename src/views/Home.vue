@@ -1,95 +1,74 @@
 <template>
-  <v-container fluid data-aos="fade-up" data-aos-duration="1000">
-    <!-- Top Section with additional space for extra items -->
-    <div class="top-section" data-aos="fade-up" data-aos-duration="1000">
-      <v-row class="d-flex align-center">
-        <v-col cols="12" md="6" data-aos="fade-right" data-aos-duration="1200">
-          <div class="text-left">
-            <!-- Large Description -->
-            <h1 class="display-2 font-weight-bold jump-blue">Innovating the Future of Technology</h1>
-            <!-- Medium Description -->
-            <h2 class="text-md md:text-lg text-gray-800 mt-2">Pushing the boundaries of software development.</h2>
-            <!-- Small Description -->
-            <p class="text-sm text-gray-600 mt-2">Transforming businesses with powerful and scalable solutions.</p>
-          </div>
-          <!-- Buttons below the descriptions -->
-          <div class="button-container mt-4" data-aos="fade-up" data-aos-delay="200">
-            <v-btn color="primary" href="/contact" class="luxury-btn mr-4">Get Started</v-btn>
-            <v-btn color="secondary" href="/services" class="luxury-btn">Learn More</v-btn>
-          </div>
-        </v-col>
+<v-container fluid class="top-section" data-aos="fade-up" data-aos-duration="1000">
+  <v-row class="d-flex align-center">
+    <v-col cols="12" md="6" data-aos="fade-right" data-aos-duration="1200">
+      <div class="text-left">
+        <h1 class="jump-blue">Innovating the Future of Technology</h1>
+        <h2 class="medium-desc">Pushing the boundaries of software development.</h2>
+        <p class="small-desc">Transforming businesses with powerful and scalable solutions.</p>
 
-        <v-col cols="12" md="6" class="d-flex justify-center" data-aos="fade-left" data-aos-duration="1200">
-          <v-img
-            :src="gifSource"
-            alt="Technology Animation"
-            class="d-block"
-            height="400px"
-            width="auto"
-          />
-        </v-col>
-      </v-row>
-    </div>
-  </v-container>
-
-  <!-- Carousel Section -->
-  <div data-aos="fade-up" data-aos-duration="1000">
-    <v-carousel
-      cycle
-      height="500"
-      hide-delimiter-background
-      show-arrows="hover"
-      interval="5000"
-    >
-      <template v-for="(slide, index) in slides" :key="index">
-        <v-carousel-item>
-          <!-- Display the image only if it has loaded -->
-          <template v-if="loadedImages[index]">
-            <v-img
-              :src="slide.src"
-              :alt="slide.alt"
-              class="d-block image-with-overlay"
-              height="500"
-              max-width="calc(100% - 10px)"
-              cover
-            />
-          </template>
-
-          <!-- Loading spinner while the image is loading -->
-          <div v-else class="loading-placeholder">
-            <v-progress-circular indeterminate color="primary" />
-          </div>
-
-          <!-- Overlay with title and description -->
-          <div class="image-overlay" data-aos="fade-up" data-aos-delay="300">
-            <h2 class="text-h4 font-weight-bold mb-2">{{ slide.title }}</h2>
-            <p class="text-h6">{{ slide.description }}</p>
-          </div>
-        </v-carousel-item>
-      </template>
-    </v-carousel>
-  </div>
-
-  <!-- Display 3 Main Services -->
-  <v-row class="py-24 mt-16" data-aos="fade-up" data-aos-duration="1000">
-    <!-- Section Heading -->
-    <v-col cols="12" class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-      <div class="heading-container">
-        <h2 class="premium-heading">Premium Services</h2>
-        <div class="line-container">
-          <hr class="line-left">
-          <hr class="line-right">
+        <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
+          <v-btn color="primary" class="luxury-btn mr-4" href="/contact">Get Started</v-btn>
+          <v-btn color="secondary" class="luxury-btn" href="/services">Learn More</v-btn>
         </div>
-        <h3 class="headline font-weight-light text-gray-800 mt-2">Revolutionizing Digital Experiences</h3>
-        <p class="text-lg text-gray-600 mt-4">
-          We create cutting-edge solutions designed to elevate your business to new heights.
-          Experience innovation like never before.
-        </p>
       </div>
     </v-col>
 
-    <!-- Limited Services Loop -->
-    <v-col
+    <v-col cols="12" md="6" class="d-flex justify-center" data-aos="fade-left" data-aos-duration="1200">
+      <v-img :src="gifSource" alt="Technology Animation" height="400px" contain />
+    </v-col>
+  </v-row>
+
+
+<!-- Carousel Section -->
+<v-container fluid data-aos="fade-up" data-aos-duration="1000">
+  <v-carousel cycle height="500" hide-delimiter-background show-arrows="hover" interval="5000">
+    <template v-for="(slide, index) in slides" :key="index">
+      <v-carousel-item>
+        <template v-if="loadedImages[index]">
+          <v-img
+            :src="slide.src"
+            :alt="slide.alt"
+            class="image-with-overlay"
+            height="500"
+            cover
+          />
+        </template>
+        <div v-else class="loading-placeholder">
+          <v-progress-circular indeterminate color="primary" />
+        </div>
+
+        <div class="image-overlay">
+          <h2 class="text-h4 font-weight-bold mb-2">{{ slide.title }}</h2>
+          <p class="text-subtitle-1">{{ slide.description }}</p>
+        </div>
+      </v-carousel-item>
+    </template>
+  </v-carousel>
+
+
+  <!-- Display 3 Main Services -->
+  <v-row class="py-24" data-aos="fade-up">
+        <v-spacer></v-spacer>
+  
+        <!-- Section Heading -->
+        <v-col cols="12" class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+            <div class="heading-container">
+                <h2 class="premium-heading">Premium Services</h2>
+                <div class="line-container">
+                <hr class="line-left">
+                <hr class="line-right">
+                </div>
+                <h3 class="headline font-weight-light text-gray-800 mt-2">Revolutionizing Digital Experiences</h3>
+                <p class="text-lg text-gray-600 mt-4">
+                We create cutting-edge solutions designed to elevate your business to new heights.
+                Experience innovation like never before.
+                </p>
+            </div>
+            </v-col>
+
+                <!-- Service Cards -->
+        <v-col
   v-for="(service, index) in services"
   :key="index"
   cols="12" sm="6" md="4"
@@ -112,18 +91,12 @@
   </v-card>
 </v-col>
 
-    <!-- Explore More Button -->
-    <v-col cols="12" data-aos="zoom-in" data-aos-delay="500" class="text-center mt-4">
-      <v-btn
-        color="black"
-        to="/services"
-        class="luxury-btnn px-8 py-4 text-white text-lg font-weight-bold"
-        elevation="10"
-        rounded
-      >
-        Explore More Services
-      </v-btn>
-    </v-col>
+   <!-- Explore More Button -->
+   <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
+          <v-btn color="primary" to="/contact" class="rounded">
+           Explore more of our Services
+          </v-btn>
+        </v-col>
   </v-row>
 
   <!-- Why Choose Us -->
@@ -158,6 +131,8 @@
       </v-card>
     </v-col>
   </v-row>
+</v-container>
+</v-container>
 </template>
 
 <script setup>
@@ -227,7 +202,6 @@ const limitedServices = services.value.slice(0, 3);
 </script>
 
 <style scoped>
-/* Jumping Animation */
 @keyframes jumpLoop {
   0%, 100% {
     transform: translateY(0);
@@ -237,70 +211,48 @@ const limitedServices = services.value.slice(0, 3);
   }
 }
 
-/* Apply blue color and animation to the big headline */
-.jump-blue {
-  color: #1e88e5; /* Sleek blue */
-  animation: jumpLoop 2s infinite ease-in-out;
-  font-size: 3.5rem;
-  font-weight: bold;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-/* Top Section Styling */
 .top-section {
-  padding-bottom: 20px;
-  margin-top: 10%; /* Reduced space at the top */
+  padding-top: 90px;
+  padding-bottom: 80px;
 }
 
-/* Large Description (Heading 1) */
-.text-left h1 {
-  font-size: 3.5rem; /* Reduced font size for large description */
+.jump-blue {
+  color: #1e88e5;
+  animation: jumpLoop 2s infinite ease-in-out;
+  font-size: 3rem;
   font-weight: bold;
-  color: #333;
   letter-spacing: -0.5px;
   line-height: 1.2;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Medium Description (Heading 2) */
-.text-left h2 {
-  font-size: 1.5rem; /* More moderate size for the medium description */
+.medium-desc {
+  font-size: 1.5rem;
   color: #444;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 1rem;
-  letter-spacing: -0.5px;
   line-height: 1.4;
 }
 
-/* Small Description (Paragraph) */
-.text-left p {
-  font-size: 1.125rem; /* Slightly reduced size for the small description */
+.small-desc {
+  font-size: 1.125rem;
   color: #666;
   font-weight: 400;
   margin-top: 1rem;
   line-height: 1.6;
 }
 
-/* Buttons Styling */
-.button-container {
-  margin-top: 2rem;
-}
-
-/* Luxury Button Styling */
 .luxury-btn {
-  background: #000; /* Solid black background */
-  color: #fff; /* White text */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 25px; /* Slightly smaller border radius */
+  background: #000;
+  color: #fff;
+  border-radius: 25px;
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .luxury-btn:hover {
@@ -308,13 +260,8 @@ const limitedServices = services.value.slice(0, 3);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-.luxury-btn + .luxury-btn {
-  margin-left: 1rem;
-}
-
 .image-with-overlay {
   position: relative;
-  padding: 0 5px; /* Add 5px padding to the left and right */
 }
 
 .image-overlay {
@@ -323,8 +270,8 @@ const limitedServices = services.value.slice(0, 3);
   left: 0;
   right: 0;
   padding: 2rem;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%); /* Darker background for more contrast */
-  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #fff;
   text-align: center;
 }
 
@@ -342,57 +289,72 @@ const limitedServices = services.value.slice(0, 3);
 }
 
 .v-carousel__prev:hover, .v-carousel__next:hover {
-  color: #ff4081; /* Hover color for the arrows */
+  color: #ff4081;
 }
+
 
 .service-card {
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover .service-icon {
+    transform: scale(1.2);
+  }
+  
+  .v-btn {
+    font-weight: 600;
+    padding: 10px 20px;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-indigo-600 {
+    color: #5c6bc0;
+  }
+  
+  .text-gray-600 {
+    color: #757575;
+  }
+  
+  .text-gray-800 {
+    color: #424242;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.2);
-}
-
-.v-btn {
-  font-weight: 600;
-  padding: 10px 20px;
-}
-
-.mt-16 {
-  margin-top: 4rem; /* adds space above the section */
-}
-
-.luxury-btnn {
-  background-color: black;  /* Set the background color to black */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);  /* Adjusted box shadow for black button */
-  border-radius: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.luxury-btnn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);  /* Enhanced shadow effect on hover */
+  .mb-16 {
+  margin-top: 8%; /* adds space above the section */
 }
 
 /* Premium Services Heading */
 .premium-heading {
-  font-size: 4rem;  /* Large size */
+  font-size: 2.5rem;  /* Large size */
   color: #1E88E5;  /* Blue color */
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
   animation: jump 1.5s ease-in-out infinite;  /* Jumping effect */
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .premium-heading {
+    margin-top: 10%;
+  }
 }
 
 @keyframes jump {
@@ -452,5 +414,4 @@ const limitedServices = services.value.slice(0, 3);
   font-weight: 400;
   margin-top: 1.5rem;
 }
-
 </style>

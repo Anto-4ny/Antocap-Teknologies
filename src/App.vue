@@ -15,7 +15,6 @@
 import { useMeta } from 'vue-meta'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-import '@fortawesome/fontawesome-free/css/all.css';
 
 
 // Setting SEO metadata using vue-meta (recommended for Vue)

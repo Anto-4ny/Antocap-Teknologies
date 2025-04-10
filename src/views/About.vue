@@ -4,7 +4,9 @@
     <v-row align="center" justify="center" class="text-center mb-12" data-aos="fade-down">
       <v-col cols="12" md="8">
         <h1 class="text-h3 font-weight-bold mb-4">About Antocap Teknologies</h1>
-        <p class="text-subtitle-1">Founded by Antony Ndambuki in August 2024, Antocap Teknologies is a premium software development company committed to innovation, excellence, and client success.</p>
+        <p class="text-subtitle-1">
+          Founded by Antony Ndambuki in August 2024, Antocap Teknologies is a premium software development company committed to innovation, excellence, and client success.
+        </p>
       </v-col>
     </v-row>
 
@@ -14,19 +16,18 @@
         <v-img
           :src="AntonyNdambuki"
           alt="CEO Antony Ndambuki"
-          aspect-ratio="0"
-          width="270"
-          height="500"
+          aspect-ratio="2/3"
           class="rounded-xl elevation-10"
+          cover
         />
       </v-col>
       <v-col cols="12" md="7" data-aos="fade-left">
-  <h2 class="text-h4 font-weight-bold mb-3">Meet Our Founder</h2>
-  <p class="text-body-1">
-    Antony Ndambuki, a young and experienced software engineer, founded Antocap Teknologies with a mission to deliver transformative digital solutions. 
-    Under his leadership, we’ve helped businesses unlock their digital potential with cutting-edge software, apps, websites, and IT support.
-  </p>
-</v-col>
+        <h2 class="text-h4 font-weight-bold mb-3">Meet Our Founder</h2>
+        <p class="text-body-1">
+          Antony Ndambuki, a young and experienced software engineer, founded Antocap Teknologies with a mission to deliver transformative digital solutions. 
+          Under his leadership, we’ve helped businesses unlock their digital potential with cutting-edge software, apps, websites, and IT support.
+        </p>
+      </v-col>
     </v-row>
 
     <!-- Mission & Vision -->
@@ -35,14 +36,18 @@
         <v-card class="pa-6 rounded-xl elevation-6">
           <v-icon size="48" class="mb-2" color="primary">mdi-rocket-launch</v-icon>
           <h3 class="text-h5 font-weight-bold mb-2">Our Mission</h3>
-          <p>To empower businesses by building innovative, secure, and user-friendly software solutions that enhance performance, growth, and digital visibility.</p>
+          <p>
+            To empower businesses by building innovative, secure, and user-friendly software solutions that enhance performance, growth, and digital visibility.
+          </p>
         </v-card>
       </v-col>
       <v-col cols="12" md="6" data-aos="zoom-in-up" data-aos-delay="200">
         <v-card class="pa-6 rounded-xl elevation-6">
           <v-icon size="48" class="mb-2" color="secondary">mdi-eye</v-icon>
           <h3 class="text-h5 font-weight-bold mb-2">Our Vision</h3>
-          <p>To become a globally recognized leader in software innovation, delivering luxurious and premium digital solutions tailored to client success.</p>
+          <p>
+            To become a globally recognized leader in software innovation, delivering luxurious and premium digital solutions tailored to client success.
+          </p>
         </v-card>
       </v-col>
     </v-row>
@@ -75,7 +80,7 @@
         <v-card class="py-8 px-6 rounded-xl elevation-10" style="background: linear-gradient(135deg, #0077b6, #00b4d8);">
           <h2 class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
           <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
-         <v-btn to="/contact" color="white" text large class="font-weight-bold">Get In Touch</v-btn>
+          <v-btn to="/contact" color="white" text large class="font-weight-bold">Get In Touch</v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -102,6 +107,12 @@ useHead({
 <style scoped>
 .about-page {
   font-family: 'Inter', sans-serif;
-  margin-top: 10%;
+  margin-top: 5%;
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    margin-top: 20%;
+  }
 }
 </style>
