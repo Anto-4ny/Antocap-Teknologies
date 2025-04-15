@@ -1,70 +1,73 @@
 <template>
-<v-container fluid class="top-section" data-aos="fade-up" data-aos-duration="1000">
-  <v-row class="d-flex align-center">
-    <v-col cols="12" md="6" data-aos="fade-right" data-aos-duration="1200">
-      <div class="text-left">
-        <h1 class="jump-blue">Innovating the Future of Technology</h1>
-        <h2 class="medium-desc">Pushing the boundaries of software development.</h2>
-        <p class="small-desc">Transforming businesses with powerful and scalable solutions.</p>
+  <v-container fluid class="top-section" data-aos="fade-up" data-aos-duration="1000">
+    <v-row class="d-flex align-center">
+      <v-col cols="12" md="6" data-aos="fade-right" data-aos-duration="1200">
+        <div class="text-left">
+          <h1 class="jump-blue">Innovating the Future of Technology</h1>
+          <h2 class="medium-desc">Pushing the boundaries of software development.</h2>
+          <p class="small-desc">Transforming businesses with powerful and scalable solutions.</p>
 
-        <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
-  <!-- 'Get Started' Button -->
-  <v-btn
-    color="primary"
-    class="luxury-btn mr-4"
-    href="/contact"
-    aria-label="Contact us to get started with our services"
-  >
-    Get Started
-  </v-btn>
-  <!-- 'Learn More' Button -->
-  <v-btn
-    color="secondary"
-    class="luxury-btn"
-    href="/services"
-    aria-label="Explore our services to learn more"
-  >
-    Learn More
-  </v-btn>
-</div>
-      </div>
-    </v-col>
+          <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
+            <!-- 'Get Started' Button -->
+            <v-btn
+              color="primary"
+              class="luxury-btn mr-4"
+              href="/contact"
+              aria-label="Contact us to get started with our services"
+            >
+              Get Started
+            </v-btn>
+            <!-- 'Learn More' Button -->
+            <v-btn
+            color="secondary"
+            class="luxury-btn"
+            href="/services"
+            aria-label="Explore our services in detail"
+          >
+            Explore Our Services
+          </v-btn>
+          </div>
+        </div>
+      </v-col>
 
-    <v-col cols="12" md="6" class="d-flex justify-center" data-aos="fade-left" data-aos-duration="1200">
-      <v-img :src="gifSource" alt="Technology Animation" height="400px" contain />
-    </v-col>
-  </v-row>
+      <v-col cols="12" md="6" class="d-flex justify-center" data-aos="fade-left" data-aos-duration="1200">
+        <!-- Using native lazy loading for performance -->
+        <v-img :src="gifSource" alt="Technology Animation" height="400px" contain loading="lazy" />
+      </v-col>
+    </v-row>
 
+    <!-- Carousel Section -->
+    <v-container fluid data-aos="fade-up" data-aos-duration="1000">
+      <v-carousel cycle height="500" hide-delimiter-background show-arrows="hover" interval="5000">
+        <template v-for="(slide, index) in slides" :key="index">
+          <v-carousel-item>
+            <template v-if="loadedImages[index]">
+              <!-- Lazy load images in the carousel -->
+              <v-img
+                :src="slide.src"
+                :alt="slide.alt"
+                class="image-with-overlay"
+                height="500"
+                cover
+                loading="lazy"
+                :width="900"
+                :height="500"
+              />
+            </template>
+            <div v-else class="loading-placeholder">
+              <v-progress-circular indeterminate color="primary" />
+            </div>
 
-<!-- Carousel Section -->
-<v-container fluid data-aos="fade-up" data-aos-duration="1000">
-  <v-carousel cycle height="500" hide-delimiter-background show-arrows="hover" interval="5000">
-    <template v-for="(slide, index) in slides" :key="index">
-      <v-carousel-item>
-        <template v-if="loadedImages[index]">
-          <v-img
-            :src="slide.src"
-            :alt="slide.alt"
-            class="image-with-overlay"
-            height="500"
-            cover
-          />
+            <div class="image-overlay">
+              <h2 class="text-h4 font-weight-bold mb-2">{{ slide.title }}</h2>
+              <p class="text-subtitle-1">{{ slide.description }}</p>
+            </div>
+          </v-carousel-item>
         </template>
-        <div v-else class="loading-placeholder">
-          <v-progress-circular indeterminate color="primary" />
-        </div>
+      </v-carousel>
 
-        <div class="image-overlay">
-          <h2 class="text-h4 font-weight-bold mb-2">{{ slide.title }}</h2>
-          <p class="text-subtitle-1">{{ slide.description }}</p>
-        </div>
-      </v-carousel-item>
-    </template>
-  </v-carousel>
-
-
-  <!-- Display 3 Main Services -->
-  <v-row class="py-24" data-aos="fade-up">
+      <!-- Display 3 Main Services -->
+      <v-row class="py-24" data-aos="fade-up">
         <v-spacer></v-spacer>
   
         <!-- Section Heading -->
@@ -72,99 +75,100 @@
             <div class="heading-container">
                 <h2 class="premium-heading">Premium Services</h2>
                 <div class="line-container">
-                <hr class="line-left">
-                <hr class="line-right">
+                  <hr class="line-left">
+                  <hr class="line-right">
                 </div>
                 <h3 class="headline font-weight-light text-gray-800 mt-2">Revolutionizing Digital Experiences</h3>
                 <p class="text-lg text-gray-600 mt-4">
-                We create cutting-edge solutions designed to elevate your business to new heights.
-                Experience innovation like never before.
+                  We create cutting-edge solutions designed to elevate your business to new heights.
+                  Experience innovation like never before.
                 </p>
             </div>
-            </v-col>
+        </v-col>
 
-                <!-- Service Cards -->
+        <!-- Service Cards -->
         <v-col
-  v-for="(service, index) in services"
-  :key="index"
-  cols="12" sm="6" md="4"
-  class="d-flex justify-center mb-6"
-  :data-aos="'zoom-in-up'"
-  :data-aos-delay="100 * (index % 3)"
->
-  <v-card
-    class="elevation-12 service-card text-center pa-6"
-    :style="{ background: service.bgColor }"
-  >
-    <!-- Use plain <i> instead of <v-icon> for Font Awesome -->
-    <i
-      class="text-white mb-4"
-      :class="service.icon"
-      style="font-size: 60px"
-    ></i>
-    <h3 class="text-h5 font-weight-bold mt-4">{{ service.title }}</h3>
-    <p class="text-white mt-3">{{ service.description }}</p>
-  </v-card>
-</v-col>
-
-<!-- EXPLORE MORE BUTTON-->
-<v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
-  <!-- 'Explore More' Button -->
-  <v-btn
-    color="primary"
-    to="/services"
-    class="rounded"
-    aria-label="Discover our range of services"
-  >
-    Explore More of Our Services
-  </v-btn>
-</v-col>
-  </v-row>
-
-  <!-- Why Choose Us -->
-  <v-row class="text-center mb-16">
-    <v-col cols="12">
-      <h2 class="text-h4 font-weight-bold mb-6" data-aos="fade-up">Why Choose Antocap Teknologies?</h2>
-    </v-col>
-    <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="100">
-      <v-icon size="48" color="success" class="mb-3">mdi-star-circle</v-icon>
-      <h3 class="text-h6 font-weight-medium mb-2">Premium Quality</h3>
-      <p>We craft every solution with precision and luxury in mind.</p>
-    </v-col>
-    <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="200">
-      <v-icon size="48" color="info" class="mb-3">mdi-speedometer</v-icon>
-      <h3 class="text-h6 font-weight-medium mb-2">Speed & Performance</h3>
-      <p>Our systems are optimized for speed, SEO, and seamless user experience.</p>
-    </v-col>
-    <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="300">
-      <v-icon size="48" color="purple" class="mb-3">mdi-account-group</v-icon>
-      <h3 class="text-h6 font-weight-medium mb-2">Client-Centered</h3>
-      <p>We work closely with our clients to deliver solutions that meet real business needs.</p>
-    </v-col>
-  </v-row>
-
-  <!-- Footer Banner -->
-  <v-row align="center" justify="center" class="text-center">
-    <v-col cols="12" md="8" data-aos="fade-up">
-      <v-card class="py-8 px-6 rounded-xl elevation-10" style="background: linear-gradient(135deg, #0077b6, #00b4d8);">
-        <h2 class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
-        <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
-        <v-btn
-          to="/contact"
-          color="white"
-          text
-          large
-          class="font-weight-bold"
-          aria-label="Contact us to get in touch"
+          v-for="(service, index) in services"
+          :key="index"
+          cols="12" sm="6" md="4"
+          class="d-flex justify-center mb-6"
+          :data-aos="'zoom-in-up'"
+          :data-aos-delay="100 * (index % 3)"
         >
-          Get In Touch
-        </v-btn>
-      </v-card>
-    </v-col>
-  </v-row>
-</v-container>
-</v-container>
+          <v-card
+            class="elevation-12 service-card text-center pa-6"
+            :style="{ background: service.bgColor }"
+          >
+            <!-- Use plain <i> instead of <v-icon> for Font Awesome -->
+            <i
+              class="text-white mb-4"
+              :class="service.icon"
+              style="font-size: 60px"
+            ></i>
+            <h3 class="text-h5 font-weight-bold mt-4">{{ service.title }}</h3>
+            <p class="text-white mt-3">{{ service.description }}</p>
+          </v-card>
+        </v-col>
+
+        <!-- EXPLORE MORE BUTTON-->
+        <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
+          <!-- 'Explore More' Button -->
+          <v-btn
+            color="primary"
+            to="/services"
+            class="rounded"
+            aria-label="Discover our range of services"
+          >
+            Explore More of Our Services
+          </v-btn>
+        </v-col>
+      </v-row>
+
+      <!-- Why Choose Us -->
+      <v-row class="text-center mb-16">
+        <v-col cols="12">
+          <h2 class="text-h4 font-weight-bold mb-6" data-aos="fade-up">Why Choose Antocap Teknologies?</h2>
+        </v-col>
+        <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="100">
+          <v-icon size="48" color="success" class="mb-3">mdi-star-circle</v-icon>
+          <h3 class="text-h6 font-weight-medium mb-2">Premium Quality</h3>
+          <p>We craft every solution with precision and luxury in mind.</p>
+        </v-col>
+        <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="200">
+          <v-icon size="48" color="info" class="mb-3">mdi-speedometer</v-icon>
+          <h3 class="text-h6 font-weight-medium mb-2">Speed & Performance</h3>
+          <p>Our systems are optimized for speed, SEO, and seamless user experience.</p>
+        </v-col>
+        <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="300">
+          <v-icon size="48" color="purple" class="mb-3">mdi-account-group</v-icon>
+          <h3 class="text-h6 font-weight-medium mb-2">Client-Centered</h3>
+          <p>We work closely with our clients to deliver solutions that meet real business needs.</p>
+        </v-col>
+      </v-row>
+
+      <!-- Footer Banner -->
+      <v-row align="center" justify="center" class="text-center">
+        <v-col cols="12" md="8" data-aos="fade-up">
+          <v-card class="py-8 px-6 rounded-xl elevation-10" style="background: linear-gradient(135deg, #0077b6, #00b4d8);">
+            <h2 class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
+            <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
+            <v-btn
+              to="/contact"
+              color="white"
+              text
+              large
+              class="font-weight-bold"
+              aria-label="Contact us to get in touch"
+            >
+              Get In Touch
+            </v-btn>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-container>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue';
@@ -175,6 +179,7 @@ import gifSource from '@/assets/bJk.gif';
 import itJpg from '@/assets/it.jpg';
 import cloudJpg from '@/assets/cloud.jpg';
 import automationJpg from '@/assets/automation2.jpg';
+import { useHead } from '@vueuse/head';
 
 const slides = ref([
   {
@@ -230,6 +235,56 @@ const services = ref([
 
 // Limiting the services to display only 3 on the homepage
 const limitedServices = services.value.slice(0, 3);
+
+// SEO meta
+useHead({
+  title: 'Antocap Teknologies | Leading IT Solutions, Web & Software Development, SEO Services',
+  meta: [
+    { name: 'description', content: 'Antocap Teknologies offers innovative IT solutions, web development, software & app development, and SEO services. We help businesses achieve growth through cutting-edge technology and custom-built solutions.' },
+    { name: 'keywords', content: 'IT solutions, web development, app development, SEO services, software development, AI-powered automation, cloud services, technology solutions' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'Antony Ndambuki' },
+    { property: 'og:title', content: 'Antocap Teknologies | IT Solutions, Web Development, SEO' },
+    { property: 'og:description', content: 'Antocap Teknologies provides top-notch IT solutions, web design, software development, SEO services, and AI-powered automation to boost your business.' },
+    { property: 'og:url', content: 'https://www.antocapteknologies.com' },
+    { property: 'og:image', content: 'https://www.antocapteknologies.com/logo.png' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Antocap Teknologies | IT & Web Solutions' },
+    { name: 'twitter:description', content: 'Empowering businesses with innovative IT solutions, custom software, web design, and SEO services.' },
+    { name: 'twitter:image', content: 'https://www.antocapteknologies.com/logo.png' }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://www.antocapteknologies.com' }
+  ]
+})
+
+// Structured data for homepage
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Antocap Teknologies",
+        "url": "https://www.antocapteknologies.com",
+        "logo": "https://www.antocapteknologies.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+254757492614",
+          "contactType": "Customer Service",
+          "areaServed": "KE",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://www.facebook.com/AntocapTeknologies",
+          "https://www.instagram.com/antocap_technologies",
+          "https://twitter.com/AntocapTech"
+        ]
+      })
+    }
+  ]
+})
 </script>
 
 <style scoped>
