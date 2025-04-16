@@ -131,6 +131,7 @@ useHead({
     { name: 'keywords', content: 'best software company in the world, global IT solutions, website development Kenya, SEO agency Nairobi, mobile app developers Africa, Antony Ndambuki Antocap ceo, professional IT services, global tech company, software engineers Africa, ecommerce website development, Antocap Teknologies Nairobi Kenya, premier software firm, Antocap web agency, best website developer' },
     { name: 'author', content: 'Antocap Teknologies' },
     { name: 'robots', content: 'index, follow' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
     
     // Open Graph
     { property: 'og:site_name', content: 'Antocap Teknologies' },

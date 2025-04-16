@@ -47,6 +47,7 @@
   
   <script setup>
   import { ref } from 'vue'
+  import { useHead } from '@vueuse/head'
   
   // List of completed projects with links and descriptions for each category
   const projects = ref([
@@ -134,6 +135,86 @@
       ]
     },
   ])
+
+  useHead({
+  title: 'Projects | Antocap Teknologies - Websites, Apps, SEO & More',
+  meta: [
+    { name: 'description', content: 'Explore completed projects by Antocap Teknologies including websites, mobile apps, billing systems, SEO optimization, affiliate platforms, and more.' },
+    { name: 'keywords', content: 'Antocap Teknologies projects, website development, eCommerce, SEO, affiliate websites, management systems, billing software, mobile app development, Kenya tech company' },
+    { name: 'author', content: 'Antocap Teknologies' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
+
+    // Open Graph
+    { property: 'og:title', content: 'Projects | Antocap Teknologies' },
+    { property: 'og:description', content: 'Check out our top-tier website projects, mobile apps, SEO work, and more!' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/images/projects-preview.jpg' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/projects' },
+    { property: 'og:type', content: 'website' },
+
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Projects | Antocap Teknologies' },
+    { name: 'twitter:description', content: 'Explore our portfolio of tech projects including websites, SEO work, and mobile apps.' },
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/images/projects-preview.jpg' }
+  ],
+  script: [
+    // JSON-LD Structured Data
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Our Projects - Antocap Teknologies",
+        "description": "Showcase of completed and upcoming projects by Antocap Teknologies including eCommerce, SEO, apps, and websites.",
+        "url": "https://antocapteknologies.com/projects",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Antocap Teknologies",
+          "url": "https://antocapteknologies.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://antocapteknologies.com/logo.png"
+          },
+          "sameAs": [
+            "https://www.facebook.com/antocapteknologies",
+            "https://www.instagram.com/antocapteknologies",
+            "https://www.linkedin.com/company/antocapteknologies",
+            "https://www.twitter.com/antocapteks",
+            "https://www.youtube.com/@antocapteknologies"
+          ]
+        }
+      })
+    },
+    // Breadcrumb Schema
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://antocapteknologies.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://antocapteknologies.com/projects"
+          }
+        ]
+      })
+    }
+  ],
+  link: [
+    { rel: 'canonical', href: 'https://antocapteknologies.com/project' }
+  ]
+})
+
   </script>
   
   <style scoped>

@@ -42,6 +42,7 @@
   
   <script setup>
   import { ref } from 'vue'
+  import { useHead } from '@vueuse/head'
   
   // Import images from assets folder
   import postImage1 from '@/assets/post1.jpeg'
@@ -107,40 +108,71 @@
     blogPosts.value[index].isReadMoreVisible = !blogPosts.value[index].isReadMoreVisible;
   }
 
-  import { useHead } from '@vueuse/head'
-  
-  // SEO meta tags
-  useHead({
-    title: 'Exploring the Latest in Software Development | Antocap Teknologies',
-    meta: [
-      {
-        name: 'description',
-        content: 'Stay updated with the latest posts on software development, technologies, and best practices. Discover insights, tips, and trends in the ever-evolving tech landscape.'
-      },
-      {
-        name: 'keywords',
-        content: 'software development, technology trends, agile development, cloud computing, machine learning, web development, software best practices'
-      },
-      {
-        property: 'og:title',
-        content: 'Exploring the Latest in Software Development | Antocap Teknologies'
-      },
-      {
-        property: 'og:description',
-        content: 'Stay updated with the latest posts on software development, technologies, and best practices. Discover insights, tips, and trends in the ever-evolving tech landscape.'
-      },
-      {
-        property: 'og:image',
-        content: '/path-to-your-image.jpg'
-      },
-      {
-        property: 'og:url',
-        content: window.location.href
-      },
-    ]
-  })
-  </script>
-  
+
+// Get dynamic URL safely
+const currentUrl = typeof window !== 'undefined' ? window.location.href : 'https://antocapteknologies.com/blog'
+
+useHead({
+  title: 'Exploring the Latest in Software Development | Antocap Teknologies',
+  meta: [
+    {
+      name: 'description',
+      content: 'Stay updated with the latest posts on software development, technologies, and best practices. Discover insights, tips, and trends in the ever-evolving tech landscape.'
+    },
+    {
+      name: 'keywords',
+      content: 'software development, technology trends, agile development, cloud computing, machine learning, web development, software best practices, DevOps, mobile apps, backend frameworks, frontend development, web design, app design, seo services, html, vue developer, best software development company in kenya, nairobi and the world, bot creation, pin recovery'
+    },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'language', content: 'English' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
+
+    // Open Graph
+    { property: 'og:title', content: 'Exploring the Latest in Software Development | Antocap Teknologies' },
+    { property: 'og:description', content: 'Stay updated with the latest posts on software development, technologies, and best practices. Discover insights, tips, and trends in the ever-evolving tech landscape.' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/Antocap-logo.jpg' },
+    { property: 'og:url', content: currentUrl },
+    { property: 'og:type', content: 'website' },
+
+    // Twitter Cards
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Exploring the Latest in Software Development | Antocap Teknologies' },
+    { name: 'twitter:description', content: 'Stay updated with software development trends, agile tips, and cutting-edge tech insights.' },
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/Antocap-logo.jpg' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        name: 'Antocap Teknologies Blog',
+        url: 'https://antocapteknologies.com/blog',
+        description: 'A blog exploring the latest in software development, technology trends, and IT innovations.',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Antocap Teknologies',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://antocapteknologies.com/Antocap-logo.jpg'
+          }
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': currentUrl
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Antony Ndambuki'
+        },
+        image: 'https://antocapteknologies.com/Antocap-logo.jpg'
+      })
+    }
+  ]
+})
+</script>
+ 
   <style scoped>
   .blog-card {
     background: white !important;

@@ -37,6 +37,7 @@ useMeta({
     { name: 'description', content: 'Antocap Teknologies is a leading software development company in Utawala, Nairobi, Kenya, offering software, websites, ecommerce, bots, SEO, and IT consulting services.' },
     { name: 'keywords', content: 'Antocap Teknologies, software development Nairobi, app development Kenya, ecommerce websites Nairobi, SEO services Kenya, IT consultation, bot creation, web design Kenya, Antony Ndambuki' },
     { name: 'author', content: 'Antony Ndambuki' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
 
     // Open Graph
     { property: 'og:title', content: 'Antocap Teknologies | Software, Websites & SEO in Nairobi, Kenya' },

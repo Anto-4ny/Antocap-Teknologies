@@ -111,6 +111,7 @@ useHead({
     { name: 'description', content: 'See what satisfied clients are saying about Antocap Teknologies. Rated 4.9+ stars on Google!' },
     { name: 'keywords', content: 'testimonials, client feedback, software reviews, Antocap Teknologies, Nairobi IT services' },
     { name: 'robots', content: 'index, follow' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
     { property: 'og:title', content: 'Top Client Reviews | Antocap Teknologies' },
     { property: 'og:description', content: '4.9+ Star Rating | Trusted Tech Solutions by Antocap Teknologies. Read our verified client testimonials.' },
     { property: 'og:url', content: 'https://www.antocapteknologies.com/testimonials' },

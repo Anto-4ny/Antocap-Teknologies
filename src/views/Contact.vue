@@ -87,13 +87,10 @@
                 v-model="form.project"
                 label="Select Services (multiple)"
                 multiple
-                :items="services"
-                item-value="id"
-                item-text="name"
+                :items="services.map(s => s.name)"
                 :rules="[v => !!v.length || 'At least one service is required']"
                 outlined
                 class="mb-4"
-                data-aos="fade-up"
               />
               <v-textarea
                 v-model="form.message"
@@ -130,7 +127,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useHead } from '@vueuse/head'
 
 const formRef = ref(null)
 const valid = ref(false)
@@ -141,7 +139,6 @@ const form = ref({
   message: ''
 })
 
-// List of services for multiple selection dropdown
 const services = ref([
   { id: 1, name: 'Website Development' },
   { id: 2, name: 'Software & App Development' },
@@ -179,4 +176,118 @@ const submitForm = async () => {
     }
   }
 }
+
+// SEO Metadata
+useHead({
+  title: 'Contact Us | Antocap Teknologies',
+  meta: [
+    { name: 'description', content: 'Reach out to Antocap Teknologies for premium website development, mobile app creation, IT consulting, SEO, and technical support. Based in Utawala, Nairobi, Kenya.' },
+    { name: 'keywords', content: 'Contact Antocap Teknologies, web developers Nairobi, software company Kenya, app developers Nairobi, IT support Kenya, SEO experts Kenya, mobile app design, tech company Nairobi, computer maintenance, hacked account recovery, remote windows installation, content writing Nairobi, premium tech services Kenya, Utawala developers, Antocap contact' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'author', content: 'Antocap Teknologies' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
+
+    // Open Graph
+    { property: 'og:title', content: 'Contact Antocap Teknologies' },
+    { property: 'og:description', content: 'Let’s collaborate on your next digital project. Contact us for expert IT solutions and tech support in Nairobi.' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/assets/Antocap-logo.jpg' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/contact' },
+    { property: 'og:type', content: 'website' },
+
+    // Twitter Card
+    { name: 'twitter:title', content: 'Contact Antocap Teknologies' },
+    { name: 'twitter:description', content: 'Need help with a tech project? Talk to our expert team at Antocap Teknologies.' },
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/assets/Antocap-logo.jpg' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+
+    // Canonical
+    { rel: 'canonical', href: 'https://antocapteknologies.com/contact' }
+  ],
+  script: [
+    // ContactPage Schema
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact Us - Antocap Teknologies',
+        description: 'Official contact page for Antocap Teknologies in Nairobi, Kenya. We offer expert IT services, app & web development, and consulting.',
+        url: 'https://antocapteknologies.com/contact',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+254757492614',
+          contactType: 'customer service',
+          areaServed: 'KE',
+          availableLanguage: ['English']
+        }
+      })
+    },
+
+    // LocalBusiness Schema
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Antocap Teknologies",
+        "image": "https://antocapteknologies.com/Antocap-logo.jpg",
+        "url": "https://antocapteknologies.com",
+        "telephone": "+254757492614",
+        "email": "antocaptechnologies@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Utawala",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "description": "Antocap Teknologies provides premium software development, app creation, SEO, IT consulting, and web solutions across Kenya.",
+        "sameAs": [
+          "https://www.facebook.com/AntocapTeknologies",
+          "https://www.instagram.com/antocapteknologies",
+          "https://twitter.com/antocapteknologies",
+          "https://www.linkedin.com/company/antocap-teknologies",
+          "https://www.youtube.com/@antocapteknologies"
+        ]
+      })
+    },
+
+    // Breadcrumb Schema
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://antocapteknologies.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact Us",
+            "item": "https://antocapteknologies.com/contact"
+          }
+        ]
+      })
+    },
+
+    // Google Tag
+    {
+      async: true,
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX' // Replace with your actual GA ID
+    },
+    {
+      children: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      `
+    }
+  ]
+});
+
 </script>

@@ -60,36 +60,58 @@
 
   import { useHead } from '@vueuse/head' // You already use vue-meta manager
 
-useHead({
+  useHead({
   title: 'Premium IT Services | Antocap Teknologies',
   meta: [
+    { name: 'description', content: 'Discover Antocap Teknologies’ premium services including website development, app creation, content writing, bot creation, IT consultation, and more.' },
+    { name: 'keywords', content: 'Website Development Kenya, App Development Nairobi, IT Services Kenya, Graphic Design, Content Creation, Bot Development, Remote Support, SEO Services Kenya, Software Development, IT Consultancy, UI/UX Design, Branding, Cybersecurity, Computer Repair, Digital Marketing, Online Branding, System Optimization, Database Management, Cloud Solutions, IT Infrastructure, Full-stack Development' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
+    { name: 'robots', content: 'index, follow' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'language', content: 'English' },
+    { property: 'og:title', content: 'Premium Services - Antocap Teknologies' },
+    { property: 'og:description', content: 'Explore our innovative and scalable digital solutions crafted to elevate your business.' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/services' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/Antocap-logo.jpg' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Premium Services - Antocap Teknologies' },
+    { name: 'twitter:description', content: 'Explore our innovative and scalable digital solutions crafted to elevate your business.' },
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/Antocap-logo.jpg' }
+  ],
+  script: [
     {
-      name: 'description',
-      content: 'Discover Antocap Teknologies’ premium services including website development, app creation, content writing, bot creation, IT consultation, and more.'
-    },
-    {
-      name: 'keywords',
-      content: 'Website Development kenya, App Development nairobi kenya, IT Services, Graphic Design, Content Creation, Bot Development, Remote Support, SEO Services'
-    },
-    {
-      property: 'og:title',
-      content: 'Premium Services - Antocap Teknologies'
-    },
-    {
-      property: 'og:description',
-      content: 'Explore our innovative and scalable digital solutions crafted to elevate your business.'
-    },
-    {
-      property: 'og:type',
-      content: 'website'
-    },
-    {
-      property: 'og:url',
-      content: 'https://antocapteknologies.com/services' // Replace with your actual URL
-    },
-    {
-      property: 'og:image',
-      content: 'https://antocapteknologies.com/Antocap-logo.jpg' // Replace with a valid image for social previews
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'Antocap Teknologies',
+        url: 'https://antocapteknologies.com',
+        logo: 'https://antocapteknologies.com/Antocap-logo.jpg',
+        image: 'https://antocapteknologies.com/Antocap-logo.jpg',
+        description: 'Antocap Teknologies offers premium IT services including website development, app development, graphic design, IT support, remote installations, and more.',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Utawala',
+          addressRegion: 'Nairobi',
+          addressCountry: 'KE'
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+254757492614',
+          contactType: 'Customer Service'
+        },
+        founder: {
+          '@type': 'Person',
+          name: 'Antony Ndambuki'
+        },
+        sameAs: [
+          'https://facebook.com/antocapteknologies',
+          'https://instagram.com/antocapteknologies',
+          'https://twitter.com/antocaptech',
+          'https://linkedin.com/company/antocapteknologies'
+        ]
+      })
     }
   ]
 })

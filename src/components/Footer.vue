@@ -292,6 +292,7 @@ useHead({
     { name: 'description', content: 'Antocap Teknologies delivers high-end software development, cybersecurity, automation bots, digital solutions and remote IT services globally from Nairobi, Kenya.' },
     { name: 'keywords', content: 'Antocap Teknologies, Antony Ndambuki, Nairobi IT services, software development in Kenya, remote IT support, how to get cybersecurity services in Kenya, Utawala software company, website developers in Nairobi, best IT company in Kenya, AI bots Kenya, professional IT consulting, recover hacked accounts, forgotten PIN recovery, remote computer installation services' },
     { name: 'author', content: 'Antony Ndambuki' },
+    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
     
     // Open Graph (Facebook, LinkedIn, etc.)
     { property: 'og:type', content: 'website' },
