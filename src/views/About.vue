@@ -21,13 +21,13 @@
       <v-row align="center" justify="center" class="mb-16">
         <v-col cols="12" md="5" data-aos="fade-right">
           <v-img
-            v-lazy
             :src="AntonyNdambuki"
             alt="Portrait of Antony Ndambuki, Founder of Antocap Teknologies"
             aspect-ratio="2/3"
             class="rounded-xl elevation-10"
             cover
             lazy-src="/lazy-placeholder.jpg"
+            loading="lazy"
           />
         </v-col>
         <v-col cols="12" md="7" data-aos="fade-left">
@@ -126,20 +126,36 @@ import logo from '@/assets/Antocap-logo.jpg'
 
 const siteUrl = 'https://antocapteknologies.com'
 const pageUrl = `${siteUrl}/about`
-const imageUrl = `${siteUrl}${logo}` // ✅ Combines base URL with logo's public path
+const imageUrl = `${siteUrl}${logo}`
 
 useHead({
   title: 'About Us - Antocap Teknologies',
   meta: [
-    { name: 'description', content: 'Learn more about Antocap Teknologies, founded by Antony Ndambuki. Explore our premium IT services, digital solutions, software innovation, and commitment to excellence.' },
-    { name: 'keywords', content: 'Antocap Teknologies, Antony Ndambuki, software development, app development, IT company, tech startup, full stack development, frontend, backend, mobile apps, cloud computing, AI, SaaS, IT support, cybersecurity, tech consultancy, digital agency, UI/UX, DevOps, ecommerce development, database design, system automation, enterprise solutions' },
+    // Basic Meta
+    {
+      name: 'description',
+      content:
+        'Learn more about Antocap Teknologies, founded by Antony Ndambuki. Explore our premium IT services, digital solutions, software innovation, and commitment to excellence.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'Antocap Teknologies, Antony Ndambuki, software development, app development, IT company, tech startup, full stack development, frontend, backend, mobile apps, cloud computing, AI, SaaS, IT support, cybersecurity, tech consultancy, digital agency, UI/UX, DevOps, ecommerce development, database design, system automation, enterprise solutions'
+    },
     { name: 'author', content: 'Antony Ndambuki' },
     { name: 'robots', content: 'index, follow' },
-    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' }, // Replace with your code
+    {
+      name: 'google-site-verification',
+      content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4'
+    },
 
     // Open Graph
     { property: 'og:title', content: 'About Antocap Teknologies' },
-    { property: 'og:description', content: 'Founded by Antony Ndambuki in 2024, Antocap Teknologies is a premium tech company delivering digital excellence.' },
+    {
+      property: 'og:description',
+      content:
+        'Founded by Antony Ndambuki in 2024, Antocap Teknologies is a premium tech company delivering digital excellence.'
+    },
     { property: 'og:image', content: imageUrl },
     { property: 'og:url', content: pageUrl },
     { property: 'og:type', content: 'website' },
@@ -147,51 +163,54 @@ useHead({
     // Twitter Cards
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'About Antocap Teknologies' },
-    { name: 'twitter:description', content: 'Discover the story behind Antocap Teknologies and our founder Antony Ndambuki.' },
+    {
+      name: 'twitter:description',
+      content:
+        'Discover the story behind Antocap Teknologies and our founder Antony Ndambuki.'
+    },
     { name: 'twitter:image', content: imageUrl }
   ],
   link: [
     { rel: 'canonical', href: pageUrl },
     { rel: 'alternate', hreflang: 'en', href: pageUrl },
-    { rel: 'alternate', hreflang: 'sw', href: `${pageUrl}?lang=sw` } // Optional Swahili version
+    { rel: 'alternate', hreflang: 'sw', href: `${pageUrl}?lang=sw` }
   ],
   script: [
     // Organization Structured Data
     {
       type: 'application/ld+json',
       children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Antocap Teknologies",
-        "url": siteUrl,
-        "logo": imageUrl,
-        "founder": {
-          "@type": "Person",
-          "name": "Antony Ndambuki",
-          "jobTitle": "CEO & Founder",
-          "url": pageUrl,
-          "sameAs": [
-            "https://www.linkedin.com/in/antony-ndambuki",
-            "https://github.com/AntonyNdambuki"
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Antocap Teknologies',
+        url: siteUrl,
+        logo: imageUrl,
+        founder: {
+          '@type': 'Person',
+          name: 'Antony Ndambuki',
+          jobTitle: 'CEO & Founder',
+          url: pageUrl,
+          sameAs: [
+            'https://www.linkedin.com/in/antony',
+            'https://github.com/Anto-4ny'
           ]
         },
-        "foundingDate": "2024-08",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Utawala",
-          "addressRegion": "Nairobi",
-          "addressCountry": "KE"
+        foundingDate: '2024-08',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Utawala',
+          addressRegion: 'Nairobi',
+          addressCountry: 'KE'
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "antocaptechnologies@gmail.com",
-          "contactType": "Customer Support",
-          "availableLanguage": ["English", "Swahili"]
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'antocaptechnologies@gmail.com',
+          contactType: 'Customer Support',
+          availableLanguage: ['English', 'Swahili']
         },
-        "sameAs": [
-          "https://quantumincome.org",
-          "https://www.facebook.com/antocap",
-          "https://www.instagram.com/antocap"
+        sameAs: [
+          'https://www.facebook.com/antocap',
+          'https://www.instagram.com/antocap'
         ]
       })
     },
@@ -200,14 +219,14 @@ useHead({
     {
       type: 'application/ld+json',
       children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": siteUrl,
-        "name": "Antocap Teknologies",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": `${siteUrl}/search?q={search_term_string}`,
-          "query-input": "required name=search_term_string"
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        url: siteUrl,
+        name: 'Antocap Teknologies',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${siteUrl}/search?q={search_term_string}`,
+          'query-input': 'required name=search_term_string'
         }
       })
     },
@@ -216,11 +235,12 @@ useHead({
     {
       type: 'application/ld+json',
       children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "About Us - Antocap Teknologies",
-        "url": pageUrl,
-        "description": "Learn more about Antocap Teknologies, our founder Antony Ndambuki, and our mission to deliver transformative digital experiences."
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'About Us - Antocap Teknologies',
+        url: pageUrl,
+        description:
+          'Learn more about Antocap Teknologies, our founder Antony Ndambuki, and our mission to deliver transformative digital experiences.'
       })
     },
 
@@ -228,20 +248,20 @@ useHead({
     {
       type: 'application/ld+json',
       children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": siteUrl
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "About",
-            "item": pageUrl
+            '@type': 'ListItem',
+            position: 2,
+            name: 'About',
+            item: pageUrl
           }
         ]
       })
@@ -251,21 +271,22 @@ useHead({
     {
       type: 'application/ld+json',
       children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Custom Software Development, Web & App Design, Tech Consultation",
-        "provider": {
-          "@type": "Organization",
-          "name": "Antocap Teknologies",
-          "url": siteUrl
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType:
+          'Custom Software Development, Web & App Design, Tech Consultation',
+        provider: {
+          '@type': 'Organization',
+          name: 'Antocap Teknologies',
+          url: siteUrl
         },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Kenya"
+        areaServed: {
+          '@type': 'Country',
+          name: 'Kenya'
         },
-        "availableChannel": {
-          "@type": "ServiceChannel",
-          "serviceUrl": `${siteUrl}/contact`
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: `${siteUrl}/contact`
         }
       })
     }

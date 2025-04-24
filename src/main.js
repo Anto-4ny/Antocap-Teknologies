@@ -5,7 +5,6 @@ import vuetify from './plugins/vuetify'
 import { createMetaManager } from 'vue-meta'
 import 'vuetify/styles'
 import router from './router'
-import '@fortawesome/fontawesome-free/css/all.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { createHead } from '@vueuse/head'
@@ -22,8 +21,8 @@ app.mount('#app')
 
 // Initialize AOS after mount
 AOS.init({
-    once: false,         // Animate every time you scroll (both down and up)
-    mirror: true,        // Repeat animation when scrolling up
-    duration: 1000,      // Animation duration
+    once: false,
+    mirror: true,
+    duration: 1000,
     easing: 'ease-in-out'
   })

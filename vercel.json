@@ -7,6 +7,10 @@
       "destination": "/robots.txt"
     },
     {
+      "source": "/Antocap-logo.jpg",
+      "destination": "/Antocap-logo.jpg"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
     },
