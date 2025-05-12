@@ -73,12 +73,12 @@
       category: 'Management Systems',
       projects: [
         {
-          title: 'coming soon',
-          link: '/projects/management-1', // Link to the detailed project page
+          title: 'Subscription Management',
+          link: 'https://subsmart-website.vercel.app/',
         },
         {
           title: 'coming soon',
-          link: '/projects/management-2', // Link to the detailed project page
+          link: '', 
         },
       ]
     },
@@ -86,12 +86,12 @@
       category: 'Billing Systems',
       projects: [
         {
-          title: 'coming soon',
-          link: '', // Link to the detailed project page
+          title: 'Subsmart Subscription management',
+          link: 'https://subsmart-website.vercel.app/', 
         },
         {
           title: 'coming soon',
-          link: '', // Link to the detailed project page
+          link: '', 
         },
       ]
     },
@@ -100,15 +100,15 @@
       projects: [
         {
           title: 'SEO for Product Trace Limited',
-          link: 'https://www.product-traceltd.com/', // Link to the detailed project page
+          link: 'https://www.product-traceltd.com/',
         },
         {
           title: 'SEO for Antocap Teknologies',
-          link: 'https://antocapteknologies.com/', // Link to the detailed project page
+          link: 'https://antocapteknologies.com/', 
         },
         {
           title: 'SEO for Sanfiat Technologies',
-          link: 'https://sanfiat.antocapteknologies.com/', // Link to the detailed project page
+          link: 'https://sanfiat.antocapteknologies.com/', 
         },
       ]
     },
@@ -117,11 +117,11 @@
       projects: [
         {
           title: 'Quantum Market Website',
-          link: 'https://quantumincome.org/', // Link to the detailed project page
+          link: 'https://quantumincome.org/',
         },
         {
           title: 'Sanfiat Technologies Website',
-          link: 'https://sanfiat.antocapteknologies.com/', // Link to the detailed project page
+          link: 'https://sanfiat.antocapteknologies.com/',
         },
       ]
     },
@@ -130,7 +130,7 @@
       projects: [
         {
           title: 'JobTask Mobile App',
-          link: 'https://play.google.com/store/apps/details?id=com.jobtaskukportalss&hl=en&pli=1', // Link to the detailed project page
+          link: 'https://play.google.com/store/apps/details?id=com.jobtaskukportalss&hl=en&pli=1',
         }
       ]
     },
