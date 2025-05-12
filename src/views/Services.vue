@@ -33,7 +33,7 @@
     class="elevation-12 service-card text-center pa-6"
     :style="{ background: service.bgColor }"
   >
-    <!-- Use plain <i> instead of <v-icon> for Font Awesome -->
+    
     <i
       class="text-white mb-4"
       :class="service.icon"
@@ -44,10 +44,9 @@
   </v-card>
 </v-col>
 
-  
         <!-- Explore More Button -->
         <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
-          <v-btn color="primary" to="/contact" class="rounded">
+          <v-btn color="green" to="/contact" class="rounded">
             Book any of our above Services
           </v-btn>
         </v-col>
@@ -58,7 +57,7 @@
   <script setup>
   import { ref } from 'vue';
 
-  import { useHead } from '@vueuse/head' // You already use vue-meta manager
+  import { useHead } from '@vueuse/head' 
 
   useHead({
   title: 'Premium IT Services | Antocap Teknologies',
@@ -116,68 +115,67 @@
   ]
 })
 
-  
   // Define all the services with the same professional background color
 const services = ref([
   {
     title: 'Website Development',
     description: 'Custom-built, high-performance websites with sleek designs, optimized for speed, SEO, and user experience. At Antocap Teknologies, we leverage the latest technologies to create responsive, visually appealing websites that perform well in search engines, boosting your online presence.',
     icon: 'fas fa-laptop-code',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'black', 
   },
   {
     title: 'Software & App Development',
     description: 'Robust, scalable, and efficient software tailored to streamline operations. We create business apps, tools, and management systems with a focus on functionality and user-friendly interfaces. Our apps are built with cutting-edge frameworks and ensure high performance, security, and seamless integration with existing systems. SEO-optimized apps for greater visibility and engagement.',
     icon: 'fas fa-code',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Graphic Design',
     description: 'Crafting visually stunning logos, branding, and marketing materials. Stand out in a crowded marketplace with elite-level designs. Our graphic design services include brand identity creation, web design, social media graphics, and promotional materials. We ensure every design reflects your brand\'s vision and targets the right audience while being SEO-friendly.',
     icon: 'fas fa-paint-brush',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Content Writing & Creation',
     description: 'Providing high-quality content for websites, blogs, and more. Our writing is tailored to engage your audience and boost SEO. At Antocap Teknologies, we create content that not only resonates with your audience but also adheres to the latest SEO trends, ensuring your content ranks well on search engines and attracts organic traffic.',
     icon: 'fas fa-pencil-alt',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Computer Maintenance (Onsite)',
     description: 'Keep your computers running smoothly with our professional maintenance services, including hardware upgrades, system optimizations, and troubleshooting. Whether it’s a slow system or faulty hardware, we provide fast, reliable solutions to ensure your devices are in top condition, all while ensuring your data is secure.',
     icon: 'fas fa-tools',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Remote Windows Installations',
     description: 'Fast and secure remote installations of Windows OS, making your systems ready in no time, no matter where you are. We ensure a smooth installation process, with a focus on system security and optimization for peak performance, all while reducing downtime.',
     icon: 'fas fa-desktop',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Bot Creation',
     description: 'Developing advanced bots for various platforms to automate tasks and improve user engagement. Whether for social media, customer support, or workflow automation, we create intelligent bots that provide real-time solutions and drive efficiency, all while ensuring the system is secure and scalable.',
     icon: 'fas fa-robot',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'IT Consultation',
     description: 'Consult with us for strategic guidance in technology adoption, system architecture, and more. Our IT experts provide tailored advice for your business, helping you implement the right tech stack, optimize operations, and future-proof your organization. We also focus on ensuring that your IT infrastructure is scalable and optimized for both performance and SEO.',
     icon: 'fas fa-laptop',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'Account Recovery & Device Support',
     description: 'Assisting in recovering hacked accounts and troubleshooting device issues to get you back on track. Our team ensures you regain access to your accounts safely and provides ongoing device support to maintain security and functionality. We focus on quick resolutions and ensuring your data is safe and secure.',
     icon: 'fas fa-shield-alt',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   },
   {
     title: 'PIN Recovery (PC/Devices)',
     description: 'Helping you recover forgotten PINs for your devices to restore access quickly and securely. We ensure that the recovery process is smooth and your device remains secure throughout, offering peace of mind with minimal downtime.',
     icon: 'fas fa-lock',
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', // Professional blue gradient
+    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)', 
   }
   ]);
   </script>
@@ -186,7 +184,6 @@ const services = ref([
   .service-card {
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 0%;
   }
   
   .service-card:hover {
@@ -208,7 +205,7 @@ const services = ref([
   }
   
   .text-white {
-    color: white;
+    color: rgb(216, 33, 33);
   }
   
   .text-indigo-600 {
@@ -228,17 +225,17 @@ const services = ref([
   }
 
   .mb-16 {
-  margin-top: 8%; /* adds space above the section */
+  margin-top: 8%; 
 }
 
 /* Premium Services Heading */
 .premium-heading {
-  font-size: 2.5rem;  /* Large size */
-  color: #1E88E5;  /* Blue color */
+  font-size: 2.5rem; 
+  color: #1E88E5; 
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  animation: jump 1.5s ease-in-out infinite;  /* Jumping effect */
+  animation: jump 1.5s ease-in-out infinite; 
   margin-bottom: 0.5rem;
 }
 
@@ -278,12 +275,12 @@ const services = ref([
 }
 
 .line-left {
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Left line gradient */
+  background: linear-gradient(90deg, #0ddb28, hsl(118, 95%, 47%)); 
   margin-right: 10px;
 }
 
 .line-right {
-  background: linear-gradient(90deg, #ff512f, #dd2476); /* Right line gradient */
+  background: linear-gradient(90deg, #4c55d6, #030b70); 
   margin-left: 10px;
 }
 

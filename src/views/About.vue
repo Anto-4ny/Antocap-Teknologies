@@ -97,14 +97,14 @@
         <v-col cols="12" md="8" data-aos="fade-up">
           <v-card
             class="py-8 px-6 rounded-xl elevation-10"
-            style="background: linear-gradient(135deg, #0077b6, #00b4d8);"
+            style="background: white"
             role="presentation"
           >
-            <h2 id="cta-heading" class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
-            <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
+            <h2 id="cta-heading" class="text-h4 font-weight-bold text-black mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
+            <p class="text-black mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
             <v-btn
               to="/contact"
-              color="white"
+              color="green"
               text
               large
               class="font-weight-bold"

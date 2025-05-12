@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-row align="center" justify="space-between" no-gutters class="px-4">
         <!-- Logo -->
-        <v-col cols="auto" class="d-flex align-center">
+        <v-col cols="auto" class="d-flex align-left">
           <router-link to="/">
             <v-img
               :src="logo"
@@ -116,7 +116,7 @@ const menuItems = [
   { title: 'Home', href: '/', icon: 'mdi-home' },
   { title: 'About Us', href: '/about', icon: 'mdi-information' },
   { title: 'Services', href: '/services', icon: 'mdi-tools' },
-  { title: 'Projects Completed', href: '/project', icon: 'mdi-check-circle' },
+  { title: 'Projects', href: '/project', icon: 'mdi-check-circle' },
   { title: 'Blog', href: '/blog', icon: 'mdi-pencil' },
   { title: 'Testimonials', href: '/testimonials', icon: 'mdi-comment-quote' },
   { title: 'Get Started', href: '/contact', icon: 'mdi-email' }

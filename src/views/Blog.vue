@@ -53,7 +53,7 @@
           <p id="post-summary" class="text-grey-darken-2" style="height: 70px; overflow: hidden;">
             {{ post.shortDescription }}
           </p>
-          <v-btn @click="toggleReadMore(index)" class="mt-4" color="primary" text aria-label="Read more about blog post">
+          <v-btn @click="toggleReadMore(index)" class="mt-4" color="green" text aria-label="Read more about blog post">
             Read More
           </v-btn>
         </v-card>
@@ -80,7 +80,7 @@
             <span class="text-grey-darken-1" aria-label="Estimated read time">{{ post.readTime }} min</span>
           </div>
           <p id="post-full" class="text-grey-darken-2">{{ post.fullDescription }}</p>
-          <v-btn @click="toggleReadMore(index)" class="mt-4" color="secondary" text aria-label="Go back to blog list">
+          <v-btn @click="toggleReadMore(index)" class="mt-4" color="green" text aria-label="Go back to blog list">
             Back to Blogs
           </v-btn>
         </v-card>
@@ -252,7 +252,7 @@ useHead({
   }
   
   .v-btn:hover {
-    background-color: #00b4d8;
+    background-color: green;
   }
   
   .v-btn:focus {

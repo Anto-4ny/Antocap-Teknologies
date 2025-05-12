@@ -19,7 +19,7 @@
             class="elevation-12 service-card text-center pa-6"
             :style="{ background: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)' }"
           >
-            <v-icon class="text-white service-icon" size="60">mdi-web</v-icon>
+            <v-icon class="text-black service-icon" size="60">mdi-web</v-icon>
             <h3 class="text-h5 font-weight-bold mt-4">{{ category.category }}</h3>
             <v-list>
               <v-list-item-group>
@@ -219,7 +219,7 @@
   
   <style scoped>
   .service-card {
-    background: linear-gradient(145deg, #00b4d8 0%, #0077b6 100%) !important;
+    background: white !important;
     color: rgb(19, 6, 6);
   }
   
@@ -228,7 +228,7 @@
   }
   
   .project-link-btn {
-    background-color: #080808;
+    background-color: green;
     border-radius: 4px;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -245,14 +245,14 @@
   .animated-heading {
   font-size: 3.5rem;
   font-weight: bold;
-  color: #0077b6; /* Blue color */
+  color: #0077b6; 
   display: inline-block;
   animation: jump 1s infinite ease-in-out;
   text-align: center;
 }
 
 .blue-heading-text {
-  color: #0077b6; /* Blue color */
+  color: #0077b6; 
 }
 
 .double-line {

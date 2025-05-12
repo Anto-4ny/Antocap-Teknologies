@@ -10,7 +10,7 @@
           <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
             <!-- 'Get Started' Button -->
             <v-btn
-              color="primary"
+              color="green"
               class="luxury-btn mr-4"
               href="/contact"
               aria-label="Contact us to get started with our services"
@@ -19,7 +19,7 @@
             </v-btn>
             <!-- 'Learn More' Button -->
             <v-btn
-            color="secondary"
+            color="primary"
             class="luxury-btn"
             href="/services"
             aria-label="Explore our services in detail"
@@ -114,7 +114,7 @@
         <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
           <!-- 'Explore More' Button -->
           <v-btn
-            color="primary"
+            color="green"
             to="/services"
             class="rounded"
             aria-label="Discover our range of services"
@@ -149,12 +149,12 @@
       <!-- Footer Banner -->
       <v-row align="center" justify="center" class="text-center">
         <v-col cols="12" md="8" data-aos="fade-up">
-          <v-card class="py-8 px-6 rounded-xl elevation-10" style="background: linear-gradient(135deg, #0077b6, #00b4d8);">
-            <h2 class="text-h4 font-weight-bold text-white mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
-            <p class="text-white mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
+          <v-card class="py-8 px-6 rounded-xl elevation-2" style="background: white">
+            <h2 class="text-h4 font-weight-bold text-black mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
+            <p class="text-black mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
             <v-btn
               to="/contact"
-              color="white"
+              color="green"
               text
               large
               class="font-weight-bold"
@@ -174,8 +174,6 @@
 import { ref, onMounted } from 'vue';
 
 import gifSource from '@/assets/bJk.gif';
-
-// ✅ Import only .jpg images from the assets folder
 import itJpg from '@/assets/it.jpg';
 import cloudJpg from '@/assets/cloud.jpg';
 import automationJpg from '@/assets/automation2.jpg';
@@ -424,17 +422,17 @@ useHead({
   }
 
   .mb-16 {
-  margin-top: 8%; /* adds space above the section */
+  margin-top: 8%; 
 }
 
 /* Premium Services Heading */
 .premium-heading {
-  font-size: 2.5rem;  /* Large size */
-  color: #1E88E5;  /* Blue color */
+  font-size: 2.5rem; 
+  color: #1E88E5;  
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  animation: jump 1.5s ease-in-out infinite;  /* Jumping effect */
+  animation: jump 1.5s ease-in-out infinite;  
   margin-bottom: 0.5rem;
 }
 
@@ -474,12 +472,12 @@ useHead({
 }
 
 .line-left {
-  background: linear-gradient(90deg, #00c6ff, #0072ff); /* Left line gradient */
+  background: linear-gradient(90deg, #00c6ff, #0072ff); 
   margin-right: 10px;
 }
 
 .line-right {
-  background: linear-gradient(90deg, #ff512f, #dd2476); /* Right line gradient */
+  background: linear-gradient(90deg, #ff512f, #dd2476); 
   margin-left: 10px;
 }
 

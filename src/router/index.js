@@ -12,13 +12,16 @@ const routes = [
   { path: '/blog', name: 'Blog', component: () => import('../views/Blog.vue') },
   { path: '/services', name: 'Services', component: () => import('../views/Services.vue') },
   { path: '/testimonials', name: 'Testimonials', component: () => import('../views/Testimonials.vue') },
-  // ...
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/NotFound.vue') },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Always scroll to top
+    return { top: 0 }
+  }
 })
 
 export default router
