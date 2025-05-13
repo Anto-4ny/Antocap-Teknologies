@@ -79,8 +79,8 @@
     text
     block
     href="/signup"
-    class="justify-start text-white font-weight-medium red-bg"
-    style="text-transform: none;"
+    class="justify-start text-white font-weight-medium"
+    style="text-transform: none; background-color: green;"
     aria-label="Sign up for an account"
     name="signup-button"
   >
@@ -92,8 +92,8 @@
     text
     block
     href="/login"
-    class="justify-start text-white font-weight-medium red-bg"
-    style="text-transform: none;"
+    class="justify-start text-white font-weight-medium green-bg"
+    style="text-transform: none; background-color: green;"
     aria-label="Login to your account"
     name="login-button"
   >

@@ -50,8 +50,8 @@
                 height="500"
                 cover
                 loading="lazy"
-                :width="900"
-                :height="500"
+                :width="1300"
+                :height="1300"
               />
             </template>
             <div v-else class="loading-placeholder">
@@ -86,29 +86,48 @@
             </div>
         </v-col>
 
-        <!-- Service Cards -->
         <v-col
-          v-for="(service, index) in services"
-          :key="index"
-          cols="12" sm="6" md="4"
-          class="d-flex justify-center mb-6"
-          :data-aos="'zoom-in-up'"
-          :data-aos-delay="100 * (index % 3)"
+      v-for="(service, index) in limitedServices"
+      :key="index"
+      cols="12"
+      sm="6"
+      md="4"
+      class="d-flex justify-center mb-8"
+    >
+      <div
+        class="tilt-card"
+        ref="tiltCards"
+      >
+        <v-card
+          class="advanced-service-card pa-6 text-center"
+          elevation="10"
         >
-          <v-card
-            class="elevation-12 service-card text-center pa-6"
-            :style="{ background: service.bgColor }"
+          <!-- Animated Background Trail -->
+          <div class="animated-trail"></div>
+
+          <!-- Icon -->
+          <div
+            class="icon-circle mb-5"
+            :style="{ backgroundColor: service.iconBg }"
           >
-            <!-- Use plain <i> instead of <v-icon> for Font Awesome -->
-            <i
-              class="text-white mb-4"
-              :class="service.icon"
-              style="font-size: 60px"
-            ></i>
-            <h3 class="text-h5 font-weight-bold mt-4">{{ service.title }}</h3>
-            <p class="text-white mt-3">{{ service.description }}</p>
-          </v-card>
-        </v-col>
+            <v-icon :icon="service.icon" size="36" class="text-white"></v-icon>
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-h6 font-weight-bold mb-2 text-dark">{{ service.title }}</h3>
+
+          <!-- Description -->
+          <p class="text-body-2 text-gray-700 mb-4">{{ service.description }}</p>
+
+          <!-- Button -->
+          <RouterLink to="/services" class="text-decoration-none">
+            <v-btn class="mt-2">
+              Learn More
+            </v-btn>
+          </RouterLink>
+        </v-card>
+      </div>
+    </v-col>
 
         <!-- EXPLORE MORE BUTTON-->
         <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
@@ -119,7 +138,7 @@
             class="rounded"
             aria-label="Discover our range of services"
           >
-            Explore More of Our Services
+            Explore all Our Services
           </v-btn>
         </v-col>
       </v-row>
@@ -171,7 +190,7 @@
 
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 
 import gifSource from '@/assets/bJk.gif';
 import itJpg from '@/assets/it.jpg';
@@ -213,26 +232,40 @@ onMounted(() => {
 });
 
 const services = ref([
-  { title: 'Website Development', 
-    description: 'Custom-built, high-performance websites with sleek designs, optimized for speed, SEO, and user experience. At Antocap Teknologies, we leverage the latest technologies to create responsive, visually appealing websites that perform well in search engines, boosting your online presence.', 
-    icon: 'fas fa-laptop-code', 
-    bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)' },
-  { title: 'Software & App Development', 
-   description: 'Robust, scalable, and efficient software tailored to streamline operations. We create business apps, tools, and management systems with a focus on functionality and user-friendly interfaces. Our apps are built with cutting-edge frameworks and ensure high performance, security, and seamless integration with existing systems. SEO-optimized apps for greater visibility and engagement.',
-   icon: 'fas fa-code',
-   bgColor: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)' },
- 
-   {
-  title: 'SEO Optimization',
-  description: 'Comprehensive SEO services designed to improve your website\'s visibility on search engines. From keyword research and on-page SEO to link-building strategies, we help increase your organic traffic and drive results. At Antocap Teknologies, we focus on optimizing your site for better ranking, faster loading times, and user-friendly experience to ensure long-term success.',
-  icon: 'fas fa-search',
-  bgColor: '#8f94fb', // Keep the same background color for consistency
-}
-
+  {
+    title: 'Website Development',
+    description: 'High-performance, SEO-friendly websites built for speed, responsiveness, and aesthetics.',
+    icon: 'mdi-web',
+    iconBg: '#1976d2',
+  },
+  {
+    title: 'Software & App Development',
+    description: 'Robust mobile & desktop apps designed for scalability, performance, and security.',
+    icon: 'mdi-application-brackets',
+    iconBg: '#43a047',
+  },
+  {
+    title: 'SEO Optimization',
+    description: 'Improve your online visibility with smart keyword targeting and technical SEO.',
+    icon: 'mdi-chart-line',
+    iconBg: '#f44336',
+  },
 ]);
 
-// Limiting the services to display only 3 on the homepage
 const limitedServices = services.value.slice(0, 3);
+const tiltCards = ref([]);
+
+onMounted(async () => {
+  await nextTick();
+  tiltCards.value.forEach(card => {
+    window.VanillaTilt?.init(card, {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2,
+    });
+  });
+});
 
 // SEO meta
 useHead({
@@ -377,52 +410,77 @@ useHead({
   color: #ff4081;
 }
 
+.advanced-service-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
 
-.service-card {
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .service-icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .service-card:hover .service-icon {
-    transform: scale(1.2);
-  }
-  
-  .v-btn {
-    font-weight: 600;
-    padding: 10px 20px;
-  }
-  
-  .text-white {
-    color: white;
-  }
-  
-  .text-indigo-600 {
-    color: #5c6bc0;
-  }
-  
-  .text-gray-600 {
-    color: #757575;
-  }
-  
-  .text-gray-800 {
-    color: #424242;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
+.advanced-service-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
 
-  .mb-16 {
-  margin-top: 8%; 
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: transform 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.advanced-service-card:hover .icon-circle {
+  transform: scale(1.15) rotate(5deg);
+}
+
+/* Button Styling */
+.v-btn {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* Gradient trail */
+.animated-trail {
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.05) 20%, transparent 70%);
+  top: -100%;
+  left: -100%;
+  animation: gradientMove 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes gradientMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50%, 50%);
+  }
+}
+
+.text-dark {
+  color: #1f1f1f;
+}
+
+.text-gray-700 {
+  color: #616161;
+}
+
+.tilt-card {
+  width: 100%;
 }
 
 /* Premium Services Heading */
