@@ -492,6 +492,7 @@ useHead({
   position: relative;
   animation: jump 1.5s ease-in-out infinite;  
   margin-bottom: 0.5rem;
+  margin-top: 4%;
 }
 
 @media (max-width: 600px) {

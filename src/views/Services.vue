@@ -63,7 +63,7 @@
           <v-card
             class="elevation-6 text-center px-4 py-5"
             color="#ffffff"
-            style="border-radius: 16px; min-height: 320px; width: 100%; max-width: 320px;"
+            style="border-radius: 16px; min-height: 100%; width: 100%; max-width: 320px;"
             v-tilt
           >
             <v-icon :color="service.iconColor" size="50" class="mb-3">
@@ -300,7 +300,7 @@ function selectService(index) {
 
 @media (max-width: 600px) {
   .premium-heading {
-    margin-top: 10%;
+    margin-top: 20%;
   }
 }
 
