@@ -56,7 +56,11 @@
       projects: [
         {
           title: 'Antocap Teknologies',
-          link: 'https://antocapteknologies.com/', // Link to the detailed project page
+          link: 'https://antocapteknologies.com/', 
+        },
+                {
+          title: 'Polarhomes',
+          link: 'https://polarhomes.org/', 
         },
       ]
     },
@@ -65,7 +69,7 @@
       projects: [
         {
           title: 'Jubazone E-commerce Website',
-          link: 'https://jubazone.co.ke/', // Link to the detailed project page
+          link: 'https://jubazone.co.ke/',
         }
       ]
     },
@@ -109,6 +113,10 @@
         {
           title: 'SEO for Sanfiat Technologies',
           link: 'https://sanfiat.antocapteknologies.com/', 
+        },
+        {
+          title: 'SEO for Polarhomes',
+          link: 'https://polarhomes.org/', 
         },
       ]
     },
