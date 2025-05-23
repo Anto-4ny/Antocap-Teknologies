@@ -72,7 +72,7 @@
           link: 'https://polarhomes.org/', 
         },
            {
-          title: 'Polarhomes',
+          title: 'Cleaning Treks website',
           link: 'https://www-cleaninigtreks-com.vercel.app/', 
         },
       ]
