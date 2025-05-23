@@ -51,6 +51,15 @@
   
   // List of completed projects with links and descriptions for each category
   const projects = ref([
+        {
+      category: 'Artificial Inteligence(Ai)',
+      projects: [
+        {
+          title: 'Ai Life simulation',
+          link: 'https://ai-chatbot-rho-three-50.vercel.app/', 
+        },
+      ]
+    },
     {
       category: 'Services Websites',
       projects: [
