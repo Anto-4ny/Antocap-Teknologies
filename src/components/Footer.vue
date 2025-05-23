@@ -59,7 +59,7 @@
       <v-icon left class="mr-2" color="transparent">mdi-circle</v-icon>
       Contact Us
     </v-list-item>
-    <v-list-item link to="/services" aria-label="Navigate to the Our Services page">
+    <v-list-item link to="/service" aria-label="Navigate to the Our Services page">
       <v-icon left class="mr-2" color="transparent">mdi-circle</v-icon>
       Our Services
     </v-list-item>

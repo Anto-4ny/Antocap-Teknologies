@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="py-16 mt-10 bg-grey-lighten-4" data-aos="fade-up">
+    <v-container fluid class="py-16 mt-10 bg-grey-4" data-aos="fade-up">
         <v-row justify="center" class="text-center mb-10">
     <v-col cols="12" md="8">
       <h5 class="text-primary mb-2">Our Completed Projects</h5>

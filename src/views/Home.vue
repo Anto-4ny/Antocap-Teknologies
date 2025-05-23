@@ -7,26 +7,27 @@
           <h2 class="medium-desc">Pushing the boundaries of software development.</h2>
           <p class="small-desc">Transforming businesses with powerful and scalable solutions.</p>
 
-          <div class="button-container mt-6" data-aos="fade-up" data-aos-delay="200">
-            <!-- 'Get Started' Button -->
-            <v-btn
-              color="green"
-              class="luxury-btn mr-4"
-              href="/contact"
-              aria-label="Contact us to get started with our services"
-            >
-              Get Started
-            </v-btn>
-            <!-- 'Learn More' Button -->
-            <v-btn
-            color="primary"
-            class="luxury-btn"
-            href="/services"
-            aria-label="Explore our services in detail"
-          >
-            Explore Our Services
-          </v-btn>
-          </div>
+<div class="button-container mt-6 d-flex flex-column flex-md-row align-start" data-aos="fade-up" data-aos-delay="200">
+  <!-- 'Get Started' Button -->
+  <v-btn
+    color="green"
+    class="luxury-btn mb-4 mb-md-0 mr-md-4"
+    href="/contact"
+    aria-label="Contact us to get started with our services"
+  >
+    Get Started
+  </v-btn>
+
+  <!-- 'Explore Our Services' Button -->
+  <v-btn
+    color="primary"
+    class="luxury-btn"
+    href="/services"
+    aria-label="Explore our services in detail"
+  >
+    Explore Our Services
+  </v-btn>
+</div>
         </div>
       </v-col>
 
@@ -86,48 +87,68 @@
             </div>
         </v-col>
 
-        <v-col
-      v-for="(service, index) in limitedServices"
-      :key="index"
-      cols="12"
-      sm="6"
-      md="4"
-      class="d-flex justify-center mb-8"
+       <v-col
+  v-for="(service, index) in limitedServices"
+  :key="index"
+  cols="12"
+  sm="6"
+  md="4"
+  class="d-flex justify-center mb-8"
+>
+  <div
+    class="tilt-card"
+    ref="tiltCards"
+    role="region"
+    :aria-label="`Service card for ${service.title}`"
+  >
+    <v-card
+      class="advanced-service-card pa-6 text-center"
+      elevation="10"
+      :aria-labelledby="`service-title-${index}`"
+      :aria-describedby="`service-desc-${index}`"
     >
+      <!-- Animated Background Trail -->
+      <div class="animated-trail" aria-hidden="true"></div>
+
+      <!-- Icon -->
       <div
-        class="tilt-card"
-        ref="tiltCards"
+        class="icon-circle mb-5"
+        :style="{ backgroundColor: service.iconBg }"
+        :aria-label="`${service.title} icon`"
+        role="img"
       >
-        <v-card
-          class="advanced-service-card pa-6 text-center"
-          elevation="10"
-        >
-          <!-- Animated Background Trail -->
-          <div class="animated-trail"></div>
-
-          <!-- Icon -->
-          <div
-            class="icon-circle mb-5"
-            :style="{ backgroundColor: service.iconBg }"
-          >
-            <v-icon :icon="service.icon" size="36" class="text-white"></v-icon>
-          </div>
-
-          <!-- Title -->
-          <h3 class="text-h6 font-weight-bold mb-2 text-dark">{{ service.title }}</h3>
-
-          <!-- Description -->
-          <p class="text-body-2 text-gray-700 mb-4">{{ service.description }}</p>
-
-          <!-- Button -->
-          <RouterLink to="/services" class="text-decoration-none">
-            <v-btn class="mt-2">
-              Learn More
-            </v-btn>
-          </RouterLink>
-        </v-card>
+        <v-icon :icon="service.icon" size="36" class="text-white"></v-icon>
       </div>
-    </v-col>
+
+      <!-- Title -->
+      <h3
+        class="text-h6 font-weight-bold mb-2 text-dark"
+        :id="`service-title-${index}`"
+      >
+        {{ service.title }}
+      </h3>
+
+      <!-- Description -->
+      <p
+        class="text-body-2 text-gray-700 mb-4"
+        :id="`service-desc-${index}`"
+      >
+        {{ service.description }}
+      </p>
+
+      <!-- Button -->
+      <RouterLink
+        :to="`/services/${service.slug || ''}`"
+        class="text-decoration-none"
+        aria-label="Learn more about {{ service.title }}"
+      >
+        <v-btn class="mt-2" color="primary" elevation="2">
+          Learn More
+        </v-btn>
+      </RouterLink>
+    </v-card>
+  </div>
+</v-col>
 
         <!-- EXPLORE MORE BUTTON-->
         <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
@@ -335,7 +356,7 @@ useHead({
 }
 
 .jump-blue {
-  color: #1e88e5;
+  color: blue;
   animation: jumpLoop 2s infinite ease-in-out;
   font-size: 3rem;
   font-weight: bold;
