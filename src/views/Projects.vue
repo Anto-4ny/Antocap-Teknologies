@@ -42,10 +42,16 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
-  </template>
-  
-  <script setup>
+    <SocialProofSection />
+    <FooterBanner />
+  </v-container>
+</template>
+
+
+<script setup>
+import SocialProofSection from '@/components/SocialProofSection.vue'
+import FooterBanner from '@/components/FooterBanner.vue'
+
   import { ref } from 'vue'
   import { useHead } from '@vueuse/head'
   

@@ -1,113 +1,85 @@
 <template>
-  <v-app-bar flat color="white" class="elevation-2" height="90">
-    <v-container fluid>
-      <v-row align="center" justify="space-between" no-gutters class="px-4">
-        <!-- Logo -->
-        <v-col cols="auto" class="d-flex align-left">
-          <router-link to="/">
-            <v-img
-              :src="logo"
-              alt="Antocap Teknologies Logo"
-              height="60"
-              width="70"
-              class="mr-3"
-            ></v-img>
-          </router-link>
-          <div class="font-weight-bold text-black">
-            <div style="font-size: 20px;">Antocap</div>
-            <div style="font-size: 14px;">Teknologies</div>
-          </div>
-        </v-col>
+  <section :class="{ 'dark-bg': isDarkMode, 'light-bg': !isDarkMode }">
+    <v-app-bar flat class="elevation-3 black-bg" height="90">
+      <v-container fluid>
+        <v-row align="center" justify="space-between" no-gutters class="px-4">
+          <!-- Logo and Brand -->
+          <v-col cols="auto" class="d-flex align-center">
+            <router-link to="/" class="d-flex align-center">
+              <v-img :src="logo" alt="Antocap Teknologies Logo" height="60" width="70" class="mr-3" />
+              <div class="brand-text">
+                <div class="brand-main">Antocap</div>
+                <div class="brand-sub">Teknologies</div>
+              </div>
+            </router-link>
+          </v-col>
 
-        <!-- Desktop Nav Links -->
-        <v-col class="d-none d-md-flex justify-end align-center" cols="auto">
+          <!-- Desktop Nav Links -->
+          <v-col cols="auto" class="d-none d-md-flex justify-end align-center">
+            <v-btn
+              v-for="item in menuItems"
+              :key="item.title"
+              text
+              class="mx-2 nav-link"
+              :href="item.href"
+            >
+              {{ item.title }}
+            </v-btn>
+          </v-col>
+
+          <!-- Hamburger Button -->
+          <v-btn icon class="d-md-none gold-text" @click="drawer = true">
+            <v-icon size="28">mdi-menu</v-icon>
+          </v-btn>
+        </v-row>
+      </v-container>
+    </v-app-bar>
+
+    <!-- Mobile Drawer -->
+    <v-navigation-drawer
+      v-model="drawer"
+      right
+      temporary
+      class="elevation-24 pure-black"
+      :width="300"
+      style="z-index: 3000;"
+    >
+      <v-list dense class="pure-black">
+        <v-list-item
+          v-for="item in menuItems"
+          :key="item.title"
+          @click="drawer = false"
+          class="px-3 py-2"
+        >
           <v-btn
-            v-for="item in menuItems"
-            :key="item.title"
             text
-            class="mx-1 text-black font-weight-medium nav-link"
+            block
             :href="item.href"
-            style="min-width: auto;"
+            class="justify-start drawer-link"
+            style="text-transform: none;"
           >
+            <v-icon left :class="item.color" class="mr-3">{{ item.icon }}</v-icon>
             {{ item.title }}
           </v-btn>
-        </v-col>
+        </v-list-item>
 
-        <!-- Hamburger for Mobile -->
-        <v-btn icon class="d-md-none text-black" @click="drawer = true">
-          <v-icon size="28">mdi-menu</v-icon>
-        </v-btn>
-      </v-row>
-    </v-container>
-  </v-app-bar>
+        <v-divider class="gold-border my-2"></v-divider>
 
-  <!-- Mobile Drawer -->
-  <v-navigation-drawer
-  v-model="drawer"
-  right
-  temporary
-  scrim
-  class="bg-white elevation-24"
-  :width="300"
-  style="z-index: 3000;"
-  aria-label="Mobile navigation drawer"
-  name="mobile-drawer"
->
-    <v-list dense>
-      <v-list-item
-        v-for="item in menuItems"
-        :key="item.title"
-        @click="drawer = false"
-        class="px-3 py-2"
-      >
-        <v-btn
-          text
-          block
-          :href="item.href"
-          class="justify-start text-black font-weight-medium"
-          style="text-transform: none;"
-        >
-          <v-icon left color="primary" class="mr-3">{{ item.icon }}</v-icon>
-          {{ item.title }}
-        </v-btn>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-  <v-list-item class="px-3 py-2">
-  <v-btn
-    text
-    block
-    href="/signup"
-    class="justify-start text-white font-weight-medium"
-    style="text-transform: none; background-color: green;"
-    aria-label="Sign up for an account"
-    name="signup-button"
-  >
-    Sign Up
-  </v-btn>
-</v-list-item>
-<v-list-item class="px-3 py-2">
-  <v-btn
-    text
-    block
-    href="/login"
-    class="justify-start text-white font-weight-medium green-bg"
-    style="text-transform: none; background-color: green;"
-    aria-label="Login to your account"
-    name="login-button"
-  >
-    Login
-  </v-btn>
-</v-list-item>
-
-    </v-list>
-  </v-navigation-drawer>
+        <v-list-item class="px-3 py-2">
+          <v-btn block href="/signup" class="gold-btn">Sign Up</v-btn>
+        </v-list-item>
+        <v-list-item class="px-3 py-2">
+          <v-btn block href="/login" class="gold-btn">Login</v-btn>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { useHead } from '@vueuse/head'
+import { isDarkMode } from '@/composables/useTheme.js';
 import logo from '@/assets/Antocap-logo.jpg'
 
 const drawer = ref(false)
@@ -175,7 +147,7 @@ useHead({
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: -1.2711,  // Example for Utawala Nairobi
+        latitude: -1.2711, 
         longitude: 36.9368
       },
       openingHours: 'Mo-Su 08:00-22:00',
@@ -238,44 +210,82 @@ useHead({
 
 
 <style scoped>
-.v-app-bar {
-  z-index: 2100;
+.black-bg {
+  background-color: #000 !important;
 }
-
+.pure-black {
+  background-color: #000 !important;
+}
+.gold-text {
+  color: #d4af37 !important;
+}
+.gold-border {
+  border-color: #d4af37 !important;
+}
 .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  text-transform: none;
   position: relative;
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
-  width: 100%;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
   height: 2px;
+  background-color: #d4af37;
+  transition: width 0.3s ease-in-out;
 }
-.nav-link::before {
-  top: -4px;
-  background: rgb(13, 236, 5);
+.nav-link:hover::after {
+  width: 100%;
 }
-.nav-link::after {
-  bottom: -8px;
-  background: rgb(230, 5, 5);
+.brand-text {
+  color: #fff;
+}
+.brand-main {
+  font-size: 22px;
+  font-weight: 700;
+}
+.brand-sub {
+  font-size: 14px;
+  color: #d4af37;
+  font-weight: 500;
 }
 
-.red-bg {
-  background-color: rgb(235, 12, 12) !important;
+a {
+  text-decoration: none !important;
 }
 
-.v-btn:nth-child(7) {
-  background-color: rgb(8, 247, 67) !important;
-  color: white;
+.gold-btn {
+  background-color: #d4af37 !important;
+  color: #000 !important;
+  font-weight: bold;
+  text-transform: none;
+  padding: 10px;
   font-size: 16px;
-  padding: 12px 24px;
 }
-
-.v-navigation-drawer {
-  position: absolute;
-  top: 0;
-  max-height: fit-content;
+.drawer-link {
+  color: #fff !important;
+  font-weight: 500;
+  text-transform: none;
+  background-color: transparent !important;
+}
+.text-blue {
+  color: #2196f3 !important;
+}
+.text-green {
+  color: #4caf50 !important;
+}
+.text-deep-orange {
+  color: #ff5722 !important;
+}
+.text-purple {
+  color: #9c27b0 !important;
+}
+.text-pink {
+  color: #e91e63 !important;
 }
 </style>
 

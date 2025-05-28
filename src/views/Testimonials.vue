@@ -54,10 +54,16 @@
         View Live Google Reviews
       </v-btn>
     </div>
+    <SocialProofSection />
+    <FooterBanner />
   </v-container>
 </template>
 
+
 <script setup>
+import SocialProofSection from '@/components/SocialProofSection.vue'
+import FooterBanner from '@/components/FooterBanner.vue'
+
 import { ref, onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
 

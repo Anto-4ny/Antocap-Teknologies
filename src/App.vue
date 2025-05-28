@@ -1,5 +1,13 @@
 <template>
-  <v-app>
+  <v-app :class="{ 'light-mode': !isDarkMode, 'dark-mode': isDarkMode }">
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" @click="toggleTheme">
+      <v-icon
+        :class="{ 'bulb-on': !isDarkMode, 'bulb-off': isDarkMode }"
+        size="40"
+      >mdi-lightbulb</v-icon>
+    </div>
+
     <!-- Global Header -->
     <Header />
 
@@ -16,6 +24,12 @@ import { useMeta } from 'vue-meta'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import favicon from './assets/Antocap-logo.jpg'
+import { ref } from 'vue'
+
+const isDarkMode = ref(true)
+const toggleTheme = () => {
+  isDarkMode.value = !isDarkMode.value
+}
 
 // Dynamically update favicon
 const setFavicon = () => {
@@ -31,7 +45,6 @@ const setFavicon = () => {
 setFavicon()
 
 const publicImageUrl = 'https://www.antocapteknologies.com/Antocap-logo.jpg'
-
 
 // SEO Metadata
 useMeta({
@@ -101,5 +114,36 @@ useMeta({
 </script>
 
 <style scoped>
-/* You can add shared layout styles here */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.theme-toggle .v-icon {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  color: #ffd700;
+}
+
+.theme-toggle .bulb-off {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.theme-toggle .bulb-on {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffea00;
+}
+
+.dark-mode {
+  background-color: #000 !important;
+  color: #fff;
+}
+
+.light-mode {
+  background-color: #f9f9f9 !important;
+  color: #111;
+}
 </style>

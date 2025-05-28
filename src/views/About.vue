@@ -91,35 +91,16 @@
       </v-row>
     </section>
 
-    <!-- Footer CTA Banner -->
-    <section role="region" aria-labelledby="cta-heading">
-      <v-row align="center" justify="center" class="text-center">
-        <v-col cols="12" md="8" data-aos="fade-up">
-          <v-card
-            class="py-8 px-6 rounded-xl elevation-10"
-            style="background: white"
-            role="presentation"
-          >
-            <h2 id="cta-heading" class="text-h4 font-weight-bold text-black mb-4">Join the Digital Revolution with Antocap Teknologies</h2>
-            <p class="text-black mb-4">Let’s turn your idea into a premium digital experience that scales and excels.</p>
-            <v-btn
-              to="/contact"
-              color="green"
-              text
-              large
-              class="font-weight-bold"
-              aria-label="Contact Antocap Teknologies"
-            >
-              Get In Touch
-            </v-btn>
-          </v-card>
-        </v-col>
-      </v-row>
-    </section>
+    <SocialProofSection />
+    <FooterBanner />
   </v-container>
 </template>
 
+
 <script setup>
+import SocialProofSection from '@/components/SocialProofSection.vue'
+import FooterBanner from '@/components/FooterBanner.vue'
+
 import { useHead } from '@vueuse/head'
 import AntonyNdambuki from '@/assets/CEO-Antony-Ndambuki.jpg'
 import logo from '@/assets/Antocap-logo.jpg'
