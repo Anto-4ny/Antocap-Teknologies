@@ -88,10 +88,11 @@ const menuItems = [
   { title: 'Home', href: '/', icon: 'mdi-home' },
   { title: 'About Us', href: '/about', icon: 'mdi-information' },
   { title: 'Services', href: '/services', icon: 'mdi-tools' },
+  { title: 'Pricing', href: '/pricing', icon: 'mdi-cash' },
   { title: 'Projects', href: '/project', icon: 'mdi-check-circle' },
+  { title: 'Contact Us', href: '/contact', icon: 'mdi-email' },
   { title: 'Blog', href: '/blog', icon: 'mdi-pencil' },
-  { title: 'Testimonials', href: '/testimonials', icon: 'mdi-comment-quote' },
-  { title: 'Get Started', href: '/contact', icon: 'mdi-email' }
+  { title: 'Rating & Reviews', href: '/testimonials', icon: 'mdi-comment-quote' }
 ]
 
 const logoUrl = 'https://www.antocapteknologies.com/logo.png'
