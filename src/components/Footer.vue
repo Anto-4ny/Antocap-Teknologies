@@ -51,15 +51,16 @@
                 <v-list class="footer-list">
                   <v-list-item link to="/"><span>Home</span></v-list-item>
                   <v-list-item link to="/about"><span>About Us</span></v-list-item>
+                  <v-list-item link to="/pricing"><span>Pricing</span></v-list-item>
                   <v-list-item link to="/contact"><span>Contact Us</span></v-list-item>
-                  <v-list-item link to="/service"><span>Our Services</span></v-list-item>
                 </v-list>
               </v-col>
               <v-col cols="6">
                 <v-list class="footer-list">
+                  <v-list-item link to="/service"><span>Our Services</span></v-list-item>
                   <v-list-item link to="/project"><span>Our Projects</span></v-list-item>
                   <v-list-item link to="/blog"><span>Latest Blog</span></v-list-item>
-                  <v-list-item link to="/testimonials"><span>Testimonials</span></v-list-item>
+                  <v-list-item link to="/testimonials"><span>Rating & Reviews</span></v-list-item> 
                 </v-list>
               </v-col>
             </v-row>
