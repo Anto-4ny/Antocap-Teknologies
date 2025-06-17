@@ -1,0 +1,50 @@
+{
+  "name": "Antocap Teknologies",
+  "short_name": "Antocap",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Premium software, web, app, SEO, and IT services in Nairobi, Kenya.",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/Antocap-logo.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Antocap-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/Antocap-logo.jpg",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "/Antocap-logo.jpg",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}
+
