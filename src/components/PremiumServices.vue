@@ -169,7 +169,7 @@ onMounted(async () => {
 }
 
 .premium-heading {
-  font-size: 2.7rem;
+  font-size: 1.7rem;
   font-weight: 800;
   text-transform: uppercase;
   background: linear-gradient(to right, #ffd700, #ffcc00);
@@ -181,7 +181,7 @@ onMounted(async () => {
 }
 
 .headline {
-  font-size: 1.75rem;
+  font-size: 1rem;
   color: #e0e0e0;
   font-weight: 300;
 }

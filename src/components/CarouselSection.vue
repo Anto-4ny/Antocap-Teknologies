@@ -41,36 +41,57 @@
 import { ref, onMounted } from 'vue'
 import { isDarkMode } from '@/composables/useTheme.js';
 
-import itJpg from '@/assets/it.jpg'
-import cloudJpg from '@/assets/cloud.jpg'
-import automationJpg from '@/assets/automation2.jpg'
-import gifSource from '@/assets/bJk.gif';
+import carousel0 from '@/assets/carousel0.webp'
+import carousel1 from '@/assets/carousel1.jpg'
+import carousel2 from '@/assets/carousel2.jpg'
+import carousel3 from '@/assets/carousel3.webp';
+import carousel4 from '@/assets/carousel4.jpg'
+import carousel5 from '@/assets/carousel5.png'
+import carousel6 from '@/assets/carousel6.png'
 
 const slides = ref([
   {
-    src: itJpg,
-    title: 'Innovative IT Solutions',
-    description: 'Leading the future of technology with cutting-edge solutions.',
-    alt: 'Innovative IT Solutions'
+    src: carousel1,
+    title: 'Website Development Excellence',
+    description: 'Crafting modern, responsive websites tailored by Antocap Teknologies.',
+    alt: 'Website Development by Antocap Teknologies'
   },
   {
-    src: cloudJpg,
-    title: 'Advanced Cloud Services',
-    description: 'Seamless integration with secure and scalable cloud solutions.',
-    alt: 'Advanced Cloud Services'
+    src: carousel0,
+    title: 'Web & Billing Systems Integration',
+    description: 'Robust website solutions integrated with seamless billing systems.',
+    alt: 'Web and Billing Systems'
   },
   {
-    src: automationJpg,
-    title: 'AI-Powered Automation',
-    description: 'Harnessing artificial intelligence to drive efficiency and growth.',
-    alt: 'AI-Powered Automation'
+    src: carousel2,
+    title: 'Boost Your Online Presence',
+    description: 'Helping businesses stand out with powerful online visibility strategies.',
+    alt: 'Online Presence Solutions'
   },
-    {
-    src: gifSource,
-    title: 'AI-Powered Automation',
-    description: 'Harnessing artificial intelligence to drive efficiency and growth.',
-    alt: 'AI-Powered Automation'
-  }
+  {
+    src: carousel3,
+    title: 'Custom App Development',
+    description: 'Building user-friendly mobile and web apps tailored to your goals.',
+    alt: 'App Development Services'
+  },
+  {
+    src: carousel4,
+    title: 'Social Media Integration',
+    description: 'Linking your brand to audiences through smart social media connections.',
+    alt: 'Social Media Integration'
+  },
+  {
+    src: carousel5,
+    title: 'SEO & Google Rankings',
+    description: 'Optimizing your digital footprint to rank higher and reach wider.',
+    alt: 'SEO and Google Optimization'
+  },
+  {
+    src: carousel6,
+    title: 'Efficient Management Systems',
+    description: 'Streamlining operations with tailored management system solutions.',
+    alt: 'Business Management Systems'
+  },
 ])
 
 const loadedImages = ref(Array(slides.value.length).fill(false))
@@ -115,7 +136,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.45); /* blackish overlay */
+  background-color: rgba(0, 0, 0, 0.527); 
   z-index: 2;
 }
 
@@ -125,10 +146,10 @@ onMounted(() => {
   left: 0;
   right: 0;
   padding: 2rem;
-  color: #ffd700; /* gold text */
+  color: #ffd700; 
   text-align: center;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.3); /* subtle black bg behind text */
+  background: rgba(0, 0, 0, 0.3); 
   border-top: 1px solid #fff;
 }
 
@@ -148,6 +169,6 @@ onMounted(() => {
 
 .v-carousel__prev:hover,
 .v-carousel__next:hover {
-  color: #ffd700; /* gold hover */
+  color: #ffd700; 
 }
 </style>

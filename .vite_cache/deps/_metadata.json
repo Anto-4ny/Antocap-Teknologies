@@ -1,0 +1,103 @@
+{
+  "hash": "cce179f9",
+  "configHash": "97eb718f",
+  "lockfileHash": "14567792",
+  "browserHash": "38c7ccb7",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "8747740a",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "833b9aad",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "059454ba",
+      "needsInterop": false
+    },
+    "@vueuse/head": {
+      "src": "../../node_modules/@vueuse/head/dist/index.mjs",
+      "file": "@vueuse_head.js",
+      "fileHash": "880fd32f",
+      "needsInterop": false
+    },
+    "aos": {
+      "src": "../../node_modules/aos/dist/aos.js",
+      "file": "aos.js",
+      "fileHash": "136f1a33",
+      "needsInterop": true
+    },
+    "vanilla-tilt": {
+      "src": "../../node_modules/vanilla-tilt/lib/vanilla-tilt.es2015.js",
+      "file": "vanilla-tilt.js",
+      "fileHash": "0a4d70c1",
+      "needsInterop": false
+    },
+    "vue-meta": {
+      "src": "../../node_modules/vue-meta/dist/vue-meta.esm-browser.min.js",
+      "file": "vue-meta.js",
+      "fileHash": "16862332",
+      "needsInterop": false
+    },
+    "vue3-carousel": {
+      "src": "../../node_modules/vue3-carousel/dist/carousel.mjs",
+      "file": "vue3-carousel.js",
+      "fileHash": "9a60476a",
+      "needsInterop": false
+    },
+    "vuetify": {
+      "src": "../../node_modules/vuetify/lib/framework.js",
+      "file": "vuetify.js",
+      "fileHash": "17b7cf0c",
+      "needsInterop": false
+    },
+    "vuetify/components": {
+      "src": "../../node_modules/vuetify/lib/components/index.js",
+      "file": "vuetify_components.js",
+      "fileHash": "e479a5d6",
+      "needsInterop": false
+    },
+    "vuetify/directives": {
+      "src": "../../node_modules/vuetify/lib/directives/index.js",
+      "file": "vuetify_directives.js",
+      "fileHash": "acce592b",
+      "needsInterop": false
+    },
+    "vuetify/iconsets/mdi": {
+      "src": "../../node_modules/vuetify/lib/iconsets/mdi.js",
+      "file": "vuetify_iconsets_mdi.js",
+      "fileHash": "1f62512e",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-3OZNRR7W": {
+      "file": "chunk-3OZNRR7W.js"
+    },
+    "chunk-NHPGYAP4": {
+      "file": "chunk-NHPGYAP4.js"
+    },
+    "chunk-YMX75DDC": {
+      "file": "chunk-YMX75DDC.js"
+    },
+    "chunk-FPK7HIJZ": {
+      "file": "chunk-FPK7HIJZ.js"
+    },
+    "chunk-PEHW3TFN": {
+      "file": "chunk-PEHW3TFN.js"
+    },
+    "chunk-IJV5NOMV": {
+      "file": "chunk-IJV5NOMV.js"
+    },
+    "chunk-L6OFPWCY": {
+      "file": "chunk-L6OFPWCY.js"
+    }
+  }
+}

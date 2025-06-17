@@ -8,28 +8,34 @@
       >mdi-lightbulb</v-icon>
     </div>
 
-    <!-- Global Header -->
+    <!-- Header, Content, Footer -->
     <Header />
-
-    <!-- Router View for Pages -->
     <router-view />
-
-    <!-- Global Footer -->
     <Footer />
   </v-app>
 </template>
 
 <script setup>
 import { useMeta } from 'vue-meta'
+import { ref, onMounted } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import favicon from './assets/Antocap-logo.jpg'
-import { ref } from 'vue'
 
 const isDarkMode = ref(true)
+
 const toggleTheme = () => {
   isDarkMode.value = !isDarkMode.value
+  localStorage.setItem('theme', isDarkMode.value ? 'dark' : 'light')
 }
+
+// Load theme preference from localStorage
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme) {
+    isDarkMode.value = savedTheme === 'dark'
+  }
+})
 
 // Dynamically update favicon
 const setFavicon = () => {
@@ -55,14 +61,12 @@ useMeta({
     { name: 'author', content: 'Antony Ndambuki' },
     { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
 
-    // Open Graph
     { property: 'og:title', content: 'Antocap Teknologies | Software, Websites & SEO in Nairobi, Kenya' },
     { property: 'og:description', content: 'Antocap Teknologies is a leading software development company in Utawala, Nairobi, Kenya, offering software, websites, ecommerce, bots, SEO, and IT consulting services. Founded by Antony Ndambuki, Antocap Teknologies builds premium software, apps, and websites. Trusted in Nairobi and beyond.' },
     { property: 'og:image', content: publicImageUrl },
     { property: 'og:url', content: 'https://www.antocapteknologies.com/' },
     { property: 'og:type', content: 'website' },
 
-    // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Antocap Teknologies - Premium Software & IT Services in Kenya' },
     { name: 'twitter:description', content: 'From software and app dev to SEO and bots, Antocap Teknologies delivers excellence across Africa.' },
@@ -116,8 +120,8 @@ useMeta({
 <style scoped>
 .theme-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 6%;
+  right: 5%;
   cursor: pointer;
   z-index: 1000;
 }
@@ -139,11 +143,11 @@ useMeta({
 
 .dark-mode {
   background-color: #000 !important;
-  color: #fff;
+  color: #fff !important;
 }
 
 .light-mode {
   background-color: #f9f9f9 !important;
-  color: #111;
+  color: #111 !important;
 }
 </style>
