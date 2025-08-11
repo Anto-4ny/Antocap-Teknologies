@@ -7,6 +7,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 import compression from 'vite-plugin-compression'
 import { generateCriticalCSS } from './critical-css'
 
+const isVercel = process.env.VERCEL === '1'
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -101,6 +103,10 @@ export default defineConfig({
         {
           name: 'generate-critical-css',
           writeBundle: async () => {
+            if (isVercel) {
+              console.log('Skipping critical CSS generation on Vercel build')
+              return
+            }
             try {
               await generateCriticalCSS()
             } catch (error) {

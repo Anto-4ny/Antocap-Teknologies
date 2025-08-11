@@ -13,11 +13,12 @@ export async function generateCriticalCSS() {
       inline: true,
       width: 1920,
       height: 1080,
-      penthouse: {
-        puppeteer: {
-          executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // ✅ Update this path if needed
-        },
-      },
+      // Remove the puppeteer.executablePath option for portability
+      // penthouse: {
+      //   puppeteer: {
+      //     executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+      //   },
+      // },
     })
 
     writeFileSync(htmlPath, html.replace('</head>', `<style>${css}</style></head>`))
