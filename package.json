@@ -12,13 +12,10 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@sparticuz/chromium-min": "^138.0.2",
     "@vueuse/head": "^2.0.0",
     "aos": "^2.3.4",
     "axios": "^1.8.4",
     "critical": "^7.2.1",
-    "puppeteer": "^24.10.1",
-    "puppeteer-core": "^24.16.1",
     "rollup-plugin-visualizer": "^6.0.3",
     "swiper": "^11.2.10",
     "vanilla-tilt": "^1.8.1",
