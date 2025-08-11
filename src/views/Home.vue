@@ -129,7 +129,7 @@ const services = [
       {
         name: 'Basic',
         description: 'Simple and elegant single-page website.',
-        kes: 20000,
+        kes: 25000,
         usd: 155,
         features: [
           { text: 'A single clean page for your business.', included: true },
