@@ -1,12 +1,11 @@
 <template>
-    <section :class="{ 'dark-bg': isDarkMode, 'light-bg': !isDarkMode }">
+    <section>
   <section
     :class="[
       'premium-section',
       'relative',
       'py-16',
-      'px-4',
-      isLight ? 'light-gradient' : 'dark-bg'
+      'px-4'
     ]"
   >
 
@@ -158,16 +157,6 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.dark-bg {
-  background-color: #000;
-  color: #fff;
-}
-
-.light-bg {
-  background-color: #fff;
-  color: #000;
-}
-
 .premium-heading {
   font-size: 1.7rem;
   font-weight: 800;
