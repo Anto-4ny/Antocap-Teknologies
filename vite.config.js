@@ -5,6 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import imagemin from 'vite-plugin-imagemin'
 import { VitePWA } from 'vite-plugin-pwa'
 import compression from 'vite-plugin-compression'
+import { generateCriticalCSS } from './critical-css'
 
 export default defineConfig({
   plugins: [
@@ -21,16 +22,24 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'robots.txt', 'sitemap.xml', 'apple-touch-icon.png'],
       manifest: {
         name: 'Antocap Teknologies',
-        short_name: 'Antocap',
-        description: 'website, apps, management systems development, seo services, point of sale, pos',
+        short_name: 'AT',
+        description: 'website, apps, management systems development, seo services',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
         scope: '/',
         icons: [
-          { src: '/pwa-192x192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png' }
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
         ]
       },
       workbox: {
@@ -75,7 +84,7 @@ export default defineConfig({
   },
   build: {
     minify: 'esbuild',
-    chunkSizeWarningLimit: 1600, // Increased to reduce warnings
+    chunkSizeWarningLimit: 400,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -87,14 +96,27 @@ export default defineConfig({
             return 'vendor'
           }
         }
-      }
+      },
+      plugins: [
+        {
+          name: 'generate-critical-css',
+          writeBundle: async () => {
+            try {
+              await generateCriticalCSS()
+            } catch (error) {
+              console.error('Failed to generate critical CSS:', error)
+            }
+          }
+        }
+      ]
     }
   },
   cacheDir: '.vite_cache',
   server: {
     headers: {
       'Cache-Control': 'public, max-age=31536000, immutable'
-    }
+    },
+    middlewareMode: false
   },
   publicDir: 'public',
   assetsInclude: ['robots.txt', 'sitemap.xml'],

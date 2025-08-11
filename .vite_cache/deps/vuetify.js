@@ -9,10 +9,6 @@ import {
   useLayout
 } from "./chunk-NHPGYAP4.js";
 import {
-  IconSymbol,
-  createIcons
-} from "./chunk-YMX75DDC.js";
-import {
   DisplaySymbol,
   LocaleSymbol,
   ThemeSymbol,
@@ -24,6 +20,10 @@ import {
   useRtl,
   useTheme
 } from "./chunk-FPK7HIJZ.js";
+import {
+  IconSymbol,
+  createIcons
+} from "./chunk-YMX75DDC.js";
 import {
   DefaultsSymbol,
   IN_BROWSER,
