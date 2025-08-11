@@ -121,6 +121,6 @@ export default defineConfig({
   publicDir: 'public',
   assetsInclude: ['robots.txt', 'sitemap.xml'],
   optimizeDeps: {
-    include: ['vue', 'axios', 'vue-router']
+    include: ['vue', 'axios', 'vue-router', 'swiper']
   }
 })
