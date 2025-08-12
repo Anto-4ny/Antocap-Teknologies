@@ -65,7 +65,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import webdev from '@/assets/webdev.webp';
-import appDevImg from '@/assets/appdev.jpg';
+import appDevImg from '@/assets/appDev.jpg';
 import seoImg from '@/assets/seo.jpg';
 import posImg from '@/assets/pos.png';
 import managementImg from '@/assets/management.jpg';
