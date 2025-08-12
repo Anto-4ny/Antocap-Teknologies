@@ -1,17 +1,17 @@
 <template>
 
     <TopHeroSection />
-    <v-divider class="my-0" color="gold" thickness="1" />
-
+      <v-divider class="my-0" color="gold" thickness="0" />
     <CarouselSection />
-    <v-divider class="my-0" color="gold" thickness="2" />
+      <v-divider class="my-0" color="gold" thickness="2" />
 
     <PremiumServices />
     <v-divider class="my-0" color="gold" thickness="2" />
 
     <!-- Pricing Plans Section -->
- <section class="py-16 px-4" style="background-color: #000; color: #fff">
+<section class="py-16 px-4" style="background-color: #000; color: #fff">
   <v-container>
+    <!-- Section title -->
     <v-row justify="center" class="mb-12">
       <v-col cols="12" md="8" class="text-center">
         <h1 class="text-h4 font-weight-bold gradient-gold-text mb-4">
@@ -24,6 +24,7 @@
       </v-col>
     </v-row>
 
+    <!-- Services Loop -->
     <div v-for="(service, i) in services" :key="i" class="mb-16">
       <h2 class="text-h5 font-weight-bold mb-6 white--text">
         <v-icon :color="service.color" class="mr-2">{{ service.icon }}</v-icon>
@@ -40,12 +41,16 @@
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 }
         }"
-        :navigation="true"
+        :navigation="{
+          prevEl: `.swiper-prev-${i}`,
+          nextEl: `.swiper-next-${i}`
+        }"
         :autoplay="{ delay: 10000, disableOnInteraction: false }"
         :speed="1000"
         loop
         class="pricing-swiper"
       >
+        <!-- Pricing Cards -->
         <SwiperSlide v-for="(plan, j) in service.plans" :key="j">
           <v-card class="pa-4 position-relative pricing-card d-flex flex-column">
             <div class="save-badge">
@@ -63,17 +68,18 @@
               {{ plan.description }}
             </v-card-subtitle>
 
+            <!-- Price Details -->
             <div class="mb-4">
               <div class="white-accent mb-1">
                 <strong class="white--text">was:</strong>
                 <span class="line-through mr-2" style="opacity: 0.7;">
-                  {{ plan.wasKes.toLocaleString() }} KES
+                  {{ plan.wasKes.toLocaleString() }} kes
                 </span>
               </div>
               <div class="white-accent mb-3">
                 <strong class="white--text">NOW:</strong>
                 <span class="gold-accent">
-                  {{ plan.kes.toLocaleString() }} KES
+                  {{ plan.kes.toLocaleString() }} kes
                 </span>
               </div>
               <div class="white-accent mb-1">
@@ -90,6 +96,7 @@
               </div>
             </div>
 
+            <!-- Features -->
             <v-list dense class="mb-4">
               <v-list-item
                 v-for="(feature, k) in plan.features"
@@ -109,6 +116,7 @@
 
             <v-spacer></v-spacer>
 
+            <!-- CTA Button -->
             <v-btn
               color="yellow-darken-2"
               rounded
@@ -121,6 +129,14 @@
             </v-btn>
           </v-card>
         </SwiperSlide>
+
+        <!-- Custom Navigation Arrows -->
+        <div :class="`swiper-prev-${i} custom-nav-btn`">
+          <v-icon color="gold" size="36">mdi-chevron-left-circle</v-icon>
+        </div>
+        <div :class="`swiper-next-${i} custom-nav-btn`">
+          <v-icon color="gold" size="36">mdi-chevron-right-circle</v-icon>
+        </div>
       </Swiper>
     </div>
 
@@ -161,10 +177,10 @@ import WhyChoose from '@/components/WhyChoose.vue';
 
 // Reactive services data
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Autoplay } from 'swiper/modules'; // ✅ FIXED
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/autoplay'; // optional but recommended
+import 'swiper/css/autoplay'; 
 
 
 // Pricing data
@@ -351,12 +367,26 @@ useHead({
   padding: 2px 0;
 }
 
-
+.custom-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  cursor: pointer;
+}
 .swiper-button-prev,
 .swiper-button-next {
-  color: gold !important;
-  font-weight: bold;
-  transform: scale(1.3);
+  background: transparent;
+}
+[class*="swiper-prev"] {
+  left: 5px; /* Move left arrow outside carousel */
+  color: gold;
+}
+[class*="swiper-next"] {
+  right: 5px; /* Move right arrow outside carousel */
+  color: gold;
 }
 </style>
 

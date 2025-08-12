@@ -1,260 +1,198 @@
 <template>
-    <section>
-  <section
-    :class="[
-      'premium-section',
-      'relative',
-      'py-16',
-      'px-4'
-    ]"
-  >
-
+  <section class="premium-section">
     <v-container>
-      <!-- Section Heading -->
-      <v-col cols="12" class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
-        <div class="heading-container">
-          <h2 class="premium-heading" aria-label="Premium Services Section Heading">Premium Services</h2>
-          <div class="line-container">
-            <hr class="line-left" />
-            <v-icon color="gold" class="mx-4" aria-hidden="true">mdi-diamond-stone</v-icon>
-            <hr class="line-right" />
-          </div>
-          <h3 class="headline font-weight-light mt-2" aria-label="Subheading about innovation">
-            Revolutionizing Digital Experiences
-          </h3>
-          <p class="description mt-4" aria-label="Section description">
-            We create cutting-edge solutions designed to elevate your business to new heights.
-            Experience innovation like never before.
-          </p>
-        </div>
-      </v-col>
+      <!-- Heading -->
+      <div class="section-heading" data-aos="fade-down">
+        <h2 class="gold-gradient">Premium Services</h2>
+        <p class="subtitle">Where technology meets luxury — tailored for you.</p>
+      </div>
 
-      <!-- Service Cards -->
-      <v-row>
-        <v-col
+      <!-- Swiper Carousel -->
+      <swiper
+        :modules="[Autoplay, Navigation]"
+        :slides-per-view="1"
+        :space-between="20"
+        :loop="true"
+        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+        :navigation="{ prevEl: '.custom-prev', nextEl: '.custom-next' }"
+        :breakpoints="{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1440: { slidesPerView: 4 }
+        }"
+        class="premium-swiper"
+      >
+        <swiper-slide
           v-for="(service, index) in services"
           :key="index"
-          cols="12"
-          sm="6"
-          md="4"
-          class="d-flex justify-center mb-10"
         >
-          <div
-            class="tilt-card"
-            ref="tiltCards"
-            role="region"
-            :aria-label="`Service card for ${service.title}`"
-          >
-            <v-card
-              class="premium-card pa-6 text-center"
-              elevation="12"
-              :aria-labelledby="`service-title-${index}`"
-              :aria-describedby="`service-desc-${index}`"
-            >
-              <!-- Icon -->
-              <div
-                class="icon-circle mb-5"
-                :style="{ backgroundColor: service.iconBg }"
-                aria-hidden="true"
-              >
-                <v-icon :icon="service.icon" size="38" class="text-white"></v-icon>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <!-- Image -->
+            <div class="card-image" :style="{ backgroundImage: `url(${service.image})` }">
+              <div class="image-overlay">
+                <v-icon :icon="service.icon" class="service-icon"></v-icon>
               </div>
+            </div>
 
-              <!-- Title -->
-              <h3
-                class="text-h6 font-weight-bold mb-2 text-gold"
-                :id="`service-title-${index}`"
-              >
-                {{ service.title }}
-              </h3>
-
-              <!-- Description -->
-              <p
-                class="text-body-2 text-light-gray mb-4"
-                :id="`service-desc-${index}`"
-              >
-                {{ service.description }}
-              </p>
-
-              <!-- Descriptive Link Button -->
-              <RouterLink
-                :to="`/${service.slug}#${service.title.replace(/\s+/g, '-').toLowerCase()}`"
-                class="text-decoration-none"
-                :aria-label="`Learn more about ${service.title}`"
-              >
-                <v-btn class="gold-btn mt-2" elevation="4">
-                  About {{ service.title }}
-                </v-btn>
+            <!-- Content -->
+            <div class="card-content">
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <RouterLink :to="`/${service.slug}`">
+                <v-btn class="gold-btn mt-3">{{ service.title }}</v-btn>
               </RouterLink>
-            </v-card>
+            </div>
           </div>
-        </v-col>
-      </v-row>
+        </swiper-slide>
 
-      <!-- Explore More Button -->
-      <v-col cols="12" class="text-center mt-8" data-aos="fade-up" data-aos-delay="200">
-        <v-btn
-          to="/services"
-          class="gold-btn px-8 py-3"
-          elevation="6"
-          aria-label="Explore all our services"
-        >
-          Explore all Our Services
+        <!-- Custom Navigation Buttons -->
+        <v-btn icon class="nav-btn custom-prev">
+          <v-icon icon="mdi-chevron-left" />
         </v-btn>
-      </v-col>
+        <v-btn icon class="nav-btn custom-next">
+          <v-icon icon="mdi-chevron-right" />
+        </v-btn>
+      </swiper>
     </v-container>
-  </section>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
-import { isDarkMode } from '@/composables/useTheme.js';
+import { ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
+import webdev from '@/assets/webdev.webp';
+import appDevImg from '@/assets/appdev.jpg';
+import seoImg from '@/assets/seo.jpg';
+import posImg from '@/assets/pos.png';
+import managementImg from '@/assets/management.jpg';
+import revampImg from '@/assets/revamp.jpg';
+import automationImg from '@/assets/automation.jpg';
+import itSupportImg from '@/assets/itsupport.jpg';
 
-// Services data with accessible labels and consistent structure
 const services = ref([
-  {
-    title: 'Website Development',
-    description: 'High-performance, SEO-friendly websites built for speed, responsiveness, and aesthetics.',
-    icon: 'mdi-web',
-    iconBg: '#FFD700',
-    slug: 'services',
-    ariaLabel: 'Learn more about Website Development',
-  },
-  {
-    title: 'Software & App Development',
-    description: 'Robust mobile & desktop apps designed for scalability, performance, and security.',
-    icon: 'mdi-application-brackets',
-    iconBg: '#C0B283',
-    slug: 'services',
-    ariaLabel: 'Learn more about Software and App Development services',
-  },
-  {
-    title: 'SEO Optimization',
-    description: 'Improve your online visibility with smart keyword targeting and technical SEO.',
-    icon: 'mdi-chart-line',
-    iconBg: '#B8860B',
-    slug: 'services',
-    ariaLabel: 'Learn more about SEO Optimization services',
-  },
+  { title: 'Website Development', description: 'Elegant, fast, and responsive websites crafted for maximum impact.', icon: 'mdi-web', image: webdev, slug: 'services' },
+  { title: 'App Development', description: 'Scalable mobile and desktop applications for the modern era.', icon: 'mdi-cellphone', image: appDevImg, slug: 'services' },
+  { title: 'SEO Optimization', description: 'Boost your visibility with precision-targeted SEO strategies.', icon: 'mdi-chart-line', image: seoImg, slug: 'services' },
+  { title: 'POS Systems', description: 'Luxury retail & restaurant POS solutions for seamless transactions.', icon: 'mdi-cash-register', image: posImg, slug: 'services' },
+  { title: 'Management Systems', description: 'Streamline operations with custom management software.', icon: 'mdi-office-building-cog', image: managementImg, slug: 'services' },
+  { title: 'Web Revamping', description: 'Transform outdated sites into premium digital experiences.', icon: 'mdi-refresh', image: revampImg, slug: 'services' },
+  { title: 'Automation', description: 'Save time and costs with advanced automation solutions.', icon: 'mdi-robot', image: automationImg, slug: 'services' },
+  { title: 'IT Support', description: 'Reliable and responsive IT support for your business.', icon: 'mdi-laptop', image: itSupportImg, slug: 'services' }
 ]);
-
-// Tilt card DOM elements will be initialized with VanillaTilt on mount
-const tiltCards = ref([]);
-
-onMounted(async () => {
-  await nextTick();
-  tiltCards.value.forEach(card => {
-    window.VanillaTilt?.init(card, {
-      max: 20,
-      speed: 500,
-      glare: true,
-      'max-glare': 0.25,
-    });
-  });
-});
 </script>
 
 <style scoped>
-.premium-heading {
-  font-size: 1.7rem;
+.premium-section {
+  background: linear-gradient(180deg, #000, #111);
+  padding: 4rem 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gold-gradient {
+  font-size: 2rem;
   font-weight: 800;
-  text-transform: uppercase;
-  background: linear-gradient(to right, #ffd700, #ffcc00);
+  background: linear-gradient(to right, #ffd700, #b8860b);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.75rem;
-  margin-top: 0%;
 }
 
-.headline {
-  font-size: 1rem;
-  color: #e0e0e0;
-  font-weight: 300;
+.subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
 }
 
-.description {
-  font-size: 1.125rem;
-  color: #b0b0b0;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
+/* Hide default Swiper arrows */
+.premium-swiper .swiper-button-prev::after,
+.premium-swiper .swiper-button-next::after {
+  display: none;
 }
 
-.line-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.25rem;
-}
-
-.line-left,
-.line-right {
-  width: 25%;
-  border: none;
-  height: 2px;
-  background: linear-gradient(90deg, #ffd700, #ffcc00);
-}
-
-.premium-card {
-  position: relative;
-  border-radius: 20px;
-  background-color: #1e1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
-  z-index: 2;
-}
-
-.premium-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 20px 50px rgba(255, 215, 0, 0.1);
-}
-
-
-.icon-circle {
-  width: 70px;
-  height: 70px;
+/* Custom nav buttons */
+.nav-btn {
+  background: linear-gradient(90deg, #ffd700, #b8860b);
+  color: black !important;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.custom-prev {
+  left: 5px;
+}
+
+.custom-next {
+  right: 5px;
+}
+
+/* Fade in on hover */
+.premium-swiper:hover .nav-btn {
+  opacity: 1;
+}
+
+.service-card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.3);
+}
+
+.card-image {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.image-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.2);
-  transition: transform 0.4s ease;
 }
-
-.premium-card:hover .icon-circle {
-  transform: scale(1.15);
-  box-shadow: 0 0 35px rgb(223, 222, 220);
-  transform: translateY(-4px);
-}
-
-.text-gold {
+.service-icon {
+  font-size: 2rem;
   color: #ffd700;
 }
 
-.text-light-gray {
-  color: #c0c0c0;
+.card-content {
+  padding: 1rem;
+}
+.card-content h3 {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+.card-content p {
+  color: #ccc;
+  font-size: 0.9rem;
 }
 
 .gold-btn {
-  background: linear-gradient(90deg, #ffd700, #ffcc00);
-  color: #1a1a1a !important;
-  font-weight: 600;
-  border-radius: 999px;
-  text-transform: none;
-  transition: background 0.3s ease;
-}
-
-.gold-btn:hover {
-  background: linear-gradient(90deg, #ffcc00, #ffd700);
-}
-
-.tilt-card {
-  width: 100%;
+  background: linear-gradient(90deg, #ffd700, #b8860b);
+  color: #000 !important;
+  border-radius: 25px;
+  font-weight: 400;
+  padding: 4px 8px;
 }
 </style>
 

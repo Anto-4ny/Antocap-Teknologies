@@ -4,7 +4,7 @@ import {
   genericComponent,
   mergeDeep,
   propsFactory
-} from "./chunk-PEHW3TFN.js";
+} from "./chunk-TIEWGVU7.js";
 import {
   computed,
   createVNode,
@@ -232,4 +232,4 @@ export {
   createIcons,
   useIcon
 };
-//# sourceMappingURL=chunk-YMX75DDC.js.map
+//# sourceMappingURL=chunk-VQS5S42S.js.map

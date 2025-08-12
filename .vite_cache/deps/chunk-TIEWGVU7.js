@@ -1378,8 +1378,6 @@ function useRender(render) {
 }
 
 export {
-  propsFactory,
-  makeComponentProps,
   IN_BROWSER,
   SUPPORTS_INTERSECTION,
   SUPPORTS_TOUCH,
@@ -1462,6 +1460,8 @@ export {
   getLuma,
   getContrast,
   getForeground,
+  propsFactory,
+  makeComponentProps,
   getCurrentInstance2 as getCurrentInstance,
   getCurrentInstanceName,
   DefaultsSymbol,
@@ -1483,4 +1483,4 @@ export {
   isFixedPosition,
   useRender
 };
-//# sourceMappingURL=chunk-PEHW3TFN.js.map
+//# sourceMappingURL=chunk-TIEWGVU7.js.map
