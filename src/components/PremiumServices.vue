@@ -71,7 +71,7 @@ import posImg from '@/assets/pos.png';
 import managementImg from '@/assets/management.jpg';
 import revampImg from '@/assets/revamp.jpg';
 import automationImg from '@/assets/automation.jpg';
-import itSupportImg from '@/assets/itsupport.jpg';
+import itSupportImg from '@/assets/itSupport.jpg';
 
 const services = ref([
   { title: 'Website Development', description: 'Elegant, fast, and responsive websites crafted for maximum impact.', icon: 'mdi-web', image: webdev, slug: 'services' },
