@@ -86,11 +86,29 @@ const services = ref([
 </script>
 
 <style scoped>
+/* Full-width section without unwanted scrollbars */
 .premium-section {
-  background: linear-gradient(180deg, #000, #111);
+  width: 100%;
   padding: 4rem 0;
+  background: linear-gradient(180deg, #000, #111);
+  overflow-x: hidden; /* Prevent horizontal scroll inside this section */
 }
 
+/* Override Vuetify's default container constraints */
+.premium-section .v-container {
+  max-width: 90% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Rows and columns should never cause overflow */
+.premium-section .v-row,
+.premium-section .v-col {
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Heading styles */
 .section-heading {
   text-align: center;
   margin-bottom: 2rem;
@@ -110,7 +128,7 @@ const services = ref([
   font-size: 1.1rem;
 }
 
-/* Hide default Swiper arrows */
+/* Hide Swiper default arrows */
 .premium-swiper .swiper-button-prev::after,
 .premium-swiper .swiper-button-next::after {
   display: none;
@@ -144,6 +162,7 @@ const services = ref([
   opacity: 1;
 }
 
+/* Card styles */
 .service-card {
   background: #1a1a1a;
   border-radius: 16px;
@@ -156,6 +175,7 @@ const services = ref([
   box-shadow: 0 12px 24px rgba(255, 215, 0, 0.3);
 }
 
+/* Image area */
 .card-image {
   height: 160px;
   background-size: cover;
@@ -174,6 +194,7 @@ const services = ref([
   color: #ffd700;
 }
 
+/* Text content */
 .card-content {
   padding: 1rem;
 }
@@ -187,6 +208,7 @@ const services = ref([
   font-size: 0.9rem;
 }
 
+/* Button */
 .gold-btn {
   background: linear-gradient(90deg, #ffd700, #b8860b);
   color: #000 !important;
@@ -195,4 +217,3 @@ const services = ref([
   padding: 4px 8px;
 }
 </style>
-

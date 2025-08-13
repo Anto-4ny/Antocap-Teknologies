@@ -197,6 +197,7 @@ onMounted(() => {
 
 /* Small & foldable devices */
 @media (max-width: 480px) {
+  .top-section { overflow-x: hidden; }
   .carousel-image-container,
   .custom-carousel { height: 350px !important; margin-top: 15px;}
   .jump-heading, .medium-desc, { text-align: center; }
@@ -212,6 +213,7 @@ onMounted(() => {
 
 /* Ultra small screens (e.g., foldables half screen) */
 @media (max-width: 320px) {
+  .top-section { overflow-x: hidden; }
   .jump-heading { font-size: 1rem; }
   .medium-desc { font-size: 0.75rem; }
   .description-text { font-size: 0.6rem; text-align: left;}

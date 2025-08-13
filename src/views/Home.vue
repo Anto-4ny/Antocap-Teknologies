@@ -152,7 +152,7 @@
   </v-container>
 </section>
 
-    <v-divider class="my-0" color="gold" thickness="2" />
+    <v-divider class="my-" color="gold" thickness="2" />
 
     <WhyChoose />
  
@@ -311,30 +311,33 @@ useHead({
 });
 </script>
 
-<style>
+<style scoped>
+/* =====================
+   TEXT & COLOR STYLES
+   ===================== */
 .gradient-gold-text {
   background: linear-gradient(90deg, gold, orange);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 .gold-accent {
   color: gold;
 }
-
 .gold-faded-text {
   color: rgba(255, 215, 0, 0.7);
 }
-
 .white-accent {
   color: white;
 }
 
+/* =====================
+   BADGES
+   ===================== */
 .save-badge {
   position: absolute;
-  top: -5px;
-  right: -5px;
+  top: 8px;
+  right: 8px;
   background: gold;
   color: black;
   font-weight: bold;
@@ -342,9 +345,13 @@ useHead({
   border-radius: 50px;
   font-size: 0.9rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  max-width: calc(100% - 16px);
+  overflow: hidden;
 }
 
-/* Make the entire pricing card a column so content pushes button down */
+/* =====================
+   PRICING CARDS
+   ===================== */
 .pricing-card {
   background-color: #111;
   border: 1px solid gold;
@@ -353,41 +360,107 @@ useHead({
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* pushes footer/button to bottom */
+  justify-content: space-between;
   padding: 16px;
 }
-
-/* Style for the Get Started button */
 .pricing-card .v-btn {
   font-weight: bold;
   font-size: 1rem;
   background-color: gold !important;
   color: black !important;
-  margin-top: auto; 
+  margin-top: auto;
   padding: 2px 0;
 }
 
+/* =====================
+   SWIPER NAVIGATION
+   ===================== */
 .custom-nav-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 45%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 10;
   cursor: pointer;
+  overflow: hidden;
+  max-width: 100%;
 }
 .swiper-button-prev,
 .swiper-button-next {
   background: transparent;
 }
-[class*="swiper-prev"] {
-  left: 5px; /* Move left arrow outside carousel */
+[class*="swiper-prev"],
+[class*="swiper-next"] {
+  max-width: calc(100% - 20px);
   color: gold;
+}
+[class*="swiper-prev"] {
+  left: 0;
 }
 [class*="swiper-next"] {
-  right: 5px; /* Move right arrow outside carousel */
-  color: gold;
+  right: 0;
+}
+
+/* =====================
+   LAYOUT SAFETY
+   ===================== */
+:deep(html),
+:deep(body) {
+  overflow: hidden; /* hide all scrollbars */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+:deep(html)::-webkit-scrollbar,
+:deep(body)::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+section,
+.v-container,
+.v-row,
+.v-col {
+  max-width: 100% !important;
+  overflow: hidden;
+}
+
+img, video, canvas, iframe {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* =====================
+   SWIPER BEHAVIOR
+   ===================== */
+.swiper {
+  overflow: visible;
+  max-width: 100% !important;
+}
+.swiper-wrapper {
+  will-change: transform;
+}
+.swiper-slide {
+  overflow: hidden;
+}
+
+/* =====================
+   REMOVE GAPS
+   ===================== */
+section, .v-container {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 600px) {
+  .custom-nav-btn {
+    display: none;
+  }
 }
 </style>
-
-
