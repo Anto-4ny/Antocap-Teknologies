@@ -1,7 +1,7 @@
 <template>
 
     <TopHeroSection />
-      <v-divider class="my-0" color="gold" thickness="0" />
+      <v-divider class="my-0" color="gold" thickness="2" />
     <CarouselSection />
       <v-divider class="my-0" color="gold" thickness="2" />
 

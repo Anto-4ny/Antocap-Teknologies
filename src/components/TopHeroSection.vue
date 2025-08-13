@@ -124,22 +124,32 @@ onMounted(() => {
 .image-with-overlay { height: 100%; z-index: 1; }
 .dark-overlay { position: absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.53); z-index:2; }
 .text-overlay { position: absolute; bottom: 0; width: 100%; padding: 1.5rem; color: #ffd700; z-index: 3; background: rgba(0,0,0,0.35); text-align: center; }
-.overlay-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; }
-.overlay-desc { font-size: 0.9rem; color: #fff; }
+.overlay-title { font-size: clamp(0.9rem, 2.5vw, 1.2rem); font-weight: bold; margin-bottom: 0.5rem; }
+.overlay-desc { font-size: clamp(0.75rem, 2vw, 0.9rem); color: #fff; }
 
 /* Force carousel arrows visible */
 .custom-carousel .v-carousel__controls { opacity: 1 !important; visibility: visible !important; }
-.custom-carousel .v-btn--icon { background-color: rgba(0,0,0,0.4) !important; color: #ffd700 !important; }
+.custom-carousel .v-btn--icon { background-color: rgba(0,0,0,0.4) !important; color: #ffd700 !important; transform: scale(0.8); }
+@media (max-width: 600px) {
+  .custom-carousel .v-btn--icon { transform: scale(0.65); }
+}
 
 /* Hero text block */
-.hero-text { display: flex; flex-direction: column; justify-content: center; max-height: 500px; }
-.jump-heading { color: #ffd700; font-size: 3rem; font-weight: 900; margin-bottom: 0.6rem; line-height: 1.2; }
-.medium-desc { font-size: 1.4rem; color: #ccc; margin-bottom: 1rem; }
-.description-text { font-size: 1rem; color: #ddd; margin-bottom: 1.2rem; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; max-height: 500px; padding: clamp(0.5rem, 2vw, 1.5rem); }
+.jump-heading { 
+  color: #ffd700; 
+  font-size: clamp(1.6rem, 4vw, 2rem); 
+  font-weight: 900; 
+  margin-bottom: 0.6rem; 
+  line-height: 1.2; 
+  text-align: left;
+}
+.medium-desc { font-size: clamp(1rem, 1.5vw, 1.1rem); color: #ccc; margin-bottom: 1rem; text-align: left; }
+.description-text { font-size: clamp(0.75rem, 1.2vw, 1rem); color: #ddd; margin-bottom: 1.2rem; text-align: left; }
 
-.feature-list { list-style: none; padding: 0; margin: 0 0 1.5rem; margin-left: 15px;}
-.feature-list li { display: flex; align-items: center; margin-bottom: 0.4rem; font-size: 0.9rem; }
-.gold-tick { color: #ffd700; margin-right: 0.6rem; }
+.feature-list { list-style: none; padding: 0; margin: 0 0 1.5rem; margin-left: 15px; }
+.feature-list li { display: flex; align-items: center; margin-bottom: 0.4rem; font-size: clamp(0.75rem, 1vw, 0.9rem); }
+.gold-tick { color: #fdc703ff; margin-right: 0.6rem; }
 
 /* Buttons */
 .button-container {
@@ -151,8 +161,8 @@ onMounted(() => {
 
 .luxury-btn {
   border-radius: 30px;
-  padding: 10px 26px;
-  font-size: 0.95rem;
+  padding: clamp(8px, 2vw, 10px) clamp(18px, 4vw, 26px);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.5px;
   display: inline-flex;
@@ -168,7 +178,6 @@ onMounted(() => {
   color: white !important;
   box-shadow: 0 3px 10px rgba(212, 175, 55, 0.4);
 }
-
 .luxury-btn.primary:hover {
   background: linear-gradient(135deg, #c19d2b, #a67c1a);
   transform: translateY(-2px);
@@ -181,28 +190,32 @@ onMounted(() => {
   color: #d4af37 !important;
   border: 1.5px solid #d4af37;
 }
-
 .luxury-btn.secondary:hover {
   background-color: rgba(212, 175, 55, 0.1);
   transform: translateY(-2px);
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
+/* Small & foldable devices */
+@media (max-width: 480px) {
   .carousel-image-container,
-  .custom-carousel { height: 420px !important; margin-top: 20px;}
-  .jump-heading { font-size: 2rem; text-align: center; margin-top: 20px;}
-  .medium-desc { font-size: 1.1rem; text-align: center; }
-  .description-text { text-align: center; }
-  .button-container { flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 0px;}
+  .custom-carousel { height: 350px !important; margin-top: 15px;}
+  .jump-heading, .medium-desc, .description-text { text-align: center; }
+  .button-container { justify-content: center; gap: 0.5rem; margin-bottom: 0px; }
   .luxury-btn.primary, .luxury-btn.secondary {
     flex: 1 1 calc(50% - 0.6rem);
-    min-width: 140px;
-    max-width: 200px;
-    text-align: center;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    min-width: 120px;
+    max-width: 180px;
+    padding: 8px 10px;
   }
+}
+
+/* Ultra small screens (e.g., foldables half screen) */
+@media (max-width: 320px) {
+  .jump-heading { font-size: 1rem; }
+  .medium-desc { font-size: 0.75rem; }
+  .description-text { font-size: 0.6rem; }
+  .feature-list li { font-size: 0.5rem; }
+  .luxury-btn { font-size: 0.4rem; padding: 3px 4px; }
+  .carousel-image-container, .custom-carousel { height: 230px !important; }
 }
 </style>

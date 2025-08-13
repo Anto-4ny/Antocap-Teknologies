@@ -120,7 +120,7 @@ const isExpanded = ref(false)
 .about-section {
   background-color: #000;
   color: #fff;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .image-col {
@@ -130,9 +130,10 @@ const isExpanded = ref(false)
 }
 
 .v-img {
-  width: 20%;
-  height: 20%;
-  margin-left: 6%;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin-left: 4%;
 }
 
 .text-col {
@@ -163,39 +164,49 @@ const isExpanded = ref(false)
 /* Typography */
 .gold-heading {
   color: #ffd700;
-  font-size: 2.5rem;
+  font-size: clamp(1.7rem, 4vw, 0.85rem);
   font-weight: 900;
+  line-height: 1.2;
 }
+
 .intro-text {
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 1.2vw, .1rem);
   color: #ddd;
+  line-height: 1.6;
 }
 
 /* Feature grid */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 0.6rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem 1.2rem;
   margin: 1rem 0;
 }
+
 .feature-item {
   display: flex;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
+
 .gold-icon {
   color: #ffd700;
   margin-right: 0.6rem;
+  flex-shrink: 0;
 }
 
 .section-title {
   color: #ffd700;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 1.3vw, 1.3rem);
   margin-top: 1rem;
   margin-bottom: 0.4rem;
 }
 
-/* Buttons */
+  .mission-vision {
+    font-size: 0.85rem;
+  }
+
 /* Primary: Gold Luxury Button */
 .gold-btn-primary {
   background: linear-gradient(135deg, #d4af37, #b88a44);
@@ -204,10 +215,11 @@ const isExpanded = ref(false)
   font-family: 'Poppins', sans-serif;
   border-radius: 50px;
   padding: 10px 28px;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .gold-btn-primary:hover {
@@ -225,9 +237,10 @@ const isExpanded = ref(false)
   border: 2px solid #d4af37;
   border-radius: 50px;
   padding: 10px 28px;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .gold-btn-secondary:hover {
@@ -250,12 +263,62 @@ const isExpanded = ref(false)
   .gold-heading {
     text-align: center;
   }
-  .intro-text, .mission-vision {
+  .intro-text, 
+  .mission-vision {
     text-align: center;
   }
   .buttons-row {
     justify-content: center;
   }
+  .v-img {
+    margin-left: 0;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+    .gold-heading {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .intro-text, 
+  .mission-vision {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  .feature-item {
+    font-size: 0.75rem;
+  }
+  .gold-btn-primary, 
+  .gold-btn-secondary {
+    padding: 4px 10px;
+    font-size: 0.6rem;
+  }
+  .v-img {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 320px) {
+      .gold-heading {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  .intro-text, 
+  .mission-vision {
+    text-align: center;
+    font-size: 0.5rem;
+  }
+  .feature-item {
+    font-size: 0.5rem;
+  }
+  .gold-btn-primary, 
+  .gold-btn-secondary {
+    padding: 3px 8px;
+    font-size: 0.5rem;
+  }
+  .v-img {
+    max-width: 150px;
+  }
 }
 </style>
-

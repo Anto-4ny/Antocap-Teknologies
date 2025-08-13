@@ -56,22 +56,50 @@ const publicImageUrl = 'https://antocapteknologies.com/Antocap-logo.jpg'
 useMeta({
   title: 'Antocap Teknologies | Software, App & Website Development in Nairobi, Kenya',
   meta: [
-    { name: 'description', content: 'Antocap Teknologies is a leading software development company in Utawala, Nairobi, Kenya, offering software, websites, ecommerce, bots, SEO, and IT consulting services.' },
-    { name: 'keywords', content: 'Antocap Teknologies, software development Nairobi, app development Kenya, ecommerce websites Nairobi, SEO services Kenya, IT consultation, bot creation, web design Kenya, Antony Ndambuki' },
+    {
+      name: 'description',
+      content:
+        'Antocap Teknologies is a top software development company in Utawala, Nairobi, Kenya. We offer professional software, mobile apps, ecommerce websites, SEO, bots, and IT consulting services.'
+    },
+    {
+      name: 'keywords',
+      content:
+        'Antocap Teknologies, software development Nairobi, app development Kenya, ecommerce websites Nairobi, SEO services Kenya, IT consulting, bot creation, web design Kenya, Antony Ndambuki, website developers Nairobi'
+    },
     { name: 'author', content: 'Antony Ndambuki' },
     { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
 
-    { property: 'og:title', content: 'Antocap Teknologies | Software, Websites & SEO in Nairobi, Kenya' },
-    { property: 'og:description', content: 'Antocap Teknologies is a leading software development company in Utawala, Nairobi, Kenya, offering software, websites, ecommerce, bots, SEO, and IT consulting services. Founded by Antony Ndambuki, Antocap Teknologies builds premium software, apps, and websites. Trusted in Nairobi and beyond.' },
+    // Open Graph
+    {
+      property: 'og:title',
+      content:
+        'Antocap Teknologies | Premium Software, Websites & SEO in Nairobi, Kenya'
+    },
+    {
+      property: 'og:description',
+      content:
+        'Antocap Teknologies, founded by Antony Ndambuki, delivers premium software, mobile apps, ecommerce websites, bots, and SEO services in Nairobi and across Africa.'
+    },
     { property: 'og:image', content: publicImageUrl },
     { property: 'og:url', content: 'https://antocapteknologies.com/' },
     { property: 'og:type', content: 'website' },
 
+    // Twitter Cards
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Antocap Teknologies - Premium Software & IT Services in Kenya' },
-    { name: 'twitter:description', content: 'From software and app dev to SEO and bots, Antocap Teknologies delivers excellence across Africa.' },
+    {
+      name: 'twitter:title',
+      content:
+        'Antocap Teknologies - Premium Software & IT Services in Kenya'
+    },
+    {
+      name: 'twitter:description',
+      content:
+        'From software and app development to SEO and automation bots, Antocap Teknologies delivers trusted IT solutions across Africa.'
+    },
     { name: 'twitter:image', content: publicImageUrl }
   ],
+
+  // Structured Data
   script: [
     {
       type: 'application/ld+json',
@@ -85,18 +113,22 @@ useMeta({
           "@type": "Person",
           "name": "Antony Ndambuki",
           "jobTitle": "Software Engineer",
-          "description": "A young and experienced software engineer, founder of Antocap Teknologies in August 2024."
+          "description": "Antony Ndambuki, a skilled software engineer, founded Antocap Teknologies in August 2024 to deliver innovative digital solutions."
         },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Utawala",
           "addressLocality": "Nairobi",
+          "addressRegion": "Nairobi County",
+          "postalCode": "00100",
           "addressCountry": "Kenya"
         },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254757492614",
-          "contactType": "customer service"
+          "contactType": "Customer Service",
+          "areaServed": "Africa",
+          "availableLanguage": ["English", "Swahili"]
         },
         "sameAs": [
           "https://www.facebook.com/antocapteknologies",
@@ -106,15 +138,16 @@ useMeta({
           "https://www.youtube.com/@antocapteknologies",
           "https://www.tiktok.com/@antocapteknologies"
         ],
-        "description": "Antocap Teknologies is a software and IT solutions company based in Nairobi, Kenya. We provide web and mobile development, ecommerce, SEO, bots, IT consultation, and more.",
-        "serviceArea": {
-          "@type": "Place",
-          "name": "Africa"
-        }
+        "description":
+          "Antocap Teknologies is a Nairobi-based software and IT solutions company offering custom software, mobile apps, ecommerce platforms, SEO, bots, and consulting services.",
+        "serviceArea": [
+          { "@type": "Place", "name": "Kenya" },
+          { "@type": "Place", "name": "Africa" }
+        ]
       })
     }
   ]
-})
+});
 </script>
 
 <style scoped>
