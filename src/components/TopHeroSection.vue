@@ -138,14 +138,14 @@ onMounted(() => {
 .hero-text { display: flex; flex-direction: column; justify-content: center; max-height: 500px; padding: clamp(0.5rem, 2vw, 1.5rem); }
 .jump-heading { 
   color: #ffd700; 
-  font-size: clamp(1.6rem, 4vw, 2rem); 
+  font-size: clamp(1.8rem, 4vw, 3rem); 
   font-weight: 900; 
   margin-bottom: 0.6rem; 
   line-height: 1.2; 
   text-align: left;
 }
-.medium-desc { font-size: clamp(1rem, 1.5vw, 1.1rem); color: #ccc; margin-bottom: 1rem; text-align: left; }
-.description-text { font-size: clamp(0.75rem, 1.2vw, 1rem); color: #ddd; margin-bottom: 1.2rem; text-align: left; }
+.medium-desc { font-size: clamp(1.1rem, 1.6vw, 1.2rem); color: #ccc; margin-bottom: 1rem; text-align: left; }
+.description-text { font-size: clamp(0.85rem, 1.3vw, 1.1rem); color: #ddd; margin-bottom: 1.2rem; text-align: left; }
 
 .feature-list { list-style: none; padding: 0; margin: 0 0 1.5rem; margin-left: 15px; }
 .feature-list li { display: flex; align-items: center; margin-bottom: 0.4rem; font-size: clamp(0.75rem, 1vw, 0.9rem); }
@@ -199,7 +199,8 @@ onMounted(() => {
 @media (max-width: 480px) {
   .carousel-image-container,
   .custom-carousel { height: 350px !important; margin-top: 15px;}
-  .jump-heading, .medium-desc, .description-text { text-align: center; }
+  .jump-heading, .medium-desc, { text-align: center; }
+  .description-text { text-align: left; }
   .button-container { justify-content: center; gap: 0.5rem; margin-bottom: 0px; }
   .luxury-btn.primary, .luxury-btn.secondary {
     flex: 1 1 calc(50% - 0.6rem);
@@ -213,7 +214,7 @@ onMounted(() => {
 @media (max-width: 320px) {
   .jump-heading { font-size: 1rem; }
   .medium-desc { font-size: 0.75rem; }
-  .description-text { font-size: 0.6rem; }
+  .description-text { font-size: 0.6rem; text-align: left;}
   .feature-list li { font-size: 0.5rem; }
   .luxury-btn { font-size: 0.4rem; padding: 3px 4px; }
   .carousel-image-container, .custom-carousel { height: 230px !important; }
