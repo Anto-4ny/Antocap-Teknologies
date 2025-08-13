@@ -7,10 +7,6 @@
           <v-col cols="auto" class="d-flex align-center">
             <router-link to="/" class="d-flex align-center">
               <v-img :src="logo" alt="Antocap Teknologies Logo" height="60" width="70" class="mr-3" />
-              <div class="brand-text">
-                <div class="brand-main">Antocap</div>
-                <div class="brand-sub">Teknologies</div>
-              </div>
             </router-link>
           </v-col>
 
@@ -233,18 +229,6 @@ useHead({
 }
 .nav-link:hover::after {
   width: 100%;
-}
-.brand-text {
-  color: #fff;
-}
-.brand-main {
-  font-size: 12px;
-  font-weight: 700;
-}
-.brand-sub {
-  font-size: 7px;
-  color: #d4af37;
-  font-weight: 500;
 }
 
 a {
