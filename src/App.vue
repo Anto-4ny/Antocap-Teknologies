@@ -50,7 +50,7 @@ const setFavicon = () => {
 }
 setFavicon()
 
-const publicImageUrl = 'https://www.antocapteknologies.com/Antocap-logo.jpg'
+const publicImageUrl = 'https://antocapteknologies.com/Antocap-logo.jpg'
 
 // SEO Metadata
 useMeta({
@@ -64,7 +64,7 @@ useMeta({
     { property: 'og:title', content: 'Antocap Teknologies | Software, Websites & SEO in Nairobi, Kenya' },
     { property: 'og:description', content: 'Antocap Teknologies is a leading software development company in Utawala, Nairobi, Kenya, offering software, websites, ecommerce, bots, SEO, and IT consulting services. Founded by Antony Ndambuki, Antocap Teknologies builds premium software, apps, and websites. Trusted in Nairobi and beyond.' },
     { property: 'og:image', content: publicImageUrl },
-    { property: 'og:url', content: 'https://www.antocapteknologies.com/' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/' },
     { property: 'og:type', content: 'website' },
 
     { name: 'twitter:card', content: 'summary_large_image' },
@@ -79,7 +79,7 @@ useMeta({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Antocap Teknologies",
-        "url": "https://www.antocapteknologies.com/",
+        "url": "https://antocapteknologies.com/",
         "logo": publicImageUrl,
         "founder": {
           "@type": "Person",

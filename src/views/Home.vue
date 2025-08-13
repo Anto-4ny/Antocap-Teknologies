@@ -270,15 +270,15 @@ useHead({
     { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
     { property: 'og:title', content: 'Antocap Teknologies | IT Solutions, Web Development, SEO, POS' },
     { property: 'og:description', content: 'Antocap Teknologies provides top-notch IT solutions, web design, software development, SEO services, and AI-powered automation to boost your business.' },
-    { property: 'og:url', content: 'https://www.antocapteknologies.com' },
-    { property: 'og:image', content: 'https://www.antocapteknologies.com/logo.jpg' },
+    { property: 'og:url', content: 'https://antocapteknologies.com' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/logo.jpg' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Antocap Teknologies | IT & Web Solutions' },
     { name: 'twitter:description', content: 'Empowering businesses with innovative IT solutions, custom software, web design, and SEO services.' },
-    { name: 'twitter:image', content: 'https://www.antocapteknologies.com/logo.png' }
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/logo.png' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://www.antocapteknologies.com' }
+    { rel: 'canonical', href: 'https://antocapteknologies.com' }
   ]
 });
 
@@ -291,8 +291,8 @@ useHead({
         "@context": "http://schema.org",
         "@type": "Organization",
         "name": "Antocap Teknologies",
-        "url": "https://www.antocapteknologies.com",
-        "logo": "https://www.antocapteknologies.com/logo.png",
+        "url": "https://antocapteknologies.com",
+        "logo": "https://antocapteknologies.com/logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+254757492614",

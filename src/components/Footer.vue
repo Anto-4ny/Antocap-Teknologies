@@ -122,12 +122,12 @@
         <v-row class="justify-space-between flex-wrap mt-2">
           <v-col cols="12" sm="6" class="text-center text-sm-left">
             <p class="footer-note">
-              <a href="https://www.antocapteknologies.com/" class="text-gold">Antocap Teknologies</a>, All rights reserved.
+              <a href="https://antocapteknologies.com/" class="text-gold">Antocap Teknologies</a>, All rights reserved.
             </p>
           </v-col>
           <v-col cols="12" sm="6" class="text-center text-sm-right">
             <p class="footer-note">
-              Designed by <a href="https://www.antocapteknologies.com/" class="text-gold">Antocap Teknologies</a>
+              Designed by <a href="https://antocapteknologies.com/" class="text-gold">Antocap Teknologies</a>
             </p>
           </v-col>
         </v-row>
@@ -176,17 +176,17 @@ useHead({
     
     // Open Graph (Facebook, LinkedIn, etc.)
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://www.antocapteknologies.com/' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/' },
     { property: 'og:title', content: 'Antocap Teknologies | Premium IT & AI Solutions' },
     { property: 'og:description', content: 'Get premium IT services including website development, cybersecurity, bots, and remote support with Antocap Teknologies, led by CEO Antony Ndambuki.' },
-    { property: 'og:image', content: 'https://www.antocapteknologies.com/assets/Antocap-logo.jpg' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/assets/Antocap-logo.jpg' },
 
     // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:url', content: 'https://www.antocapteknologies.com/' },
+    { name: 'twitter:url', content: 'https://antocapteknologies.com/' },
     { name: 'twitter:title', content: 'Antocap Teknologies | Premium IT & AI Solutions' },
     { name: 'twitter:description', content: 'Explore high-end digital and remote IT services from Nairobi to the world with Antocap Teknologies.' },
-    { name: 'twitter:image', content: 'https://www.antocapteknologies.com/assets/Antocap-logo.jpg' }
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/assets/Antocap-logo.jpg' }
   ],
   script: [
     {
@@ -196,8 +196,8 @@ useHead({
         "@type": "Organization",
         "name": "Antocap Teknologies",
         "alternateName": "Antocap",
-        "url": "https://www.antocapteknologies.com",
-        "logo": "https://www.antocapteknologies.com/assets/Antocap-logo.jpg",
+        "url": "https://antocapteknologies.com",
+        "logo": "https://antocapteknologies.com/assets/Antocap-logo.jpg",
         "founder": {
           "@type": "Person",
           "name": "Antony Ndambuki"

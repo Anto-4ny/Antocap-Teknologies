@@ -105,9 +105,9 @@ onMounted(() => {
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        animateCount(count1, 500)
-        animateCount(count2, 95)
-        animateCount(count3, 10)
+        animateCount(count1, 600)
+        animateCount(count2, 96.7)
+        animateCount(count3, 15)
         observer.disconnect()
       }
     },

@@ -15,7 +15,7 @@ useHead({
   title: '404 - Page Not Found | Antocap Teknologies',
   meta: [
     { name: 'description', content: 'Page not found - Antocap Teknologies. This page no longer exists or was moved. Return to our homepage for premium web and software services in Nairobi.' },
-    { name: 'keywords', content: '404, page not found, Antocap Teknologies, return to homepage, website error, not found, Nairobi tech company, software development Kenya, web design, seo services, tech firm and agency in kenya, software development company in nairobi' },
+    { name: 'keywords', content: 'pos, website development, seo, 404, page not found, Antocap Teknologies, return to homepage, website error, not found, Nairobi tech company, software development Kenya, web design, seo services, tech firm and agency in kenya, software development company in nairobi' },
     { name: 'robots', content: 'index, follow' },
     { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
 

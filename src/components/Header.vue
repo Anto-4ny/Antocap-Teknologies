@@ -95,7 +95,7 @@ const menuItems = [
   { title: 'Rating & Reviews', href: '/testimonials', icon: 'mdi-comment-quote' }
 ]
 
-const logoUrl = 'https://www.antocapteknologies.com/logo.png'
+const logoUrl = 'https://antocapteknologies.com/logo.png'
 
 useHead({
   title: 'Antocap Teknologies | World’s Leading Software & IT Company',
@@ -109,7 +109,7 @@ useHead({
     // Open Graph
     { property: 'og:site_name', content: 'Antocap Teknologies' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://www.antocapteknologies.com/' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/' },
     { property: 'og:title', content: 'Antocap Teknologies | World’s Leading Software & IT Company' },
     { property: 'og:description', content: 'Revolutionizing IT & software globally. From Nairobi to the world, Antocap Teknologies delivers the best in software development, design, and tech solutions.' },
     { property: 'og:image', content: logoUrl },
@@ -123,7 +123,7 @@ useHead({
     { name: 'twitter:creator', content: '@antocap' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://www.antocapteknologies.com/' },
+    { rel: 'canonical', href: 'https://antocapteknologies.com/' },
     { rel: 'icon', href: '/Antocap-logo.jpg' }
   ],
   
@@ -134,8 +134,8 @@ useHead({
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: 'Antocap Teknologies',
-      image: 'https://www.antocapteknologies.com/logo.png',
-      url: 'https://www.antocapteknologies.com/',
+      image: 'https://antocapteknologies.com/logo.png',
+      url: 'https://antocapteknologies.com/',
       telephone: '+254757492614',
       email: 'antocaptechnologies@gmail.com',
       address: {

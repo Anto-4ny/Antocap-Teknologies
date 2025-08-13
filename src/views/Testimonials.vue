@@ -119,15 +119,15 @@ useHead({
     { name: 'robots', content: 'index, follow' },
     { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
     { property: 'og:title', content: 'Top Client Reviews | Antocap Teknologies' },
-    { property: 'og:description', content: '4.9+ Star Rating | Trusted Tech Solutions by Antocap Teknologies. Read our verified client testimonials.' },
-    { property: 'og:url', content: 'https://www.antocapteknologies.com/testimonials' },
-    { property: 'og:image', content: 'https://www.antocapteknologies.com/logo.png' },
+    { property: 'og:description', content: '5+ Star Rating | Trusted Tech Solutions by Antocap Teknologies. Read our verified client testimonials.' },
+    { property: 'og:url', content: 'https://antocapteknologies.com/testimonials' },
+    { property: 'og:image', content: 'https://antocapteknologies.com/logo.png' },
     { name: 'twitter:title', content: 'Client Testimonials | Antocap Teknologies' },
     { name: 'twitter:description', content: 'Read verified reviews and testimonials from happy clients of Antocap Teknologies.' },
-    { name: 'twitter:image', content: 'https://www.antocapteknologies.com/logo.png' }
+    { name: 'twitter:image', content: 'https://antocapteknologies.com/logo.png' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://www.antocapteknologies.com/testimonials' }
+    { rel: 'canonical', href: 'https://antocapteknologies.com/testimonials' }
   ],
   script: [
     {

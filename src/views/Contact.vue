@@ -151,6 +151,7 @@ const services = ref([
   { id: 9, name: 'Bot Creation' },
   { id: 10, name: 'Account Recovery & Device Support' },
   { id: 11, name: 'PIN Recovery (PC/Devices)' },
+  { id: 12, name: 'Point of Sale (POS)' },
 ]);
 
 const submitForm = async () => {
