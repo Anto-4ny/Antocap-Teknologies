@@ -64,14 +64,6 @@
         </v-list-item>
 
         <v-divider class="gold-border my-2"></v-divider>
-
-        <v-list-item class="px-3 py-2">
-          <v-btn block href="/signup" class="gold-btn">Sign Up</v-btn>
-        </v-list-item>
-        <v-list-item class="px-3 py-2">
-          <v-btn block href="/login" class="gold-btn">Login</v-btn>
-        </v-list-item>
-      </v-list>
     </v-navigation-drawer>
   </section>
 </template>
@@ -246,11 +238,11 @@ useHead({
   color: #fff;
 }
 .brand-main {
-  font-size: 22px;
+  font-size: 12px;
   font-weight: 700;
 }
 .brand-sub {
-  font-size: 14px;
+  font-size: 7px;
   color: #d4af37;
   font-weight: 500;
 }
