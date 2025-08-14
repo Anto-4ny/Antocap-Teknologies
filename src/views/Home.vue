@@ -159,14 +159,14 @@
     <SocialProofSection />
 
     <FooterBanner />
+
+    <Testimonials />
 </template>
 
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
+import { ref } from 'vue';
 import { useHead } from '@vueuse/head';
-
-import { isDarkMode, toggleTheme } from '@/composables/useTheme.js';
 
 import TopHeroSection from '@/components/TopHeroSection.vue';
 import CarouselSection from '@/components/CarouselSection.vue';
@@ -174,6 +174,7 @@ import PremiumServices from '@/components/PremiumServices.vue';
 import SocialProofSection from '@/components/SocialProofSection.vue';
 import FooterBanner from '@/components/FooterBanner.vue';
 import WhyChoose from '@/components/WhyChoose.vue';
+import Testimonials from './Testimonials.vue';
 
 // Reactive services data
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -261,7 +262,7 @@ function calcSavePercent(was, now) {
 
 // SEO meta
 useHead({
-  title: 'Antocap Teknologies | Leading IT Solutions, Web & Software Development, SEO Services, pos systems',
+  title: 'Antocap Teknologies | Leading IT Solutions, Web & Software Development',
   meta: [
     { name: 'description', content: 'Antocap Teknologies offers innovative IT solutions, web development, software & app development, SEO services, pos systems. We help businesses achieve growth through cutting-edge technology and custom-built solutions.' },
     { name: 'keywords', content: 'pos, point of sale systems, IT solutions, web development, app development, SEO services, software development, AI-powered automation, cloud services, technology solutions' },

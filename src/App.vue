@@ -1,12 +1,12 @@
 <template>
   <v-app :class="{ 'light-mode': !isDarkMode, 'dark-mode': isDarkMode }">
-    <!-- Theme Toggle Button -->
+    <!-- Theme Toggle Button 
     <div class="theme-toggle" @click="toggleTheme">
       <v-icon
         :class="{ 'bulb-on': !isDarkMode, 'bulb-off': isDarkMode }"
         size="40"
       >mdi-lightbulb</v-icon>
-    </div>
+    </div>-->
 
     <!-- Header, Content, Footer -->
     <Header />

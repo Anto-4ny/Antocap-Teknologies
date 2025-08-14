@@ -128,7 +128,7 @@ onMounted(() => {
 .overlay-desc { font-size: clamp(0.75rem, 2vw, 0.9rem); color: #fff; }
 
 /* Force carousel arrows visible */
-.custom-carousel .v-carousel__controls { opacity: 1 !important; visibility: visible !important; }
+.custom-carousel .v-carousel__controls { opacity: 0 !important; visibility: visible !important; }
 .custom-carousel .v-btn--icon { background-color: rgba(0,0,0,0.4) !important; color: #ffd700 !important; transform: scale(0.8); }
 @media (max-width: 600px) {
   .custom-carousel .v-btn--icon { transform: scale(0.65); }
@@ -200,7 +200,7 @@ onMounted(() => {
   .top-section { overflow-x: hidden; }
   .carousel-image-container,
   .custom-carousel { height: 350px !important; margin-top: 15px;}
-  .jump-heading, .medium-desc, { text-align: center; }
+  .jump-heading, .medium-desc { text-align: center; }
   .description-text { text-align: left; }
   .button-container { justify-content: center; gap: 0.5rem; margin-bottom: 0px; }
   .luxury-btn.primary, .luxury-btn.secondary {

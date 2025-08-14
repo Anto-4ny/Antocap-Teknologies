@@ -103,10 +103,10 @@ const menuItems = [
   { title: "Rating & Reviews", href: "/testimonials", icon: "mdi-comment-quote" }
 ]
 
-const appBarWidth = ref("97%")
+const appBarWidth = ref("93%")
 
 const handleScroll = () => {
-  appBarWidth.value = window.scrollY > 50 ? "100%" : "97%"
+  appBarWidth.value = window.scrollY > 50 ? "100%" : "93%"
 }
 
 onMounted(() => {
@@ -127,6 +127,7 @@ onUnmounted(() => {
 .v-app-bar {
   overflow-x: hidden;
 }
+
 .pure-black {
   background-color: #000 !important;
 }

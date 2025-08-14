@@ -175,6 +175,7 @@
       <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
         <FooterBanner />
       </div>
+      <Testimonials />
     </v-container>
   </div>
 </template>
@@ -186,6 +187,7 @@ import { ref } from 'vue'
 import SocialProofSection from '@/components/SocialProofSection.vue'
 import FooterBanner from '@/components/FooterBanner.vue'
 import WhyChoose from '@/components/WhyChoose.vue'
+import Testimonials from './Testimonials.vue';
 import { isDarkMode, toggleTheme } from '@/composables/useTheme.js';
 
 import { useHead } from '@vueuse/head'
