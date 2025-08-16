@@ -73,14 +73,39 @@ import FooterBanner from '@/components/FooterBanner.vue'
           title: 'Antocap Teknologies',
           link: 'https://antocapteknologies.com/', 
         },
-                {
+        {
+          title: 'Moovin Property Management',
+          link: 'https://moovin-eight.vercel.app/', 
+        },
+        {
+          title: 'Halon Graphics',
+          link: 'https://anto-4ny.github.io/halon-graphics/', 
+        },
+        {
+          title: 'Dickyways Tours & Travels',
+          link: 'https://anto-4ny.github.io/dickyways/', 
+        },
+        {
+          title: 'Allekey Tours & Travels',
+          link: 'https://anto-4ny.github.io/allekey/', 
+        },
+        {
+          title: 'Chestermac',
+          link: 'https://anto-4ny.github.io/chestermac/', 
+        },
+        {
           title: 'Polarhomes',
           link: 'https://polarhomes.org/', 
         },
-           {
-          title: 'Cleaning Treks website',
+                {
+          title: 'Curriculam Vitae',
+          link: 'https://cv-neon-omega.vercel.app/', 
+        },
+        {
+          title: 'Cleaning Treks',
           link: 'https://www-cleaninigtreks-com.vercel.app/', 
         },
+
       ]
     },
     {
@@ -100,8 +125,8 @@ import FooterBanner from '@/components/FooterBanner.vue'
           link: 'https://subsmart-website.vercel.app/',
         },
         {
-          title: 'coming soon',
-          link: '', 
+          title: 'Property Management System',
+          link: 'https://moovin-eight.vercel.app/', 
         },
       ]
     },
