@@ -57,7 +57,7 @@
               </v-col>
               <v-col cols="6">
                 <v-list class="footer-list">
-                  <v-list-item link to="/service"><span>> Our Services</span></v-list-item>
+                  <v-list-item link to="/services"><span>> Our Services</span></v-list-item>
                   <v-list-item link to="/project"><span>> Our Projects</span></v-list-item>
                   <v-list-item link to="/blog"><span>> Latest Blog</span></v-list-item>
                   <v-list-item link to="/testimonials"><span>> Rating & Reviews</span></v-list-item> 
