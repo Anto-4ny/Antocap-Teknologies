@@ -69,32 +69,39 @@
             </v-card-subtitle>
 
             <!-- Price Details -->
-            <div class="mb-4">
-              <div class="white-accent mb-1">
-                <strong class="white--text">was:</strong>
-                <span class="line-through mr-2" style="opacity: 0.7;">
-                  {{ plan.wasKes.toLocaleString() }} kes
-                </span>
-              </div>
-              <div class="white-accent mb-3">
-                <strong class="white--text">NOW:</strong>
-                <span class="gold-accent">
-                  {{ plan.kes.toLocaleString() }} kes
-                </span>
-              </div>
-              <div class="white-accent mb-1">
-                <strong class="white--text">was:</strong>
-                <span class="line-through mr-2" style="opacity: 0.7;">
-                  ${{ plan.wasUsd.toFixed(2) }}
-                </span>
-              </div>
-              <div class="white-accent">
-                <strong class="white--text">NOW:</strong>
-                <span class="gold-accent">
-                  ${{ plan.usd.toFixed(2) }}
-                </span>
-              </div>
-            </div>
+            <v-row class="mb-4" align="start" justify="space-between" no-gutters>
+              <!-- KES Column (left aligned) -->
+              <v-col class="pr-4" style="border-right: 1px solid #d4af37; text-align: left; max-width: 50%;">
+                <div>
+                  <span class="text-caption text-white text-opacity-70">Was:</span>
+                  <span class="text-caption text-white text-opacity-70 text-decoration-line-through ml-1">
+                    {{ plan.wasKes.toLocaleString() }} KES
+                  </span>
+                </div>
+                <div class="mt-1">
+                  <span class="text-caption text-white">Now:</span>
+                  <span class="text-subtitle-2 font-weight-bold ml-1" style="color: #d4af37;">
+                    {{ plan.kes.toLocaleString() }} KES
+                  </span>
+                </div>
+              </v-col>
+
+              <!-- USD Column (right aligned) -->
+              <v-col class="pl-4" style="text-align: right; max-width: 50%;">
+                <div>
+                  <span class="text-caption text-white text-opacity-70">Was:</span>
+                  <span class="text-caption text-white text-opacity-70 text-decoration-line-through ml-1">
+                    ${{ plan.wasUsd.toFixed(2) }}
+                  </span>
+                </div>
+                <div class="mt-1">
+                  <span class="text-caption text-white">Now:</span>
+                  <span class="text-subtitle-2 font-weight-bold ml-1" style="color: #d4af37;">
+                    ${{ plan.usd.toFixed(2) }}
+                  </span>
+                </div>
+              </v-col>
+            </v-row>
 
             <!-- Features -->
             <v-list dense class="mb-4">

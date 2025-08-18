@@ -72,16 +72,18 @@ import managementImg from '@/assets/management.jpg';
 import revampImg from '@/assets/revamp.jpg';
 import automationImg from '@/assets/automation.jpg';
 import itSupportImg from '@/assets/itSupport.jpg';
+import graphicdesign from '@/assets/design.png';
 
 const services = ref([
-  { title: 'Website Development', description: 'Elegant, fast, and responsive websites crafted for maximum impact.', icon: 'mdi-web', image: webdev, slug: 'services' },
-  { title: 'App Development', description: 'Scalable mobile and desktop applications for the modern era.', icon: 'mdi-cellphone', image: appDevImg, slug: 'services' },
-  { title: 'SEO Optimization', description: 'Boost your visibility with precision-targeted SEO strategies.', icon: 'mdi-chart-line', image: seoImg, slug: 'services' },
-  { title: 'POS Systems', description: 'Luxury retail & restaurant POS solutions for seamless transactions.', icon: 'mdi-cash-register', image: posImg, slug: 'services' },
-  { title: 'Management Systems', description: 'Streamline operations with custom management software.', icon: 'mdi-office-building-cog', image: managementImg, slug: 'services' },
-  { title: 'Web Revamping', description: 'Transform outdated sites into premium digital experiences.', icon: 'mdi-refresh', image: revampImg, slug: 'services' },
-  { title: 'Automation', description: 'Save time and costs with advanced automation solutions.', icon: 'mdi-robot', image: automationImg, slug: 'services' },
-  { title: 'IT Support', description: 'Reliable and responsive IT support for your business.', icon: 'mdi-laptop', image: itSupportImg, slug: 'services' }
+  { title: 'Website Development', description: 'Elegant, fast, and responsive websites crafted for maximum impact.', icon: 'mdi-web', image: webdev, slug: 'services/website-development' },
+  { title: 'App Development', description: 'Scalable mobile and desktop applications for the modern era.', icon: 'mdi-cellphone', image: appDevImg, slug: 'services/software-app-development' },
+  { title: 'SEO Optimization', description: 'Boost your visibility with precision-targeted SEO strategies.', icon: 'mdi-chart-line', image: seoImg, slug: 'services/seo' },
+  { title: 'POS Systems', description: 'Luxury retail & restaurant POS solutions for seamless transactions.', icon: 'mdi-cash-register', image: posImg, slug: 'services/pos-softwares' },
+  { title: 'Management Systems', description: 'Streamline operations with custom management software.', icon: 'mdi-office-building-cog', image: managementImg, slug: 'services/management-systems' },
+  { title: 'Web Revamping', description: 'Transform outdated sites into premium digital experiences.', icon: 'mdi-refresh', image: revampImg, slug: 'services/web-app-revamping' },
+  { title: 'Automation', description: 'Save time and costs with advanced automation solutions.', icon: 'mdi-robot', image: automationImg, slug: 'services/automation' },
+  { title: 'IT Support', description: 'Reliable and responsive IT support for your business.', icon: 'mdi-laptop', image: itSupportImg, slug: 'services/it-support' },
+  { title: 'Graphic Design', description: 'High-impact visuals, branding, and creative designs that captivate your audience.', icon: 'mdi-draw', image: graphicdesign, slug: 'services/graphic-design' }
 ]);
 </script>
 
@@ -91,7 +93,7 @@ const services = ref([
   width: 100%;
   padding: 4rem 0;
   background: linear-gradient(180deg, #000, #111);
-  overflow-x: hidden; /* Prevent horizontal scroll inside this section */
+  overflow-x: hidden; 
 }
 
 /* Override Vuetify's default container constraints */
