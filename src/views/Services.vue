@@ -67,7 +67,7 @@ const services = ref([
     slug: 'website-development',
     shortDescription: 'Custom-built, responsive websites with sleek design, high performance, and SEO optimization.',
     icon: 'mdi-web',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/webdev.webp', import.meta.url).href
   },
   {
@@ -75,7 +75,7 @@ const services = ref([
     slug: 'software-app-development',
     shortDescription: 'Efficient, secure, and scalable software and mobile apps tailored to your business needs.',
     icon: 'mdi-application-cog',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/appDev.jpg', import.meta.url).href
   },
   {
@@ -83,7 +83,7 @@ const services = ref([
     slug: 'graphic-design',
     shortDescription: 'High-impact visuals, branding, and creative designs that captivate your audience.',
     icon: 'mdi-palette',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/design.png', import.meta.url).href
   },
   {
@@ -91,7 +91,7 @@ const services = ref([
     slug: 'seo',
     shortDescription: 'Boost visibility, rank higher, and increase organic traffic with modern SEO strategies.',
     icon: 'mdi-magnify',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/seo.jpg', import.meta.url).href
   },
   {
@@ -99,7 +99,7 @@ const services = ref([
     slug: 'automation',
     shortDescription: 'Streamline operations and reduce costs with cutting-edge automation solutions.',
     icon: 'mdi-robot',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/automation.jpg', import.meta.url).href
   },
   {
@@ -107,7 +107,7 @@ const services = ref([
     slug: 'pos-softwares',
     shortDescription: 'Smart, reliable, and secure POS systems for retail and hospitality businesses.',
     icon: 'mdi-cash-register',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/pos.png', import.meta.url).href
   },
   {
@@ -115,7 +115,7 @@ const services = ref([
     slug: 'management-systems',
     shortDescription: 'Enterprise-grade management platforms to handle your operations with ease.',
     icon: 'mdi-domain',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/management.jpg', import.meta.url).href
   },
   {
@@ -123,7 +123,7 @@ const services = ref([
     slug: 'billing-systems',
     shortDescription: 'Seamless billing and invoicing solutions for businesses of all sizes.',
     icon: 'mdi-receipt-text',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/billing.png', import.meta.url).href
   },
   {
@@ -131,7 +131,7 @@ const services = ref([
     slug: 'web-app-revamping',
     shortDescription: 'Modernize your existing platforms with premium redesigns and optimizations.',
     icon: 'mdi-refresh',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/revamp.jpg', import.meta.url).href
   },
   {
@@ -139,7 +139,7 @@ const services = ref([
     slug: 'it-support',
     shortDescription: 'Reliable, round-the-clock IT support for uninterrupted business growth.',
     icon: 'mdi-headset',
-    iconColor: 'gold',
+    iconColor: '#d4af37',
     image: new URL('@/assets/itSupport.jpg', import.meta.url).href
   }
 ])
@@ -254,7 +254,7 @@ import { useHead } from '@vueuse/head'
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   border: 2px solid gold;
   border-radius: 50%;
   padding: 15px;

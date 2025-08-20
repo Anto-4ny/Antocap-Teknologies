@@ -84,61 +84,122 @@
         </v-col>
       </v-row>
 
-      <!-- Portfolio / Samples Section -->
-      <v-row class="mt-16" data-aos="fade-up">
-        <v-col cols="12" class="text-center mb-10">
-          <h2 class="text-h5 font-weight-bold text-uppercase" style="color: #d4af37;">
-            Featured Projects
-          </h2>
-          <div class="mx-auto mt-2" style="width: 60px; height: 2px; background: #d4af37;"></div>
-        </v-col>
+            <!-- Featured Projects -->
+            <v-row class="mt-16" data-aos="fade-up">
+              <v-col cols="12" class="text-center mb-10">
+                <h2 class="text-h5 font-weight-bold text-uppercase" style="color: #d4af37;">
+                  Featured Projects
+                </h2>
+                <div class="mx-auto mt-2" style="width: 60px; height: 2px; background: #d4af37;"></div>
+              </v-col>
 
-        <v-col
-          v-for="(project, i) in service.projects"
-          :key="i"
-          cols="12"
-          md="4"
-          class="d-flex"
-          data-aos="zoom-in"
-          data-aos-delay="100"
-        >
-          <v-card class="bg-black elevation-12 rounded-lg w-100">
-            <v-img
-              :src="project.image"
-              :alt="project.name"
-              height="130"
-              class="rounded-t-lg"
-              cover
-            />
-            <v-card-text class="pa-6">
-              <h3 class="text-subtitle-1 font-weight-bold mb-2" style="color: #fff;">
-                {{ project.name }}
-              </h3>
-              <p class="text-body-2 mb-4" style="color: #aaa;">
-                {{ project.description }}
-              </p>
-              <v-btn
-                :href="project.link"
-                target="_blank"
-                color="gold"
-                variant="outlined"
-                rounded="pill"
-                size="small"
-                class="text-body-2 font-weight-bold"
-              >
-                View Live
-              </v-btn>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
+              <v-col cols="12">
+                <!-- Swiper -->
+                <swiper
+                  :slides-per-view="1"
+                  :space-between="16"
+                  :loop="true"
+                  :autoplay="{ delay: 2500, disableOnInteraction: false }"
+                  :breakpoints="{
+                    640: { slidesPerView: 1.3 },
+                    960: { slidesPerView: 2.3 },
+                    1280: { slidesPerView: 3.3 }
+                  }"
+                  :navigation="{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev'
+                  }"
+                  class="pb-10"
+                >
+                  <swiper-slide v-for="(project, i) in service.projects" :key="i">
+                    <v-card class="bg-black elevation-8 rounded-lg w-100" max-width="280">
+                      <v-img
+                        :src="project.image"
+                        :alt="project.name"
+                        height="120"
+                        class="rounded-t-lg"
+                        cover
+                      />
+                      <v-card-text class="pa-4">
+                        <h3 class="text-subtitle-2 font-weight-bold mb-2 text-white">
+                          {{ project.name }}
+                        </h3>
+                        <p class="text-body-2 mb-3" style="color: #aaa;">
+                          {{ project.description }}
+                        </p>
+
+                        <!-- Button logic -->
+                        <v-btn
+                          v-if="project.link"
+                          :href="project.link"
+                          target="_blank"
+                          color="gold"
+                          variant="outlined"
+                          rounded="pill"
+                          size="small"
+                          class="text-body-2 font-weight-bold"
+                        >
+                          View Live
+                        </v-btn>
+
+                        <v-btn
+                          v-else
+                          color="gold"
+                          variant="outlined"
+                          rounded="pill"
+                          size="small"
+                          class="text-body-2 font-weight-bold"
+                          @click="openImage(project.image)"
+                        >
+                          View Image
+                        </v-btn>
+                      </v-card-text>
+                    </v-card>
+                  </swiper-slide>
+
+                <!-- Custom gold arrows -->
+                <div class="custom-prev nav-arrow left">
+                  <v-icon size="32" color="gold">mdi-chevron-left</v-icon>
+                </div>
+                <div class="custom-next nav-arrow right">
+                  <v-icon size="32" color="gold">mdi-chevron-right</v-icon>
+                </div>
+
+                </swiper>
+              </v-col>
+
+              <!-- Modal for image preview -->
+              <v-dialog v-model="imageDialog" max-width="600">
+                <v-card>
+                  <v-img :src="selectedImage" height="400" contain />
+                </v-card>
+              </v-dialog>
+            </v-row>
     </v-container>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue"
 import { useRoute } from "vue-router"
+import { Swiper, SwiperSlide } from "swiper/vue"
+import "swiper/css"
+import "swiper/css/navigation"
 
+// state for image modal
+const imageDialog = ref(false)
+const selectedImage = ref(null)
+
+function openImage(img) {
+  selectedImage.value = img
+  imageDialog.value = true
+}
+
+// route
+const route = useRoute()
+const slug = route.params.slug
+
+// images
 const images = {
   "web-development": new URL("@/assets/webdev.webp", import.meta.url).href,
   "graphic-design": new URL("@/assets/design.png", import.meta.url).href,
@@ -150,14 +211,10 @@ const images = {
   "web-app-revamping": new URL("@/assets/revamp.jpg", import.meta.url).href,
   "it-support": new URL("@/assets/itSupport.jpg", import.meta.url).href,
   "app-development": new URL("@/assets/appDev.jpg", import.meta.url).href,
-  "default": new URL("@/assets/bjk.gif", import.meta.url).href,
+  default: new URL("@/assets/bjk.gif", import.meta.url).href,
 }
 
-// route
-const route = useRoute()
-const slug = route.params.slug
-
-// services data with portfolio samples
+// services data
 const services = {
   "website-development": {
     title: "Web Development",
@@ -205,8 +262,7 @@ const services = {
       { icon: "mdi-instagram", text: "Elegant Social Media Kits" },
     ],
     image: images["graphic-design"],
-    projects: [
-    ],
+    projects: [],
   },
 
   "seo": {
@@ -223,7 +279,8 @@ const services = {
     projects: [
       {
         name: "Product Trace limited",
-        description: "Boosted global rankings by 100% in 3 months. Keywords such as 'barcodes in kenya'",
+        description:
+          "Boosted global rankings by 100% in 3 months. Keywords such as 'barcodes in kenya'",
         link: "https://www.product-traceltd.com/",
         image: new URL("/client-logos/product-trace-ltd-logo.png", import.meta.url).href,
       },
@@ -241,8 +298,7 @@ const services = {
       { icon: "mdi-clock-fast", text: "Time & Cost Efficiency" },
     ],
     image: images["automation"],
-    projects: [
-    ],
+    projects: [],
   },
 
   "pos-softwares": {
@@ -256,8 +312,7 @@ const services = {
       { icon: "mdi-account-group", text: "Multi-user & Roles" },
     ],
     image: images["pos-softwares"],
-    projects: [
-    ],
+    projects: [],
   },
 
   "management-systems": {
@@ -271,8 +326,7 @@ const services = {
       { icon: "mdi-domain", text: "Custom Enterprise Solutions" },
     ],
     image: images["management-systems"],
-    projects: [
-    ],
+    projects: [],
   },
 
   "billing-systems": {
@@ -286,8 +340,7 @@ const services = {
       { icon: "mdi-chart-bar", text: "Revenue & Expense Reports" },
     ],
     image: images["billing-systems"],
-    projects: [
-    ],
+    projects: [],
   },
 
   "web-app-revamping": {
@@ -304,7 +357,8 @@ const services = {
     projects: [
       {
         name: "Antocap Teknologies",
-        description: "Revamped the whole software development website with modern UI.",
+        description:
+          "Revamped the whole software development website with modern UI.",
         link: "https://antocapteknologies.com/",
         image: new URL("@/assets/Antocap-logo.jpg", import.meta.url).href,
       },
@@ -322,12 +376,11 @@ const services = {
       { icon: "mdi-cloud", text: "Cloud Backup & Recovery" },
     ],
     image: images["it-support"],
-    projects: [
-    ],
+    projects: [],
   },
 }
 
-// fallback
+// fallback service
 const service = services[slug] || {
   title: "Service Not Found",
   description: "The requested service does not exist.",
@@ -350,5 +403,23 @@ const service = services[slug] || {
 }
 .letter-spacing-lg {
   letter-spacing: 4px;
+}
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.nav-arrow.left {
+  left: -20px; /* adjust spacing */
+}
+
+.nav-arrow.right {
+  right: -20px; /* adjust spacing */
 }
 </style>

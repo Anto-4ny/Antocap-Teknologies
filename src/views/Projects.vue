@@ -1,336 +1,306 @@
 <template>
-    <v-container fluid class="py-16 mt-10 bg-grey-4" data-aos="fade-up">
-        <v-row justify="center" class="text-center mb-10">
-    <v-col cols="12" md="8">
-      <h5 class="text-primary mb-2">Our Completed Projects</h5>
-      <h1 class="mb-4 animated-heading">
-        <span class="blue-heading-text">Our Completed Projects</span>
-      </h1>
-      <p class="text-grey-darken-1">
-        At Antocap Teknologies, we take pride in delivering tailored solutions to our clients, from cutting-edge websites to complex management systems. Explore our portfolio of successful projects that showcase our expertise across various industries.
-      </p>
-    </v-col>
-  </v-row>
-  
-      <!-- Project Categories -->
-      <v-row class="mb-10" justify="center" align="center">
-        <v-col v-for="(category, index) in projects" :key="index" cols="12" md="4" data-aos="fade-up" :data-aos-delay="100 * (index % 3)">
-          <v-card
-            class="elevation-12 service-card text-center pa-6"
-            :style="{ background: 'linear-gradient(145deg, #00b4d8 0%, #0077b6 100%)' }"
+  <section class="projects-section">
+    <v-container>
+      <!-- Heading -->
+      <div class="section-heading" data-aos="fade-down">
+        <h2 class="gold-gradient">Our Completed Projects</h2>
+        <p class="subtitle">Showcasing digital excellence across industries</p>
+      </div>
+
+      <!-- Loop through Categories -->
+      <div
+        v-for="(category, i) in projects"
+        :key="i"
+        class="category-wrapper"
+      >
+        <!-- Category Title -->
+        <div class="category-heading" data-aos="fade-up">
+          <v-icon :icon="category.icon" class="category-icon"></v-icon>
+          <h3>{{ category.category }}</h3>
+        </div>
+
+        <!-- Swiper -->
+        <swiper
+          :modules="[Autoplay, Navigation]"
+          :slides-per-view="2"
+          :space-between="12"
+          :loop="true"
+          :autoplay="{ delay: 4000, disableOnInteraction: false }"
+          :navigation="{ prevEl: `.prev-${i}`, nextEl: `.next-${i}` }"
+          :breakpoints="{
+            480: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+            1440: { slidesPerView: 5 }
+          }"
+          class="projects-swiper"
+        >
+          <swiper-slide
+            v-for="(project, j) in category.projects"
+            :key="j"
           >
-            <v-icon class="text-black service-icon" size="60">mdi-web</v-icon>
-            <h3 class="text-h5 font-weight-bold mt-4">{{ category.category }}</h3>
-            <v-list>
-              <v-list-item-group>
-                <v-list-item v-for="(project, index) in category.projects" :key="index">
-                  <v-list-item-content>
-                    <v-list-item-title>
-                      <v-btn
-                        :href="project.link"
-                        class="text-white project-link-btn"
-                        depressed
-                        block
-                      >
-                        {{ project.title }}
-                      </v-btn>
-                    </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
-          </v-card>
-        </v-col>
-      </v-row>
-    <SocialProofSection />
-    <FooterBanner />
-  </v-container>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+              <!-- Image -->
+              <div class="card-image">
+                <img :src="project.image" alt="project preview" />
+              </div>
+
+              <!-- Content -->
+              <div class="card-content">
+                <h4>{{ project.title }}</h4>
+                <p>{{ project.description }}</p>
+                <a :href="project.link" target="_blank">
+                  <v-btn class="gold-btn mt-2">View</v-btn>
+                </a>
+              </div>
+            </div>
+          </swiper-slide>
+
+          <!-- Category-specific Nav -->
+          <v-btn icon class="nav-btn prev-btn" :class="`prev-${i}`">
+            <v-icon icon="mdi-chevron-left" />
+          </v-btn>
+          <v-btn icon class="nav-btn next-btn" :class="`next-${i}`">
+            <v-icon icon="mdi-chevron-right" />
+          </v-btn>
+        </swiper>
+      </div>
+    </v-container>
+  </section>
 </template>
 
+<style scoped>
+.projects-section {
+  width: 100%;
+  padding: 3rem 0;
+  background: linear-gradient(180deg, #000, #111);
+  overflow-x: hidden;
+  margin-top: 2%;
+}
+
+.projects-section .v-container {
+  max-width: 95% !important;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gold-gradient {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ffd700, #b8860b);
+  -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Category Heading */
+.category-wrapper {
+  margin-bottom: 2rem;
+  position: relative;
+}
+.category-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.category-heading h3 {
+  color: #ffd700;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.category-icon {
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+/* Swiper custom nav */
+.nav-btn {
+  background: linear-gradient(90deg, #ffd700, #b8860b);
+  color: #000 !important;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 1;
+}
+.prev-btn { left: 2px; }
+.next-btn { right: 2px; }
+.nav-btn .v-icon { font-size: 0.9rem; }
+
+/* Ultra Compact Project Cards */
+.project-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(255, 215, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 220px;
+  margin: 0 auto;
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(255, 215, 0, 0.25);
+}
+
+/* Image with aspect ratio */
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Compact content */
+.card-content {
+  padding: 0.5rem;
+}
+.card-content h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffd700;
+  margin-bottom: 0.2rem;
+}
+.card-content p {
+  font-size: 0.7rem;
+  line-height: 1.1;
+  color: #ccc;
+  height: 28px; /* keep short descriptions aligned */
+  overflow: hidden;
+}
+
+/* Tiny button */
+.gold-btn {
+  background: linear-gradient(90deg, #ffd700, #b8860b);
+  color: #000 !important;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 2px 6px;
+  min-height: unset;
+}
+</style>
 
 <script setup>
-import SocialProofSection from '@/components/SocialProofSection.vue'
-import FooterBanner from '@/components/FooterBanner.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-  import { ref } from 'vue'
-  import { useHead } from '@vueuse/head'
-  
-  // List of completed projects with links and descriptions for each category
-  const projects = ref([
-        {
-      category: 'Artificial Inteligence(Ai)',
-      projects: [
-        {
-          title: 'Ai Life simulation',
-          link: 'https://ai-chatbot-rho-three-50.vercel.app/', 
-        },
-      ]
-    },
+// Example imports (replace with real ones from your assets folder)
+import aiLife from '@/assets/ai-life.jpg';
+import antocap from '@/assets/Antocap-logo.jpg';
+import moovin from '@/assets/moovin.png';
+import dickyways from '@/assets/dickyways.jpg';
+import halon from '@/assets/halon.jpg';
+import allekey from '@/assets/allekey.jpg';
+import chestermac from '@/assets/chestermac.jpg';
+import polarhomes from '/client-logos/polarhomes-logo.jpg';
+import cleaningtreks from '@/assets/cleaningtreks.jpeg';
+import jubazone from '@/assets/jubazone.webp';
+import subscription from '@/assets/subscription.png';
+import property from '@/assets/property.png';
+import billing from '@/assets/billings.png';
+import producttrace from '/client-logos/product-trace-ltd-logo.png';
+import sanfiat from '/client-logos/sanfiat-logo.png';
+import quantum from '/client-logos/quantumincome-logo.jpg';
+import jobtask from '@/assets/jobtask.jpg';
+
+const projects = [
+  {
+    category: 'Service Websites',
+    icon: 'mdi-web',
+    projects: [
+      { title: 'Antocap Teknologies', description: 'Our flagship website showcasing premium IT and digital solutions.', link: 'https://antocapteknologies.com/', image: antocap },
+      { title: 'Dickyways Tours & Travels', description: 'A dynamic travel booking site with integrated payments and itinerary management.', link: 'https://anto-4ny.github.io/dickyways/', image: dickyways },
+      { title: 'Halon Graphics', description: 'A creative agency website highlighting modern branding and graphic design services.', link: 'https://anto-4ny.github.io/halon-graphics/', image: halon },
+      { title: 'Allekey Tours & Travels', description: 'A sleek travel portal designed for easy bookings and destination showcases.', link: 'https://anto-4ny.github.io/allekey/', image: allekey },
+      { title: 'Chestermac Consultants', description: 'A professional KRA services portal with client-focused user experience.', link: 'https://anto-4ny.github.io/chestermac/', image: chestermac },
+      { title: 'Polarhomes', description: 'A modern accommodation and Airbnb-style booking site built for reliability.', link: 'https://polarhomes.org/', image: polarhomes },
+      { title: 'Cleaning Treks', description: 'A Scandinavian cleaning service website designed with clean UI and local SEO.', link: 'https://www-cleaninigtreks-com.vercel.app/', image: cleaningtreks }
+    ]
+  },
     {
-      category: 'Services Websites',
-      projects: [
-        {
-          title: 'Antocap Teknologies',
-          link: 'https://antocapteknologies.com/', 
-        },
-        {
-          title: 'Moovin Property Management',
-          link: 'https://moovin-eight.vercel.app/', 
-        },
-        {
-          title: 'Halon Graphics',
-          link: 'https://anto-4ny.github.io/halon-graphics/', 
-        },
-        {
-          title: 'Dickyways Tours & Travels',
-          link: 'https://anto-4ny.github.io/dickyways/', 
-        },
-        {
-          title: 'Allekey Tours & Travels',
-          link: 'https://anto-4ny.github.io/allekey/', 
-        },
-        {
-          title: 'Chestermac',
-          link: 'https://anto-4ny.github.io/chestermac/', 
-        },
-        {
-          title: 'Polarhomes',
-          link: 'https://polarhomes.org/', 
-        },
-                {
-          title: 'Curriculam Vitae',
-          link: 'https://cv-neon-omega.vercel.app/', 
-        },
-        {
-          title: 'Cleaning Treks',
-          link: 'https://www-cleaninigtreks-com.vercel.app/', 
-        },
-
-      ]
-    },
+    category: 'SEO Optimizations',
+    icon: 'mdi-trending-up',
+    projects: [
+      { title: 'Product Trace Limited', description: 'SEO campaign ranking "barcodes in Kenya" on Google’s first page.', link: 'https://www.product-traceltd.com/', image: producttrace },
+      { title: 'Antocap Teknologies', description: 'Ongoing SEO strategies boosting visibility and brand authority.', link: 'https://antocapteknologies.com/', image: antocap },
+      { title: 'Polarhomes', description: 'Local SEO optimization ranking for keywords like "accommodation in JKIA".', link: 'https://polarhomes.org/', image: polarhomes },
+      { title: 'Sanfiat Technologies', description: 'SEO-focused affiliate platform with competitive keyword targeting.', link: 'https://sanfiat.antocapteknologies.com/', image: sanfiat }
+    ]
+  },
+  {
+    category: 'eCommerce Solutions',
+    icon: 'mdi-cart-outline',
+    projects: [
+      { title: 'Jubazone E-commerce', description: 'A fully functional e-commerce platform with secure checkout and product management.', link: 'https://jubazone.co.ke/', image: jubazone }
+    ]
+  },
     {
-      category: 'eCommerce Solutions',
-      projects: [
-        {
-          title: 'Jubazone E-commerce Website',
-          link: 'https://jubazone.co.ke/',
-        }
-      ]
-    },
+    category: 'Affiliate Websites',
+    icon: 'mdi-handshake-outline',
+    projects: [
+      { title: 'Quantum Income', description: 'A high-conversion affiliate platform with secure online payment systems.', link: 'https://quantumincome.org/', image: quantum },
+      { title: 'Sanfiat Technologies', description: 'Affiliate marketing site integrated with MPESA STK push for instant payments.', link: 'https://sanfiat.antocapteknologies.com/', image: sanfiat }
+    ]
+  },
     {
-      category: 'Management Systems',
-      projects: [
-        {
-          title: 'Subscription Management',
-          link: 'https://subsmart-website.vercel.app/',
-        },
-        {
-          title: 'Property Management System',
-          link: 'https://moovin-eight.vercel.app/', 
-        },
-      ]
-    },
+    category: 'Artificial Intelligence (AI)',
+    icon: 'mdi-robot',
+    projects: [
+      {
+        title: 'AI Life Simulation',
+        description: 'A next-gen life simulator that mimics real human interaction using advanced AI models.',
+        link: 'https://ai-chatbot-rho-three-50.vercel.app/',
+        image: aiLife
+      },
+      {
+        title: 'Moovin Property Management',
+        description: 'An AI-powered property platform with automated tenant support and intelligent dashboards.',
+        link: 'https://moovin-eight.vercel.app/',
+        image: moovin
+      }
+    ]
+  },
+  {
+    category: 'Management Systems',
+    icon: 'mdi-cog-outline',
+    projects: [
+      { title: 'Subscription Management', description: 'A SaaS platform for handling recurring subscriptions and customer billing.', link: 'https://subsmart-website.vercel.app/', image: subscription },
+      { title: 'Property Management System', description: 'A complete real estate system for landlords, tenants, and admin operations.', link: 'https://moovin-eight.vercel.app/dashboard/', image: property }
+    ]
+  },
+  {
+    category: 'Android Mobile Apps',
+    icon: 'mdi-cellphone',
+    projects: [
+      { title: 'JobTask Mobile App', description: 'An Android app for booking services like barbers and handymen, with real-time tracking.', link: 'https://play.google.com/store/apps/details?id=com.jobtaskukportalss&hl=en&pli=1', image: jobtask }
+    ]
+  },
     {
-      category: 'Billing Systems',
-      projects: [
-        {
-          title: 'Subsmart Subscription management',
-          link: 'https://subsmart-website.vercel.app/', 
-        },
-        {
-          title: 'coming soon',
-          link: '', 
-        },
-      ]
-    },
-    {
-      category: 'SEO Optimizations',
-      projects: [
-        {
-          title: 'SEO for Product Trace Limited',
-          link: 'https://www.product-traceltd.com/',
-        },
-        {
-          title: 'SEO for Antocap Teknologies',
-          link: 'https://antocapteknologies.com/', 
-        },
-        {
-          title: 'SEO for Sanfiat Technologies',
-          link: 'https://sanfiat.antocapteknologies.com/', 
-        },
-        {
-          title: 'SEO for Polarhomes',
-          link: 'https://polarhomes.org/', 
-        },
-      ]
-    },
-    {
-      category: 'Affiliate Websites',
-      projects: [
-        {
-          title: 'Quantum Market Website',
-          link: 'https://quantumincome.org/',
-        },
-        {
-          title: 'Sanfiat Technologies Website',
-          link: 'https://sanfiat.antocapteknologies.com/',
-        },
-      ]
-    },
-    {
-      category: 'Mobile Apps',
-      projects: [
-        {
-          title: 'JobTask Mobile App',
-          link: 'https://play.google.com/store/apps/details?id=com.jobtaskukportalss&hl=en&pli=1',
-        }
-      ]
-    },
-  ])
+    category: 'Billing Systems',
+    icon: 'mdi-cash-register',
+    projects: [
+      { title: 'Coming Soon', description: 'Innovative billing systems with automation and multi-currency support—launching soon.', link: '', image: billing }
+    ]
+  }
+];
+</script>
 
-  useHead({
-  title: 'Projects | Antocap Teknologies - Websites, Apps, SEO & More',
-  meta: [
-    { name: 'description', content: 'Explore completed projects by Antocap Teknologies including websites, mobile apps, billing systems, SEO optimization, affiliate platforms, and more.' },
-    { name: 'keywords', content: 'Antocap Teknologies projects, website development, eCommerce, SEO, affiliate websites, management systems, billing software, mobile app development, Kenya tech company' },
-    { name: 'author', content: 'Antocap Teknologies' },
-    { name: 'robots', content: 'index, follow' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-    { name: 'google-site-verification', content: '5hBLXfg-cAkfTMQDRDlg4h78fQ8fo6xtex41hVJFlz4' },
-
-    // Open Graph
-    { property: 'og:title', content: 'Projects | Antocap Teknologies' },
-    { property: 'og:description', content: 'Check out our top-tier website projects, mobile apps, SEO work, and more!' },
-    { property: 'og:image', content: 'https://antocapteknologies.com/images/projects-preview.jpg' },
-    { property: 'og:url', content: 'https://antocapteknologies.com/projects' },
-    { property: 'og:type', content: 'website' },
-
-    // Twitter
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Projects | Antocap Teknologies' },
-    { name: 'twitter:description', content: 'Explore our portfolio of tech projects including websites, SEO work, and mobile apps.' },
-    { name: 'twitter:image', content: 'https://antocapteknologies.com/images/projects-preview.jpg' }
-  ],
-  script: [
-    // JSON-LD Structured Data
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Our Projects - Antocap Teknologies",
-        "description": "Showcase of completed and upcoming projects by Antocap Teknologies including eCommerce, SEO, apps, and websites.",
-        "url": "https://antocapteknologies.com/projects",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Antocap Teknologies",
-          "url": "https://antocapteknologies.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://antocapteknologies.com/logo.png"
-          },
-          "sameAs": [
-            "https://www.facebook.com/antocapteknologies",
-            "https://www.instagram.com/antocapteknologies",
-            "https://www.linkedin.com/company/antocapteknologies",
-            "https://www.twitter.com/antocapteks",
-            "https://www.youtube.com/@antocapteknologies"
-          ]
-        }
-      })
-    },
-    // Breadcrumb Schema
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://antocapteknologies.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Projects",
-            "item": "https://antocapteknologies.com/projects"
-          }
-        ]
-      })
-    }
-  ],
-  link: [
-    { rel: 'canonical', href: 'https://antocapteknologies.com/project' }
-  ]
-})
-
-  </script>
-  
-  <style scoped>
-  .service-card {
-    background: white !important;
-    color: rgb(19, 6, 6);
-  }
-  
-  .service-icon {
-    font-size: 3rem;
-  }
-  
-  .project-link-btn {
-    background-color: green;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .project-link-btn:hover {
-    background-color: #00b4d8;
-  }
-  
-  .project-link-btn:focus {
-    outline: none;
-  }
-
-  .animated-heading {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #0077b6; 
-  display: inline-block;
-  animation: jump 1s infinite ease-in-out;
-  text-align: center;
-}
-
-.blue-heading-text {
-  color: #0077b6; 
-}
-
-.double-line {
-  font-size: 3.5rem;
-  font-weight: bold;
-  color: #0077b6;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-@keyframes jump {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-  </style>
-  
