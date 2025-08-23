@@ -1,22 +1,19 @@
 <template>
-  <div :class="['home-page', { 'light-mode': !isDarkMode }]">
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" @click="toggleTheme">
-      <v-icon
-        :class="{ 'bulb-on': !isDarkMode, 'bulb-off': isDarkMode }"
-        size="40"
-        aria-label="Toggle light/dark mode"
-      >mdi-lightbulb</v-icon>
-    </div>
+  <div class="home-page">
+    <!-- Title -->
+    <h1 id="about-title" class="display-2 font-weight-black gradient-gold-text text-center mb-8">
+      About Antocap Teknologies
+    </h1>
+
+    <CarouselSection />
+
+    <v-divider class="my-8" color="gold" thickness="2" />
 
     <v-container fluid class="about-page py-12 px-4 px-md-12">
       <!-- Hero Section -->
-      <section role="region" aria-labelledby="about-title">
-        <v-row align="center" justify="center" class="text-center mb-12">
+      <section role="region" aria-labelledby="about-title" class="mb-12">
+        <v-row align="center" justify="center" class="text-center">
           <v-col cols="12" md="8">
-            <h1 id="about-title" class="display-2 font-weight-black gradient-gold-text mb-4">
-              About Antocap Teknologies
-            </h1>
             <p class="text-subtitle-1 gold-faded-text">
               Founded by <strong class="gold-accent">Antony Ndambuki</strong> in August 2024,
               <strong class="gold-accent">Antocap Teknologies</strong> is a premium software development company
@@ -27,14 +24,14 @@
       </section>
 
       <!-- CEO Info -->
-      <section aria-labelledby="ceo-heading">
-        <v-row align="center" justify="center" class="mb-16">
+      <section aria-labelledby="ceo-heading" class="mb-16">
+        <v-row align="center" justify="center">
           <v-col cols="12" md="4" class="text-center mb-6 mb-md-0">
-            <v-avatar size="160" class="elevation-10">
+            <v-avatar size="160" class="elevation-10 border-gold">
               <v-img :src="AntonyNdambuki" alt="Portrait of Antony Ndambuki" cover class="rounded-circle" />
             </v-avatar>
           </v-col>
-          <v-col cols="12" md="8">
+          <v-col cols="12" md="8" class="text-center text-md-left">
             <h2 id="ceo-heading" class="text-h4 font-weight-bold mb-3 gradient-gold-text">
               Meet Our Founder
             </h2>
@@ -47,113 +44,28 @@
         </v-row>
       </section>
 
-<!-- Services Section -->
-<section aria-labelledby="services-heading" class="mb-16" role="region">
-  <v-row align="center" justify="center" class="mb-12">
-    <v-col cols="12" md="8" class="text-center">
-      <h2 id="services-heading" class="text-h4 font-weight-bold mb-4 gradient-gold-text">
-        Our Services
-      </h2>
-      <p class="text-subtitle-1 gold-faded-text">
-        At <strong class="gold-accent">Antocap Teknologies</strong>, we offer a wide range of cutting-edge digital services
-        tailored to meet both individual and business needs.
-      </p>
-    </v-col>
-  </v-row>
+      <PremiumServices />
 
-  <v-container fluid>
-    <v-row>
-      <v-col
-        v-for="(service, index) in services"
-        :key="index"
-        cols="12"
-        sm="6"
-        md="4"
-        class="mb-8"
-        data-aos="fade-up"
-        data-aos-once="true"
-        :data-aos-delay="index * 100"
-        role="article"
-        :aria-label="`${service.title} service`"
-      >
-        <div class="d-flex align-center mb-3 cursor-pointer" @click="expanded === index ? expanded = null : expanded = index">
-          <v-icon :color="service.color" class="mr-2" size="32" aria-hidden="true">{{ service.icon }}</v-icon>
-          <h3 class="text-subtitle-1 font-weight-bold white--text mb-0">{{ service.title }}</h3>
-        </div>
-
-        <v-expand-transition>
-          <div v-if="expanded === index" class="pl-6 mt-2" aria-expanded="true">
-            <p class="white--text mb-3" :aria-label="service.description">{{ service.description }}</p>
-
-            <v-btn
-              color="yellow-darken-2"
-              class="mr-2 mb-2"
-              size="small"
-              rounded
-              to="/contact"
-              aria-label="Contact us about {{ service.title }}"
-            >
-              Contact Us
-            </v-btn>
-
-            <v-btn
-              color="primary"
-              class="mr-2 mb-2"
-              size="small"
-              rounded
-              :to="`/pricing#${service.title.toLowerCase().replace(/[^a-z]+/g, '-')}`"
-              aria-label="View pricing for {{ service.title }}"
-            >
-              View Pricing
-            </v-btn>
-
-            <v-btn
-              color="green"
-              class="mb-2"
-              size="small"
-              rounded
-              to="/projects"
-              aria-label="See projects related to {{ service.title }}"
-            >
-              View Projects
-            </v-btn>
-          </div>
-        </v-expand-transition>
-
-        <div v-if="expanded !== index" class="mt-2">
-          <v-btn
-            color="white"
-            variant="outlined"
-            size="small"
-            class="text-capitalize"
-            @click="expanded = index"
-            aria-label="Learn more about {{ service.title }}"
-          >
-            Learn More
-          </v-btn>
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
-</section>
+      <v-divider class="my-8" color="gold" thickness="2" />
 
       <!-- Mission & Vision -->
       <section aria-label="Company Mission and Vision" class="mb-16">
         <v-row>
           <v-col cols="12" md="6" data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
-            <v-card class="pa-6 rounded-xl elevation-8 glass-dark text-white" role="region" aria-labelledby="mission-heading">
-              <v-icon size="48" class="mb-2 gold-icon">mdi-rocket-launch</v-icon>
-              <h3 id="mission-heading" class="text-h5 font-weight-bold mb-2 gradient-gold-text">Our Mission</h3>
+            <v-card class="pa-6 rounded-xl elevation-8 glass-dark" role="region" aria-labelledby="mission-heading">
+              <v-icon size="48" class="mb-3 gold-icon">mdi-rocket-launch</v-icon>
+              <h3 id="mission-heading" class="text-h5 font-weight-bold mb-3 gradient-gold-text">Our Mission</h3>
               <p class="gold-faded-text">
                 To empower businesses by building innovative, secure, and user-friendly software solutions that enhance
                 performance, growth, and digital visibility.
               </p>
             </v-card>
           </v-col>
+
           <v-col cols="12" md="6" data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
-            <v-card class="pa-6 rounded-xl elevation-8 glass-dark text-white" role="region" aria-labelledby="vision-heading">
-              <v-icon size="48" class="mb-2 gold-icon">mdi-eye</v-icon>
-              <h3 id="vision-heading" class="text-h5 font-weight-bold mb-2 gradient-gold-text">Our Vision</h3>
+            <v-card class="pa-6 rounded-xl elevation-8 glass-dark" role="region" aria-labelledby="vision-heading">
+              <v-icon size="48" class="mb-3 gold-icon">mdi-eye</v-icon>
+              <h3 id="vision-heading" class="text-h5 font-weight-bold mb-3 gradient-gold-text">Our Vision</h3>
               <p class="gold-faded-text">
                 To become a globally recognized leader in software innovation, delivering luxurious and premium digital
                 solutions tailored to client success.
@@ -163,18 +75,10 @@
         </v-row>
       </section>
 
-      <!-- Additional Sections -->
-      <div data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
-        <WhyChoose />
-      </div>
-
-      <div data-aos="fade-up" data-aos-once="true" data-aos-delay="150">
-        <SocialProofSection />
-      </div>
-
-      <div data-aos="fade-up" data-aos-once="true" data-aos-delay="200">
-        <FooterBanner />
-      </div>
+      <!-- Extras -->
+      <WhyChoose data-aos="fade-up" data-aos-delay="100" />
+      <SocialProofSection data-aos="fade-up" data-aos-delay="150" />
+      <FooterBanner data-aos="fade-up" data-aos-delay="200" />
       <Testimonials />
     </v-container>
   </div>
@@ -184,11 +88,12 @@
 <script setup>
 import { ref } from 'vue'
 
+import CarouselSection from '@/components/CarouselSection.vue';
+import PremiumServices from '@/components/PremiumServices.vue';
 import SocialProofSection from '@/components/SocialProofSection.vue'
 import FooterBanner from '@/components/FooterBanner.vue'
 import WhyChoose from '@/components/WhyChoose.vue'
 import Testimonials from './Testimonials.vue';
-import { isDarkMode, toggleTheme } from '@/composables/useTheme.js';
 
 import { useHead } from '@vueuse/head'
 import AntonyNdambuki from '@/assets/CEO-Antony-Ndambuki.jpg'
@@ -197,71 +102,6 @@ import logo from '@/assets/Antocap-logo.jpg'
 const siteUrl = 'https://antocapteknologies.com'
 const pageUrl = `${siteUrl}/about`
 const imageUrl = `${siteUrl}${logo}`
-
-const expanded = ref(null);
-
-const services = [
-  {
-    icon: 'mdi-web',
-    title: 'Website Design & Development',
-    color: 'light-blue',
-    description: 'We build stunning, responsive websites tailored to your brand and optimized for performance.'
-  },
-  {
-    icon: 'mdi-android',
-    title: 'App Development',
-    color: 'green',
-    description: 'We create fast, scalable Android and iOS apps using modern technologies and intuitive design.'
-  },
-  {
-    icon: 'mdi-briefcase-outline',
-    title: 'Management Systems',
-    color: 'indigo',
-    description: 'From school systems to inventory tools, we develop smart management software for operations.'
-  },
-  {
-    icon: 'mdi-cash-register',
-    title: 'Billing Systems',
-    color: 'orange',
-    description: 'Custom billing and invoicing solutions that simplify and automate your business transactions.'
-  },
-  {
-    icon: 'mdi-chart-line',
-    title: 'SEO Services',
-    color: 'purple',
-    description: 'Boost your visibility on Google with our data-driven SEO strategies and audits.'
-  },
-  {
-    icon: 'mdi-robot',
-    title: 'Bot Creation',
-    color: 'teal',
-    description: 'From chatbots to automation bots, we craft powerful solutions to streamline workflows.'
-  },
-  {
-    icon: 'mdi-desktop-classic',
-    title: 'Computer Maintenance',
-    color: 'red',
-    description: 'We offer reliable onsite and remote maintenance to keep your systems running smoothly.'
-  },
-  {
-    icon: 'mdi-lock-reset',
-    title: 'PC PIN Recovery',
-    color: 'amber',
-    description: 'Locked out of your computer? We securely recover or reset forgotten passwords or PINs.'
-  },
-  {
-    icon: 'mdi-shield-refresh',
-    title: 'Account/Device Unhacking',
-    color: 'deep-purple',
-    description: 'Recover hacked social media or computer accounts with our expert digital security services.'
-  },
-  {
-    icon: 'mdi-server',
-    title: 'IT Services',
-    color: 'cyan',
-    description: 'We provide a full range of IT support, infrastructure setup, and cloud solutions.'
-  }
-];
 
 useHead({
   title: 'About Us - Antocap Teknologies',
@@ -433,39 +273,11 @@ useHead({
 .home-page {
   background-color: #0a0a0a;
   color: #ffffff;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.home-page.light-mode {
-  background-color: #f9f9f9;
-  color: #1a1a1a;
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 1000;
-}
-
-.theme-toggle .v-icon {
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  color: #ffd700;
-}
-
-.theme-toggle .bulb-off {
-  opacity: 0.6;
-  filter: grayscale(1);
-}
-
-.theme-toggle .bulb-on {
-  color: #ffd700;
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffea00;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
 
 .about-page {
-  font-family: 'Inter', sans-serif;
   margin-top: 5%;
 }
 
@@ -486,29 +298,22 @@ useHead({
   color: #ffd700;
 }
 
-.text-soft-white {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.icon-blue {
-  color: #2196f3;
-}
-.icon-green {
-  color: #4caf50;
-}
-.icon-teal {
-  color: #009688;
+.gold-faded-text {
+  color: rgba(255, 215, 0, 0.85);
 }
 
 .border-gold {
-  border: 4px solid #ffd700;
+  border: 3px solid #ffd700;
 }
 
 .glass-dark {
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
 }
 
+.gold-icon {
+  color: #ffd700;
+}
 </style>

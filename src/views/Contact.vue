@@ -1,106 +1,112 @@
 <template>
-  <v-container fluid class="py-16 mt-10 bg-grey-lighten-4">
+  <v-container fluid class="py-16 mt-10 bg-black text-white">
     <v-container>
-<!-- Header with AOS animation -->
-<v-row justify="center" class="text-center mb-10" data-aos="fade-up">
-  <v-col cols="12" md="8">
-    <h5 class="text-primary mb-2">Let's Connect</h5>
-    <h1 class="mb-4">We'd Love to Hear from You</h1>
-    <p class="text-grey-darken-1">
-      Have a question or project in mind? Fill out the form below, and we'll get back to you as soon as possible.
-    </p>
-  </v-col>
-</v-row>
-
-<!-- Contact Info Boxes with AOS -->
-<v-row class="mb-10" justify="center" align="center">
-  <v-col cols="12" md="4" data-aos="fade-up">
-    <v-card class="bg-primary text-white pa-5" elevation="5">
-      <v-row no-gutters align="center">
-        <div class="rounded-circle bg-white d-flex justify-center align-center" style="width: 60px; height: 60px;">
-          <v-icon color="primary" size="30">mdi-map-marker</v-icon>
-        </div>
-        <div class="ms-4">
-          <h4>Address</h4>
-          <a href="https://goo.gl/maps/VFMiwm69jWkHxZwZA" target="_blank" class="text-white text-decoration-underline">
-            Nairobi, Kenya
-          </a>
-        </div>
+      <!-- Header -->
+      <v-row justify="center" class="text-center mb-12" data-aos="fade-up">
+        <v-col cols="12" md="8">
+          <h5 class="text-gold tracking-widest mb-2">LET'S CONNECT</h5>
+          <h1 class="mb-4 font-extrabold text-3xl md:text-4xl">We’d Love to Hear From You</h1>
+          <p class="text-grey text-lg">
+            Have a project in mind? Drop us a message, and we’ll get back to you shortly.
+          </p>
+        </v-col>
       </v-row>
-    </v-card>
-  </v-col>
 
-  <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="100">
-    <v-card class="bg-primary text-white pa-5" elevation="5">
-      <v-row no-gutters align="center">
-        <div class="rounded-circle bg-white d-flex justify-center align-center" style="width: 60px; height: 60px;">
-          <v-icon color="success" size="30">mdi-phone</v-icon>
-        </div>
-        <div class="ms-4">
-          <h4>Call Us</h4>
-          <a href="tel:+254757492614" class="text-white text-decoration-underline">
-            +254 757 492 614
-          </a>
-        </div>
+      <!-- Contact Info -->
+      <v-row class="mb-12" justify="center" align="stretch" dense>
+        <v-col cols="12" md="4" data-aos="fade-up">
+          <v-card class="contact-card pa-6 h-100" elevation="8">
+            <div class="icon-circle mb-4 mx-auto">
+              <v-icon color="gold" size="34">mdi-map-marker</v-icon>
+            </div>
+            <h4 class="text-gold mb-2 text-center">Address</h4>
+            <p class="text-grey text-center">
+              <a href="https://goo.gl/maps/VFMiwm69jWkHxZwZA" target="_blank" class="text-white underline">
+                Nairobi, Kenya
+              </a>
+            </p>
+          </v-card>
+        </v-col>
+
+        <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="100">
+          <v-card class="contact-card pa-6 h-100" elevation="8">
+            <div class="icon-circle mb-4 mx-auto">
+              <v-icon color="gold" size="34">mdi-phone</v-icon>
+            </div>
+            <h4 class="text-gold mb-2 text-center">Call Us</h4>
+            <p class="text-grey text-center">
+              <a href="tel:+254757492614" class="text-white underline">
+                +254 757 492 614
+              </a>
+            </p>
+          </v-card>
+        </v-col>
+
+        <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="200">
+          <v-card class="contact-card pa-6 h-100" elevation="8">
+            <div class="icon-circle mb-4 mx-auto">
+              <v-icon color="gold" size="34">mdi-email</v-icon>
+            </div>
+            <h4 class="text-gold mb-2 text-center">Email Us</h4>
+            <p class="text-grey text-center">
+              <a href="mailto:antocaptechnologies@gmail.com" class="text-white underline">
+                antocaptechnologies@gmail.com
+              </a>
+            </p>
+          </v-card>
+        </v-col>
       </v-row>
-    </v-card>
-  </v-col>
 
-  <v-col cols="12" md="4" data-aos="fade-up" data-aos-delay="200">
-    <v-card class="bg-primary text-white pa-5" elevation="5">
-      <v-row no-gutters align="center">
-        <div class="rounded-circle bg-white d-flex justify-center align-center" style="width: 60px; height: 60px;">
-          <v-icon color="warning" size="30">mdi-email</v-icon>
-        </div>
-        <div class="ms-4">
-          <h4>Email Us</h4>
-          <a href="mailto:antocaptechnologies@gmail.com" class="text-white text-decoration-underline">
-            antocaptechnologies@gmail.com
-          </a>
-        </div>
-      </v-row>
-    </v-card>
-  </v-col>
-</v-row>
-
-      <!-- Form with AOS -->
+      <!-- Form + Business Hours -->
       <v-row>
-        <v-col cols="12" md="6" data-aos="fade-up" data-aos-delay="300">
-          <v-card class="pa-5" elevation="3">
+        <!-- Contact Form -->
+        <v-col cols="12"  data-aos="fade-up" data-aos-delay="300">
+          <v-card class="form-card pa-6" elevation="6">
+            <h3 class="text-gold mb-6 text-xl font-semibold">Send Us a Message</h3>
             <v-form ref="formRef" v-model="valid" @submit.prevent="submitForm">
               <v-text-field
                 v-model="form.name"
                 label="Your Name"
                 variant="outlined"
-                :rules="[v => !!v || 'Name is required']"
-                class="mb-4"
+                density="comfortable"
+                :rules="[rules.required('Name is required')]"
+                class="mb-4 white-input"
               />
               <v-text-field
                 v-model="form.email"
                 label="Your Email"
                 type="email"
                 variant="outlined"
-                :rules="[v => !!v || 'Email is required']"
-                class="mb-4"
+                density="comfortable"
+                :rules="[rules.required('Email is required'), rules.email]"
+                class="mb-4 white-input"
               />
               <v-select
                 v-model="form.project"
                 label="Select Services"
                 multiple
                 :items="services.map(s => s.name)"
-                :rules="[v => !!v.length || 'At least one service is required']"
-                outlined
-                class="mb-4"
+                variant="outlined"
+                density="comfortable"
+                :rules="[rules.arrayMin(1, 'Pick at least one service')]"
+                class="mb-4 white-input"
+                chips
               />
               <v-textarea
                 v-model="form.message"
-                label="Describe your project in details"
+                label="Describe your project in detail"
                 rows="4"
                 variant="outlined"
-                :rules="[v => !!v || 'Message is required']"
-                class="mb-4"
+                density="comfortable"
+                :rules="[rules.required('Message is required'), rules.minLen(10)]"
+                class="mb-6 white-input"
               />
-              <v-btn color="primary" type="submit" :disabled="!valid">
+              <v-btn
+                class="gold-btn w-100"
+                type="submit"
+                :loading="loading"
+                :disabled="!valid || loading"
+              >
                 Send Message
               </v-btn>
             </v-form>
@@ -108,75 +114,36 @@
         </v-col>
 
         <!-- Business Hours -->
-        <v-col cols="12" md="6" data-aos="fade-up" data-aos-delay="400">
-          <v-card class="pa-5 bg-grey-lighten-3" elevation="1">
-            <h4 class="text-primary mb-4">Our Business Hours</h4>
-            <v-list>
+        <v-col cols="12" data-aos="fade-up" data-aos-delay="400">
+          <v-card class="form-card pa-6" elevation="6">
+            <h3 class="text-gold mb-6 text-xl font-semibold">Our Business Hours</h3>
+            <v-list class="transparent-list">
               <v-list-item><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</v-list-item>
               <v-list-item><strong>Saturday:</strong> 9:00 AM - 4:00 PM</v-list-item>
               <v-list-item><strong>Sunday:</strong> Closed</v-list-item>
             </v-list>
-            <p class="mt-4 text-grey-darken-1">
-              Feel free to reach out to us during these hours. We will do our best to respond promptly!
+            <p class="mt-6 text-grey">
+              Feel free to reach out during these hours. We’ll respond promptly!
             </p>
           </v-card>
         </v-col>
       </v-row>
+
+      <!-- Snackbar Feedback -->
+      <v-snackbar
+        v-model="snackbar.show"
+        :timeout="3000"
+        location="bottom center"
+        class="rounded-lg"
+      >
+        {{ snackbar.message }}
+      </v-snackbar>
     </v-container>
   </v-container>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
-
-const formRef = ref(null)
-const valid = ref(false)
-const form = ref({
-  name: '',
-  email: '',
-  project: [],
-  message: ''
-})
-
-const services = ref([
-  { id: 1, name: 'Website Development' },
-  { id: 2, name: 'Software & App Development' },
-  { id: 3, name: 'Graphic Design' },
-  { id: 4, name: 'Content Writing & Creation' },
-  { id: 5, name: 'Computer Maintenance (Onsite)' },
-  { id: 6, name: 'Remote Windows Installations' },
-  { id: 7, name: 'IT Consulting' },
-  { id: 8, name: 'SEO Services' },
-  { id: 9, name: 'Bot Creation' },
-  { id: 10, name: 'Account Recovery & Device Support' },
-  { id: 11, name: 'PIN Recovery (PC/Devices)' },
-  { id: 12, name: 'Point of Sale (POS)' },
-]);
-
-const submitForm = async () => {
-  const isValid = await formRef.value?.validate()
-  if (isValid) {
-    try {
-      const response = await fetch("https://formspree.io/f/xqazjobw", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form.value),
-      })
-
-      if (response.ok) {
-        alert('Message sent successfully!')
-        form.value = { name: '', email: '', project: [], message: '' }
-        formRef.value.resetValidation()
-      } else {
-        alert('Failed to send message. Please try again.')
-      }
-    } catch (error) {
-      console.error(error)
-      alert('An error occurred. Please try again.')
-    }
-  }
-}
 
 // SEO Metadata
 useHead({
@@ -291,4 +258,155 @@ useHead({
   ]
 });
 
+import { ref } from 'vue'
+
+const formRef = ref(null)
+const valid = ref(false)
+const loading = ref(false)
+const snackbar = ref({ show: false, message: '' })
+
+const form = ref({
+  name: '',
+  email: '',
+  project: [],
+  message: '',
+  _gotcha: ''
+})
+
+const services = ref([
+  { id: 1, name: 'Website Development' },
+  { id: 2, name: 'Software & App Development' },
+  { id: 3, name: 'Graphic Design' },
+  { id: 4, name: 'Point of Sale (POS)' },
+  { id: 5, name: 'SEO Services' },
+  { id: 6, name: 'Automation' },
+  { id: 7, name: 'Management Systems' },
+  { id: 8, name: 'Billing Systems' },
+  { id: 9, name: 'Web & App Revamping' },
+  { id: 10, name: 'IT Support' }
+])
+
+const rules = {
+  required: (msg = 'Required') => (v) => (!!v && (Array.isArray(v) ? v.length > 0 : String(v).trim().length > 0)) || msg,
+  arrayMin: (n, msg) => (v) => (Array.isArray(v) && v.length >= n) || msg,
+  minLen: (n) => (v) => (v && String(v).trim().length >= n) || `Minimum ${n} characters`,
+  email: (v) => /[^\s@]+@[^\s@]+\.[^\s@]+/.test(String(v)) || 'Enter a valid email'
+}
+
+const resetForm = () => {
+  form.value = { name: '', email: '', project: [], message: '', _gotcha: '' }
+  formRef.value?.resetValidation()
+}
+
+const submitForm = async () => {
+  const isValid = await formRef.value?.validate()
+  if (!isValid || form.value._gotcha) return
+
+  loading.value = true
+  try {
+    const response = await fetch('https://formspree.io/f/xqazjobw', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        services: form.value.project,
+        message: form.value.message
+      })
+    })
+
+    if (response.ok) {
+      snackbar.value = { show: true, message: '✅ Message sent successfully!' }
+      resetForm()
+    } else {
+      snackbar.value = { show: true, message: '❌ Failed to send message. Try again.' }
+    }
+  } catch (e) {
+    console.error(e)
+    snackbar.value = { show: true, message: '⚠️ An error occurred. Try again.' }
+  } finally {
+    loading.value = false
+  }
+}
 </script>
+
+<style scoped>
+.bg-black {
+  background: #000 !important;
+}
+
+.text-gold {
+  color: #d4af37 !important;
+}
+
+.text-grey {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.contact-card,
+.form-card {
+  background: #111 !important;
+  color: #fff !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.contact-card:hover,
+.form-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d4af37;
+}
+
+/* Inputs */
+.white-input .v-field {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 10px;
+}
+.white-input .v-field__input {
+  color: #fff !important;
+}
+.white-input .v-label,
+.white-input .v-label.v-field-label {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.white-input input::placeholder,
+.white-input textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+.white-input .v-field.v-field--focused {
+  border: 1px solid #d4af37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Gold Button */
+.gold-btn {
+  background: #d4af37 !important;
+  color: #000 !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.gold-btn:hover {
+  background: #b9972a !important;
+}
+
+/* List */
+.transparent-list .v-list-item,
+.transparent-list .v-list-item * {
+  color: black !important;
+}
+</style>
