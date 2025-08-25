@@ -8,6 +8,8 @@ import compression from 'vite-plugin-compression'
 import { generateCriticalCSS } from './critical-css'
 
 const isVercel = process.env.VERCEL === '1'
+// Detect capacitor/android builds via env variable
+const isCapacitor = process.env.CAPACITOR_PLATFORM === 'android' || process.env.CAPACITOR_PLATFORM === 'ios'
 
 export default defineConfig({
   plugins: [
@@ -33,12 +35,12 @@ export default defineConfig({
         scope: '/',
         icons: [
           {
-            src: '/pwa-192x192.png',
+            src: '/Antocap-logo.jpg',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/pwa-512x512.png',
+            src: '/Antocap-logo.jpg',
             sizes: '512x512',
             type: 'image/png'
           }
@@ -76,8 +78,13 @@ export default defineConfig({
         ]
       }
     }),
-    compression({ algorithm: 'brotliCompress', threshold: 1024 }),
-    compression({ algorithm: 'gzip', threshold: 1024 })
+    // ✅ Only add compression plugins if not Capacitor
+    ...(!isCapacitor
+      ? [
+          compression({ algorithm: 'brotliCompress', threshold: 1024 }),
+          compression({ algorithm: 'gzip', threshold: 1024 })
+        ]
+      : [])
   ],
   resolve: {
     alias: {

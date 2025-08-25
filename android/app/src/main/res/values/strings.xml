@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">antocap-teknologies</string>
+    <string name="title_activity_main">antocap-teknologies</string>
+    <string name="package_name">com.antocap.teknologies</string>
+    <string name="custom_url_scheme">com.antocap.teknologies</string>
+</resources>
